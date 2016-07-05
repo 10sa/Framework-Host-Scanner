@@ -46,7 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\2016_KOI_lib\Framework.csproj">
+    <ProjectReference Include="..\Framework\Framework.csproj">
       <Project>{54a04c31-8b2d-4ad4-8241-4ba633454405}</Project>
       <Name>Framework</Name>
     </ProjectReference>

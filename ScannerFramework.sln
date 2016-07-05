@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form", "2016_KOI\Form.csproj", "{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form", "Form\Form.csproj", "{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "2016_KOI_lib\Framework.csproj", "{54A04C31-8B2D-4AD4-8241-4BA633454405}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Framework.csproj", "{54A04C31-8B2D-4AD4-8241-4BA633454405}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VulnerablePoint_Module", "std_VulnerablePoint_Module\VulnerablePoint_Module.csproj", "{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules", "Modules\Modules.csproj", "{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

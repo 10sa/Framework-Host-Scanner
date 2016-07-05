@@ -1,0 +1,7 @@
+C:\Sync Project\std_VulnerablePoint_Module\bin\Debug\std_VulnerablePoint_Module.dll
+C:\Sync Project\std_VulnerablePoint_Module\bin\Debug\std_VulnerablePoint_Module.pdb
+C:\Sync Project\std_VulnerablePoint_Module\obj\Debug\std_VulnerablePoint_Module.csprojResolveAssemblyReference.cache
+C:\Sync Project\std_VulnerablePoint_Module\obj\Debug\std_VulnerablePoint_Module.dll
+C:\Sync Project\std_VulnerablePoint_Module\obj\Debug\std_VulnerablePoint_Module.pdb
+C:\Sync Project\std_VulnerablePoint_Module\bin\Debug\ScannerFramework.dll
+C:\Sync Project\std_VulnerablePoint_Module\bin\Debug\ScannerFramework.pdb

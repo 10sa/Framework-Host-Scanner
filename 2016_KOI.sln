@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2016_KOI", "2016_KOI\2016_KOI.csproj", "{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScannerFramework", "2016_KOI_lib\ScannerFramework.csproj", "{54A04C31-8B2D-4AD4-8241-4BA633454405}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VulnerablePoint_Module", "std_VulnerablePoint_Module\VulnerablePoint_Module.csproj", "{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54A04C31-8B2D-4AD4-8241-4BA633454405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A04C31-8B2D-4AD4-8241-4BA633454405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A04C31-8B2D-4AD4-8241-4BA633454405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A04C31-8B2D-4AD4-8241-4BA633454405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

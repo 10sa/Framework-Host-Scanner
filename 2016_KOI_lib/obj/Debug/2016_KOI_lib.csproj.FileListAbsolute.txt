@@ -1,0 +1,15 @@
+D:\Securtiy\개발\KOI\2016_KOI\2016_KOI_lib\bin\Debug\2016_KOI_lib.dll
+D:\Securtiy\개발\KOI\2016_KOI\2016_KOI_lib\bin\Debug\2016_KOI_lib.pdb
+D:\Securtiy\개발\KOI\2016_KOI\2016_KOI_lib\obj\Debug\2016_KOI_lib.csprojResolveAssemblyReference.cache
+D:\Securtiy\개발\KOI\2016_KOI\2016_KOI_lib\obj\Debug\2016_KOI_lib.dll
+D:\Securtiy\개발\KOI\2016_KOI\2016_KOI_lib\obj\Debug\2016_KOI_lib.pdb
+C:\Users\Tensa\Desktop\2016_KOI\2016_KOI_lib\bin\Debug\2016_KOI_lib.dll
+C:\Users\Tensa\Desktop\2016_KOI\2016_KOI_lib\bin\Debug\2016_KOI_lib.pdb
+C:\Users\Tensa\Desktop\2016_KOI\2016_KOI_lib\obj\Debug\2016_KOI_lib.csprojResolveAssemblyReference.cache
+C:\Users\Tensa\Desktop\2016_KOI\2016_KOI_lib\obj\Debug\2016_KOI_lib.dll
+C:\Users\Tensa\Desktop\2016_KOI\2016_KOI_lib\obj\Debug\2016_KOI_lib.pdb
+C:\Sync Project\2016_KOI_lib\bin\Debug\2016_KOI_lib.dll
+C:\Sync Project\2016_KOI_lib\bin\Debug\2016_KOI_lib.pdb
+C:\Sync Project\2016_KOI_lib\obj\Debug\2016_KOI_lib.csprojResolveAssemblyReference.cache
+C:\Sync Project\2016_KOI_lib\obj\Debug\2016_KOI_lib.dll
+C:\Sync Project\2016_KOI_lib\obj\Debug\2016_KOI_lib.pdb

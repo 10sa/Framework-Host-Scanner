@@ -140,6 +140,7 @@ namespace ScannerFramework
 		/// <returns>완성된 URI를 반환합니다.</returns>
 		protected virtual Uri MakeUrl(string address)
 		{
+            // 이 부분을 고칠수 있을까?...
 			try
 			{
 				return new Uri(address);

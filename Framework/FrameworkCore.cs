@@ -131,11 +131,11 @@ namespace ScannerFramework
         /// 외부 Dll를 로드합니다.
         /// </summary>
         /// <returns>ModuleLoadErrorList 구조체입니다.</returns>
-		public ModuleLoadErrorList ModuleLoad()
+		private ModuleLoadErrorList ModuleLoad()
 		{
             // dll에 인터페이스를 상속하는 클래스가 2개 이상일때 로드되는것을 방지하기 위한 bool 형 변수.
             bool isFinedModuleClass = false;
-            Type Temp_Class = null;
+            Type Temp_Class;
             ModuleLoadErrorList Error_List = new ModuleLoadErrorList();
 
             // 폴더가 있는지 확인.
@@ -153,6 +153,7 @@ namespace ScannerFramework
                 Assembly Dll_Loader = Assembly.LoadFile(Module.FullName);
                 Type[] ModuleClass = Dll_Loader.GetExportedTypes();
                 
+                // 고칠것.
                 foreach(var Class in ModuleClass)
                 {
                     // 클래스 여부 검사.

@@ -7,8 +7,8 @@
     <ProjectGuid>{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_2016_KOI</RootNamespace>
-    <AssemblyName>2016_KOI</AssemblyName>
+    <RootNamespace>Form</RootNamespace>
+    <AssemblyName>Form</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

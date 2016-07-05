@@ -7,8 +7,8 @@
     <ProjectGuid>{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VulnerablePoint_Modules</RootNamespace>
-    <AssemblyName>VulnerablePoint_Modules</AssemblyName>
+    <RootNamespace>Modules</RootNamespace>
+    <AssemblyName>Modules</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -41,14 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OpenSSL_HeartBleed.cs" />
+    <Compile Include="HeartBleed.cs" />
     <Compile Include="ShellShock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\2016_KOI_lib\ScannerFramework.csproj">
+    <ProjectReference Include="..\2016_KOI_lib\Framework.csproj">
       <Project>{54a04c31-8b2d-4ad4-8241-4ba633454405}</Project>
-      <Name>ScannerFramework</Name>
+      <Name>Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

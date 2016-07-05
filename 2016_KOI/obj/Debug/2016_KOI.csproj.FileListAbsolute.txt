@@ -1,0 +1,2 @@
+C:\Users\User\Documents\GitHub\ScannerFramework\2016_KOI\bin\Debug\2016_KOI.exe.config
+C:\Users\User\Documents\GitHub\ScannerFramework\2016_KOI\bin\Debug\Form.exe.config

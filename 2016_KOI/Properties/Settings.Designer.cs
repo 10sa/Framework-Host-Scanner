@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _2016_KOI.Properties {
+namespace Form.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

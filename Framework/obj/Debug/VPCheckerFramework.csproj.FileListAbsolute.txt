@@ -1,5 +1,0 @@
-C:\Sync Project\2016_KOI_lib\bin\Debug\VPCheckerFramework.dll
-C:\Sync Project\2016_KOI_lib\bin\Debug\VPCheckerFramework.pdb
-C:\Sync Project\2016_KOI_lib\obj\Debug\VPCheckerFramework.csprojResolveAssemblyReference.cache
-C:\Sync Project\2016_KOI_lib\obj\Debug\VPCheckerFramework.dll
-C:\Sync Project\2016_KOI_lib\obj\Debug\VPCheckerFramework.pdb

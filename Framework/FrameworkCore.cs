@@ -103,14 +103,6 @@ namespace ScannerFramework
                     if (Info.VulnerablePointStatus[i])
                         Info.VulnerablePointInfo.Add(Modules[i].IVulnerableInfo());
                 }
-                catch(NotImplementedException)
-                {
-                    // 이 부분을 줄일수 있을듯 함.
-                    // 모듈의 비정상적인 구현을 점검하기 위한 에러처리.
-                    Info.VulnerablePointModuleVer[i] = "";
-                    Info.VulnerablePointStatus[i] = false;
-                    Info.VulnerablePointInfo[i] = "모듈이 정상적으로 구현되지 않았습니다.";
-                }
                 catch(Exception exp)
                 {
                     // 모듈의 예외 반환을 처리하기 위한 에러처리.
@@ -123,10 +115,6 @@ namespace ScannerFramework
             return Info;
         }
 
-
-
-        // 로드에 성공한 모듈의 메소드 유효성을 검사하는 코드를 추가해야 함. (완료)
-
         /// <summary>
         /// 외부 Dll를 로드합니다.
         /// </summary>
@@ -134,8 +122,6 @@ namespace ScannerFramework
 		private ModuleLoadErrorList ModuleLoad()
 		{
             // dll에 인터페이스를 상속하는 클래스가 2개 이상일때 로드되는것을 방지하기 위한 bool 형 변수.
-            bool isFinedModuleClass = false;
-            Type Temp_Class;
             ModuleLoadErrorList Error_List = new ModuleLoadErrorList();
 
             // 폴더가 있는지 확인.
@@ -152,53 +138,38 @@ namespace ScannerFramework
                 // LoadFile 메소드는 절대 경로를 파라메터로 넘겨야 함. (상대경로 X)
                 Assembly Dll_Loader = Assembly.LoadFile(Module.FullName);
                 Type[] ModuleClass = Dll_Loader.GetExportedTypes();
-                
-                // 고칠것.
-                foreach(var Class in ModuleClass)
+
+                foreach (var Class in ModuleClass)
                 {
                     // 클래스 여부 검사.
                     if(Class.IsClass)
                     {
                         // IVulnerableModuleBase의 여부 점검.
-                        // 이 부분은 IVulnerableModuleBase 인터페이스를 상속하는 클래스가 2개 이상인지에 대한 여부를 검색하는 코드가 포함되어 있음.
                         if (typeof(IVulnerableModuleBase).IsAssignableFrom(Class))
                         {
-                            if (!isFinedModuleClass)
+                            IVulnerableModuleBase Temp = (IVulnerableModuleBase)Activator.CreateInstance(Class);
+
+                            try
                             {
-                                Temp_Class = Class;
-                                isFinedModuleClass = true;
+                                // 모듈 이름의 정상 호출 여부 확인.
+                                string name = Temp.ModuleName;
+                                string ver = Temp.ModuleVer;
+
+                                // 오버헤드를 감수하고 모듈의 정상 여부를 검사함.
+                                // 만약 모듈이 정상적으로 구현되지 않았다면 NotImplementedException 예외를 반환할 것임.
+                                Temp.IVulnerableCheck("TEST_Address");
+                                Temp.IVulnerableInfo();
+
+                                // 정상적으로 로드되었을 경우, 추가.
+                                AddVulnerablePointCheckModule(Temp);
                             }
-                            else
+                            catch (NotImplementedException)
                             {
-                                Error_List.ErrorModuleName.Add(Module.Name);
-                                Error_List.ErrorModuleInfo.Add("인터페이스를 상속하는 클래스가 2개 이상입니다.");
-                            }                                
+                                // 모듈이 정상적으로 불러와 졌으나, ModuleName 메소드가 제대로 구현되지 않았을 경우 발생하는 예외처리.
+                                // 아예 추가하지 않는 방법을 고려할것. (버그가 발생할수 있음)
+                                AddVulnerablePointCheckModule(Temp, Module.Name);
+                            }
                         }
-                    }
-                }
-
-                if(!isFinedModuleClass)
-                {
-                    Error_List.ErrorModuleName.Add(Module.Name);
-                    Error_List.ErrorModuleInfo.Add("인터페이스를 상속하는 클래스가 없습니다.");
-                }
-                else
-                {
-                    IVulnerableModuleBase temp = (IVulnerableModuleBase)Activator.CreateInstance(Temp_Class);
-                    
-                    try
-                    {
-                        // 모듈 이름의 정상 호출 여부 확인.
-                        string name = temp.ModuleName;
-                        string ver = temp.ModuleVer;
-
-                        // 정상적으로 로드되었을 경우, 추가.
-                        AddVulnerablePointCheckModule(temp);
-                    }
-                    catch(NotImplementedException)
-                    {
-                        // 모듈이 정상적으로 불러와 졌으나, ModuleName 메소드가 제대로 구현되지 않았을 경우 발생하는 예외처리.
-                        AddVulnerablePointCheckModule(temp, Module.Name);
                     }
                 }
             }

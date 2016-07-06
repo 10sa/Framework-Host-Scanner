@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScannerFramework
+namespace Framework
 {
-	/// <summary>
-	/// 모듈을 실행시켰을때 반환하는 정보입니다.
-	/// </summary>
-	public struct VulnerablePointModuleInfo
+    /// <summary>
+    /// 모듈을 실행시켰을때 반환하는 정보입니다.
+    /// </summary>
+    public struct VulnerablePointModuleInfo
 	{
 		/// <summary>
 		/// 취약점 여부입니다.

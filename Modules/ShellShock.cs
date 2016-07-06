@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ScannerFramework;
+using Framework;
 
-namespace VulnerablePoint_Modules
+namespace Modules
 {
     /// <summary>
     /// CVE-2014-6271 :: ShellShock (Apapche HTTP Server User-Agent Attack) Patch : <http://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-025>

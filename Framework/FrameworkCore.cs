@@ -7,9 +7,9 @@ using System.Net;
 using System.IO;
 using System.Reflection;
 
-namespace ScannerFramework
+namespace Framework
 {
-    
+
     // Framework To Do List
     // 1. 완성하기.
     // 2. Dll 동적 로드 구현. (완료)
@@ -18,6 +18,57 @@ namespace ScannerFramework
     // 4. 디버깅 (진행중)
     // 모듈 추가.
 
+    
+    /// <summary>
+    /// 모듈의 데이터를 저장하고 관리하는 클래스입니다.
+    /// </summary>
+    public class ModuleData
+    {
+        public struct MetaData
+        {
+            /// <summary>
+            /// 호출할 모듈의 리스트입니다.
+            /// </summary>
+            public IVulnerableModuleBase Module { get; private set; }
+
+            /// <summary>
+            /// 호출할 모듈의 이름입니다.
+            /// </summary>
+            private string Name;
+
+            /// <summary>
+            /// 모듈의 상태입니다.
+            /// </summary>
+            public ModuleStatus Status;
+
+            public MetaData(IVulnerableModuleBase Module, string Name, ModuleStatus Info)
+            {
+                this.Module = Module;
+                this.Name = Name;
+                Status = Info;
+            }
+        }
+
+        private List<MetaData> Data = new List<MetaData>();
+
+        public int Lenght { get { return Data.Count; } }
+
+        public MetaData IndexOf(int index)
+        {
+            return Data[index];
+        }
+
+        public void Clear()
+        {
+            Data.Clear();
+        }
+
+        public void Add(IVulnerableModuleBase Module, string Name, ModuleStatus Flag)
+        {
+            Data.Add(new MetaData(Module, Name, Flag));
+        }
+    }
+
 
     /// <summary>
     /// 서버의 취약점을 점검하는 프레임워크 클래스입니다.
@@ -25,32 +76,18 @@ namespace ScannerFramework
     public class ScannerFramework
     {
 		/// <summary>
-		/// 호출할 모듈의 리스트입니다.
-		/// </summary>
-		private List<IVulnerableModuleBase> Modules = new List<IVulnerableModuleBase>();
-
-        /// <summary>
-        /// 호출할 모듈의 이름입니다.
-        /// </summary>
-        private List<string> ModulesName = new List<string>();
-
-		/// <summary>
 		/// 취약점을 점검할 서버의 URI 입니다.
 		/// </summary>
 		public string TargetServerURI { get; private set; }
 
-        /// <summary>
-        /// 모듈 로드시 발생한 에러를 저장하는 VulnerablePointModuleLoadErrorList 입니다.
-        /// </summary>
-        public ModuleLoadErrorList ErrorModuleList { get; private set; }
-
+        public ModuleData Modules = new ModuleData();
 
         /// <summary>
         /// 프레임워크를 초기화합니다.
         /// </summary>
         public ScannerFramework()
         {
-            ErrorModuleList = ModuleLoad();
+            ModuleLoad();
         }
 
 		/// <summary>
@@ -59,7 +96,7 @@ namespace ScannerFramework
 		public void Reload()
 		{
 			Modules.Clear();
-			ErrorModuleList = ModuleLoad();
+			ModuleLoad();
 		}
 
 		/// <summary>
@@ -68,61 +105,58 @@ namespace ScannerFramework
 		/// <param name="Module">추가될 모듈입니다.</param>
         public void AddVulnerablePointCheckModule(IVulnerableModuleBase Module)
         {
-			Modules.Add(Module);
-            ModulesName.Add(Module.ModuleName);
+			Modules.Add(Module, Module.ModuleName, ModuleStatus.Call);
         }
 
         /// <summary>
-        /// 모듈 이름 메소드가 정상적으로 구현되지 않았을 경우, 파라매터로 넘겨받은 이름을 모듈의 이름으로 설정합니다.
+        /// 모듈이 비정상적일시 모듈 로드를 에러로 처리하여 추가하는 메소드입니다.
         /// </summary>
         /// <param name="Module">추가될 모듈입니다.</param>
         /// <param name="Name">모듈의 이름입니다.</param>
         public void AddVulnerablePointCheckModule(IVulnerableModuleBase Module, string Name)
         {
-            Modules.Add(Module);
-            ModulesName.Add(Name);
+            Modules.Add(Module, Name, ModuleStatus.Error);
         }
         
+
         /// <summary>
         /// 목표 서버에 대한 취약점을 점검합니다.
         /// </summary>
 		/// <param name="Address">목표 서버의 주소입니다.</param>
-        /// <returns>취약점의 여부와 상태, 모듈의 정보를 포함한 리스트를 반환합니다.</returns>
-        public VulnerablePointModuleInfo VulnerablePointCheck(string Address)
+        /// <returns>호출 결과를 저장한 리스트를 반환합니다.</returns>
+        public List<CallResult> VulnerablePointCheck(string Address)
         {
-            VulnerablePointModuleInfo Info = new VulnerablePointModuleInfo();
+            List<CallResult> Info = new List<CallResult>();
 			TargetServerURI = Address;
 
-            for (int i = 0; i <= Modules.Count; i++)
+            for (int i = 0; i <= Modules.Lenght; i++)
 			{
+                // 모듈 호출 여부에 따른 작동방식 (UI에서 쓰임)
+                if (!(Modules.IndexOf(i).Status == ModuleStatus.Call))
+                    continue;
+
                 try
                 {
-                    Info.VulnerablePointName.Add(ModulesName[i]);
-                    Info.VulnerablePointModuleVer.Add(Modules[i].ModuleVer);
-                    Info.VulnerablePointStatus.Add(Modules[i].IVulnerableCheck(TargetServerURI));
-                    if (Info.VulnerablePointStatus[i])
-                        Info.VulnerablePointInfo.Add(Modules[i].IVulnerableInfo());
+                    if(Modules.IndexOf(i).Module.IVulnerableCheck(TargetServerURI))
+                        Info.Add(CallResult.Unsafe);
                 }
-                catch(Exception exp)
+                catch(Exception)
                 {
                     // 모듈의 예외 반환을 처리하기 위한 에러처리.
-                    Info.VulnerablePointModuleVer[i] = "";
-                    Info.VulnerablePointStatus[i] = false;
-                    Info.VulnerablePointInfo[i] = "모듈이 예외를 반환했습니다.\n" + exp.Message;
+                    Info.Add(CallResult.Exception);
                 }
 			}
 
             return Info;
         }
 
+
         /// <summary>
         /// 외부 Dll를 로드합니다.
         /// </summary>
         /// <returns>ModuleLoadErrorList 구조체입니다.</returns>
-		private ModuleLoadErrorList ModuleLoad()
+		private void ModuleLoad()
 		{
-            // dll에 인터페이스를 상속하는 클래스가 2개 이상일때 로드되는것을 방지하기 위한 bool 형 변수.
-            ModuleLoadErrorList Error_List = new ModuleLoadErrorList();
 
             // 폴더가 있는지 확인.
             if (!Directory.Exists("/Module"))
@@ -165,18 +199,16 @@ namespace ScannerFramework
                             }
                             catch (NotImplementedException)
                             {
-                                // 모듈이 정상적으로 불러와 졌으나, ModuleName 메소드가 제대로 구현되지 않았을 경우 발생하는 예외처리.
-                                // 아예 추가하지 않는 방법을 고려할것. (버그가 발생할수 있음)
+                                // 인터페이스를 상속하는 클래스를 찾았으나 인터페이스 메소드가 제대로 정의되지 않았을 경우 예외처리함.
+                                // Overload 된 메소드 자체가 에러 처리를 위한 메소드임.
                                 AddVulnerablePointCheckModule(Temp, Module.Name);
                             }
                         }
                     }
                 }
             }
-
-            return Error_List;
         }
+
+
     }
-
-
 }

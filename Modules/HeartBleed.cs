@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VulnerablePoint_Modules
+namespace Modules
 {
     class OpenSSL_HeartBleed
     {

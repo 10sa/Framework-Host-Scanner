@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.IO;
 
-namespace ScannerFramework
+namespace Framework
 {
 	/// <summary>
 	/// HTTP 헤더의 키와 값을 저장하기 위한 구조체입니다.

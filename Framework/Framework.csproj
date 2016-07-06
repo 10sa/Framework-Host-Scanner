@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrameworkEnum.cs" />
     <Compile Include="FrameworkStruct.cs" />
     <Compile Include="ModuleBase.cs" />
     <Compile Include="WebBase.cs" />

@@ -24,6 +24,7 @@ namespace Framework
     /// </summary>
     public class ModuleData
     {
+        // 구조체의 이름 변경과 Struct 파일로 이전할것.
         public struct MetaData
         {
             /// <summary>
@@ -80,7 +81,10 @@ namespace Framework
 		/// </summary>
 		public string TargetServerURI { get; private set; }
 
-        public ModuleData Modules = new ModuleData();
+        /// <summary>
+        /// 로드된 모듈의 정보입니다.
+        /// </summary>
+        public ModuleData Modules { get; private set; } = new ModuleData();
 
         /// <summary>
         /// 프레임워크를 초기화합니다.
@@ -203,12 +207,15 @@ namespace Framework
                                 // Overload 된 메소드 자체가 에러 처리를 위한 메소드임.
                                 AddVulnerablePointCheckModule(Temp, Module.Name);
                             }
+
                         }
+
                     }
+
                 }
+
             }
+
         }
-
-
     }
 }

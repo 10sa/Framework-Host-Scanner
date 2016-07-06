@@ -161,13 +161,15 @@ namespace Framework
         /// <returns>ModuleLoadErrorList 구조체입니다.</returns>
 		private void ModuleLoad()
 		{
-
             // 폴더가 있는지 확인.
-            if (!Directory.Exists("/Module"))
-                Directory.CreateDirectory("/Module");
+            if (!Directory.Exists(Environment.CurrentDirectory + @"\Module"))
+            {
+                Directory.CreateDirectory(Environment.CurrentDirectory + @"\Module");
+                return;
+            }
 
             // 폴더가 있을시 폴더에 있는 dll 확장자를 가진 모든 파일을 로드함.
-			DirectoryInfo ModuleFoler = new DirectoryInfo("/Module");
+			DirectoryInfo ModuleFoler = new DirectoryInfo(Environment.CurrentDirectory + @"\Module");
 			FileInfo[] ModulesInfo = ModuleFoler.GetFiles("*.dll", SearchOption.TopDirectoryOnly);
 
             // Dll 파일 로드.

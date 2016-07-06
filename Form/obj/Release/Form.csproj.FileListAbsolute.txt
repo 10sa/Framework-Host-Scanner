@@ -1,0 +1,13 @@
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Release\Form.exe.config
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Release\Form.exe
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Release\Form.pdb
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Release\Framework.dll
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Release\MetroFramework.dll
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Release\MetroFramework.Fonts.dll
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Release\Framework.pdb
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Release\Form.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Release\_2016_KOI.MainForm.resources
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Release\Form.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Release\Form.csproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Release\Form.exe
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Release\Form.pdb

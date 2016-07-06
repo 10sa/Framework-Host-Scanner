@@ -1,0 +1,4 @@
+C:\Users\User\Documents\GitHub\ScannerFramework\Framework\bin\Release\Framework.dll
+C:\Users\User\Documents\GitHub\ScannerFramework\Framework\bin\Release\Framework.pdb
+C:\Users\User\Documents\GitHub\ScannerFramework\Framework\obj\Release\Framework.dll
+C:\Users\User\Documents\GitHub\ScannerFramework\Framework\obj\Release\Framework.pdb

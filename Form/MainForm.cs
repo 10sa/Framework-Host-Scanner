@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Fonts;
 using MetroFramework.Forms;
+using Framework;
+using System.IO;
 
 namespace _2016_KOI
 {
 	public partial class MainForm : MetroForm
 	{
+        ScannerFramework sf = new ScannerFramework();
 
 		public MainForm ()
 		{
@@ -26,7 +29,7 @@ namespace _2016_KOI
 
 		private void StartCheck_button_Click (object sender, EventArgs e)
 		{
-			
-		}
+            
+        }
 	}
 }

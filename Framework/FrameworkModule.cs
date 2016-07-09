@@ -20,7 +20,7 @@ namespace Framework.Module
 		/// <summary>
 		/// 모듈 데이터를 저장하는 리스트입니다.
 		/// </summary>
-		private List<ModuleMetaData> Data = new List<ModuleMetaData>();
+		public List<ModuleMetaData> Data { get; private set; } = new List<ModuleMetaData>();
 
 		/// <summary>
 		/// 모듈 데이터를 저장하는 리스트의 길이입니다.
@@ -56,6 +56,7 @@ namespace Framework.Module
 			Data.Add(new ModuleMetaData(Module, Name, Flag));
 		}
 	}
+
 
 	/// <summary>
 	/// 모듈의 로드 및 관리를 담당하는 모듈 컨트롤러 클래스입니다.
@@ -109,39 +110,6 @@ namespace Framework.Module
 		{
 			Modules.Add(Module, Name, ModuleStatus.Error);
 		}
-
-
-		/// <summary>
-		/// 목표 서버에 대한 취약점을 점검합니다.
-		/// </summary>
-		/// <param name="Address">목표 서버의 주소입니다.</param>
-		/// <returns>호출 결과를 저장한 리스트를 반환합니다.</returns>
-		public List<CallResult> VulnerablePointCheck(string Address)
-		{
-			List<CallResult> Info = new List<CallResult>();
-			TargetServerURI = Address;
-
-			for (int i = 0; i <= Modules.Lenght; i++)
-			{
-				// 모듈 호출 여부에 따른 작동방식 (UI에서 쓰임)
-				if (!(Modules.IndexOf(i).Status == ModuleStatus.Call))
-					continue;
-
-				try
-				{
-					if (Modules.IndexOf(i).Module.IVulnerableCheck(TargetServerURI))
-						Info.Add(CallResult.Unsafe);
-				}
-				catch (Exception)
-				{
-					// 모듈의 예외 반환을 처리하기 위한 에러처리.
-					Info.Add(CallResult.Exception);
-				}
-			}
-
-			return Info;
-		}
-
 
 		/// <summary>
 		/// 외부 Dll를 로드합니다.

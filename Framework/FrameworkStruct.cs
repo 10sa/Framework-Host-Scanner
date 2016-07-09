@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framework
+namespace Framework.Struct
 {
     /// <summary>
     /// 모듈을 실행시켰을때 반환하는 정보입니다.

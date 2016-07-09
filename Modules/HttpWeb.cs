@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework;
 
-namespace Modules
+namespace Modules.HttpWeb
 {
     /// <summary>
     /// CVE-2014-6271 :: ShellShock (Apapche HTTP Server User-Agent Attack) Patch : <http://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-025>

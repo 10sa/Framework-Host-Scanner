@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FrameworkEnum.cs" />
+    <Compile Include="FrameworkModule.cs" />
     <Compile Include="FrameworkStruct.cs" />
     <Compile Include="ModuleBase.cs" />
     <Compile Include="WebBase.cs" />

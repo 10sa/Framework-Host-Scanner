@@ -1,0 +1,211 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Threading.Tasks;
+using System.Reflection;
+
+using Framework.Struct;
+using Framework.Enum;
+using Framework.Module.Base;
+
+namespace Framework.Module
+{
+	/// <summary>
+	/// 모듈의 데이터를 저장하고 관리하는 클래스입니다.
+	/// </summary>
+	public class ModuleData
+	{
+		/// <summary>
+		/// 모듈 데이터를 저장하는 리스트입니다.
+		/// </summary>
+		private List<ModuleMetaData> Data = new List<ModuleMetaData>();
+
+		/// <summary>
+		/// 모듈 데이터를 저장하는 리스트의 길이입니다.
+		/// </summary>
+		public int Lenght { get { return Data.Count; } }
+
+		/// <summary>
+		/// 파라매터로 전달된 위치에 있는 모듈 데이터를 반환합니다.
+		/// </summary>
+		/// <param name="index">모듈의 위치 정보입니다.</param>
+		/// <returns>모듈의 정보입니다.</returns>
+		public ModuleMetaData IndexOf(int index)
+		{
+			return Data[index];
+		}
+
+		/// <summary>
+		/// 모듈 데이터를 저장한 리스트를 초기화합니다.
+		/// </summary>
+		public void Clear()
+		{
+			Data.Clear();
+		}
+
+		/// <summary>
+		/// 모듈 데이터를 저장하는 리스트에 모듈 데이터를 추가합니다.
+		/// </summary>
+		/// <param name="Module">IVulnerableModuleBase 인터페이스를 상속한 모듈입니다.</param>
+		/// <param name="Name">모듈의 이름입니다.</param>
+		/// <param name="Flag">모듈의 상태입니다.</param>
+		public void Add(IVulnerableModuleBase Module, string Name, ModuleStatus Flag)
+		{
+			Data.Add(new ModuleMetaData(Module, Name, Flag));
+		}
+	}
+
+	/// <summary>
+	/// 모듈의 로드 및 관리를 담당하는 모듈 컨트롤러 클래스입니다.
+	/// </summary>
+	public class ModuleController
+	{
+		/// <summary>
+		/// 모듈 컨트롤러 클래스를 초기화합니다.
+		/// </summary>
+		/// <param name="ModuleLoad">초기화에 동시에 모듈을 로드할지에 대한 여부입니다.</param>
+		public ModuleController(bool ModuleLoad)
+		{
+			if (ModuleLoad)
+				this.ModuleLoad();
+		}
+
+		/// <summary>
+		/// 마지막으로 전달된 서버의 주소입니다.
+		/// </summary>
+		public string TargetServerURI { get; private set; }
+
+		/// <summary>
+		/// 로드된 모듈의 정보입니다.
+		/// </summary>
+		public ModuleData Modules { get; private set; } = new ModuleData();
+
+		/// <summary>
+		/// 모듈을 다시 로드합니다.
+		/// </summary>
+		public void Reload()
+		{
+			Modules.Clear();
+			ModuleLoad();
+		}
+
+		/// <summary>
+		/// 모듈을 추가합니다.
+		/// </summary>
+		/// <param name="Module">추가될 모듈입니다.</param>
+		protected void AddVulnerablePointCheckModule(IVulnerableModuleBase Module)
+		{
+			Modules.Add(Module, Module.ModuleName, ModuleStatus.Call);
+		}
+
+		/// <summary>
+		/// 모듈이 비정상적일시 모듈 로드를 에러로 처리하여 추가하는 메소드입니다.
+		/// </summary>
+		/// <param name="Module">추가될 모듈입니다.</param>
+		/// <param name="Name">모듈의 이름입니다.</param>
+		public void AddVulnerablePointCheckModule(IVulnerableModuleBase Module, string Name)
+		{
+			Modules.Add(Module, Name, ModuleStatus.Error);
+		}
+
+
+		/// <summary>
+		/// 목표 서버에 대한 취약점을 점검합니다.
+		/// </summary>
+		/// <param name="Address">목표 서버의 주소입니다.</param>
+		/// <returns>호출 결과를 저장한 리스트를 반환합니다.</returns>
+		public List<CallResult> VulnerablePointCheck(string Address)
+		{
+			List<CallResult> Info = new List<CallResult>();
+			TargetServerURI = Address;
+
+			for (int i = 0; i <= Modules.Lenght; i++)
+			{
+				// 모듈 호출 여부에 따른 작동방식 (UI에서 쓰임)
+				if (!(Modules.IndexOf(i).Status == ModuleStatus.Call))
+					continue;
+
+				try
+				{
+					if (Modules.IndexOf(i).Module.IVulnerableCheck(TargetServerURI))
+						Info.Add(CallResult.Unsafe);
+				}
+				catch (Exception)
+				{
+					// 모듈의 예외 반환을 처리하기 위한 에러처리.
+					Info.Add(CallResult.Exception);
+				}
+			}
+
+			return Info;
+		}
+
+
+		/// <summary>
+		/// 외부 Dll를 로드합니다.
+		/// </summary>
+		/// <returns>ModuleLoadErrorList 구조체입니다.</returns>
+		public void ModuleLoad()
+		{
+			// 폴더가 있는지 확인.
+			if (!Directory.Exists(Environment.CurrentDirectory + @"\Module"))
+			{
+				Directory.CreateDirectory(Environment.CurrentDirectory + @"\Module");
+				return;
+			}
+
+			// 폴더가 있을시 폴더에 있는 dll 확장자를 가진 모든 파일을 로드함.
+			DirectoryInfo ModuleFoler = new DirectoryInfo(Environment.CurrentDirectory + @"\Module");
+			FileInfo[] ModulesInfo = ModuleFoler.GetFiles("*.dll", SearchOption.TopDirectoryOnly);
+
+			// Dll 파일 로드.
+			foreach (var Module in ModulesInfo)
+			{
+				// LoadFile 메소드는 절대 경로를 파라메터로 넘겨야 함. (상대경로 X)
+				Assembly Dll_Loader = Assembly.LoadFile(Module.FullName);
+				Type[] ModuleClass = Dll_Loader.GetExportedTypes();
+
+				foreach (var Class in ModuleClass)
+				{
+					// 클래스 여부, 인스턴스 생성 가능여부 점검.
+					if (Class.IsClass && !Class.IsAbstract)
+					{
+						// IVulnerableModuleBase의 여부 점검.
+						if (typeof(IVulnerableModuleBase).IsAssignableFrom(Class))
+						{
+							IVulnerableModuleBase Temp = (IVulnerableModuleBase)Activator.CreateInstance(Class);
+
+							try
+							{
+								// 모듈 이름의 정상 호출 여부 확인.
+								string name = Temp.ModuleName;
+								string ver = Temp.ModuleVer;
+
+								// 오버헤드를 감수하고 모듈의 정상 여부를 검사함.
+								// 만약 모듈이 정상적으로 구현되지 않았다면 NotImplementedException 예외를 반환할 것임.
+								Temp.IVulnerableCheck("TEST_Address");
+								Temp.IVulnerableInfo();
+
+								// 정상적으로 로드되었을 경우, 추가.
+								AddVulnerablePointCheckModule(Temp);
+							}
+							catch (NotImplementedException)
+							{
+								// 인터페이스를 상속하는 클래스를 찾았으나 인터페이스 메소드가 제대로 정의되지 않았을 경우 예외처리함.
+								// Overload 된 메소드 자체가 에러 처리를 위한 메소드임.
+								AddVulnerablePointCheckModule(Temp, Module.Name);
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+	}
+}

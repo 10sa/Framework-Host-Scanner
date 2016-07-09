@@ -27,19 +27,19 @@ namespace Framework.Module.Base
 		/// <summary>
 		/// 웹 서버와의 통신을 위한 상위 클래스입니다.
 		/// </summary>
-		protected HttpWebRequest Request_var { get; set; }
+		protected HttpWebRequest HttpRequest { get; set; }
 		/// <summary>
 		/// 웹 서버의 URI 입니다.
 		/// </summary>
-		protected Uri Server_Address { get; set; }
+		protected Uri ServerAddress { get; set; }
 		/// <summary>
 		/// 서버에서 송신한 헤더입니다.
 		/// </summary>
-		public string Response_Header { get; protected set; }
+		public string ResponseHeader { get; protected set; }
 		/// <summary>
 		/// 서버에서 송신한 엔티티 본문입니다.
 		/// </summary>
-		public string Response_Entity { get; protected set; }
+		public string ResponseEntity { get; protected set; }
 
 		/// <summary>
 		/// 생성시 입력된 주소값으로 요청을 보냅니다.
@@ -49,14 +49,14 @@ namespace Framework.Module.Base
 		{
 			try
 			{
-				Request_var.GetRequestStream();
+				HttpRequest.GetRequestStream();
 			}
 			catch (Exception exp)
 			{
 				throw exp;
 			}
 			
-			WebResponse Response = Request_var.GetResponse();
+			WebResponse Response = HttpRequest.GetResponse();
 
 			GetHeader(Response);
 			if (GetEntity)
@@ -81,7 +81,7 @@ namespace Framework.Module.Base
 
             for(int i=0; i<=Headers.Key.Count; i++)
             {
-                Request_var.Headers.Add(Headers.Key[i], Headers.Value[i]);
+				HttpRequest.Headers.Add(Headers.Key[i], Headers.Value[i]);
             }
 
             if(CallRequestMethod)
@@ -95,7 +95,7 @@ namespace Framework.Module.Base
         /// </summary>
         public void RemoveAllHeaders()
         {
-            Request_var.Headers.Clear();
+			HttpRequest.Headers.Clear();
         }
 
 
@@ -105,7 +105,7 @@ namespace Framework.Module.Base
         /// <param name="Name">지울 헤더의 키 이름입니다.</param>
         public void RemoveHeaders(string Name)
         {
-            Request_var.Headers.Remove(Name);
+			HttpRequest.Headers.Remove(Name);
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Framework.Module.Base
         /// <param name="Response">서버측에서 반환하는 데이터를 포함한 WebResponse 클래스입니다.</param>
 		private void GetHeader(WebResponse Response)
 		{
-			Response_Header = Response.Headers.ToString();
+			ResponseHeader = Response.Headers.ToString();
 
 			return;
 		}
@@ -126,7 +126,7 @@ namespace Framework.Module.Base
 		{
             using (StreamReader Reader = new StreamReader(Response.GetResponseStream()))
             {
-                Response_Entity = Reader.ReadToEnd();
+                ResponseEntity = Reader.ReadToEnd();
             }
 
 			return;

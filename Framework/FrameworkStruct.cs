@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Framework.Module.Base;
+using Framework.Enum;
+
 namespace Framework.Struct
 {
     /// <summary>
@@ -51,5 +54,34 @@ namespace Framework.Struct
 		/// 에러의 정보입니다.
 		/// </summary>
 		public List<string> ErrorModuleInfo;
+	}
+
+	
+	/// <summary>
+	/// 불러온 모듈의 정보를 저장합니다.
+	/// </summary>
+	public struct ModuleMetaData
+	{
+		/// <summary>
+		/// 호출할 모듈의 리스트입니다.
+		/// </summary>
+		public IVulnerableModuleBase Module { get; private set; }
+
+		/// <summary>
+		/// 호출할 모듈의 이름입니다.
+		/// </summary>
+		private string Name;
+
+		/// <summary>
+		/// 모듈의 상태입니다.
+		/// </summary>
+		public ModuleStatus Status;
+
+		public ModuleMetaData(IVulnerableModuleBase Module, string Name, ModuleStatus Info)
+		{
+			this.Module = Module;
+			this.Name = Name;
+			Status = Info;
+		}
 	}
 }

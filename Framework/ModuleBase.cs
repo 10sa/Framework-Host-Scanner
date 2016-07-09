@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framework
+namespace Framework.Module.Base
 {
     /// <summary>
     /// VulnerablePointChecker 프레임워크에 추가될 모듈의 인터페이스 입니다.

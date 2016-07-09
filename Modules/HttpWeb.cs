@@ -45,7 +45,7 @@ namespace Modules.HttpWeb
             // 초기 서버 주소를 설정합니다.
 			try
 			{
-				Server_Address = MakeUrl(address);
+				ServerAddress = MakeUrl(address);
 			}
 			catch(Exception)
 			{
@@ -69,7 +69,7 @@ namespace Modules.HttpWeb
             // 깊이 탐색 알고리즘 구현하기.
 			// HTML 파싱이 필요함.
             RequestEx(true, true, true, GetRequestHeaders());
-            if (Response_Header.Contains(Agent))
+            if (ResponseHeader.Contains(Agent))
             {
                 VPInfo = "서버에 쉘 쇼크 보안 취약점이 존재합니다.\n";
                 return true;

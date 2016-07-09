@@ -84,4 +84,37 @@ namespace Framework.Struct
 			Status = Info;
 		}
 	}
+
+    /// <summary>
+    /// 모듈의 호출 결과를 저장하는 구조체입니다.
+    /// </summary>
+    public struct ModuleCallResult
+    {
+        public List<ModuleMetaData> Modules { get; private set; }
+        public List<CallResult> Results { get; private set; }
+
+        public ModuleCallResult(ModuleMetaData Module, CallResult Result)
+        {
+            Modules = new List<ModuleMetaData>();
+            Results = new List<CallResult>();
+
+            try
+            {
+                Modules.Add(Module);
+                Results.Add(Result);
+            }
+            catch(NullReferenceException)
+            {
+                if(Modules.Count != Results.Count)
+                {
+                    if ( Modules.Count < Results.Count )
+                        Results.RemoveAt(Results.Count);
+                    else
+                        Modules.RemoveAt(Modules.Count);
+                }
+
+                throw new NullReferenceException();
+            }
+        }
+    }
 }

@@ -63,20 +63,15 @@ namespace Framework.Module
 	/// </summary>
 	public class ModuleController
 	{
-		/// <summary>
-		/// 모듈 컨트롤러 클래스를 초기화합니다.
-		/// </summary>
-		/// <param name="ModuleLoad">초기화에 동시에 모듈을 로드할지에 대한 여부입니다.</param>
-		public ModuleController(bool ModuleLoad)
-		{
-			if (ModuleLoad)
-				this.ModuleLoad();
-		}
-
-		/// <summary>
-		/// 마지막으로 전달된 서버의 주소입니다.
-		/// </summary>
-		public string TargetServerURI { get; private set; }
+        /// <summary>
+        /// 모듈 컨트롤러 클래스를 초기화합니다.
+        /// </summary>
+        /// <param name="ModuleLoad">초기화에 동시에 모듈을 로드할지에 대한 여부입니다.</param>
+        public ModuleController(bool ModuleLoad)
+        {
+            if (ModuleLoad)
+                this.ModuleLoad();
+        }
 
 		/// <summary>
 		/// 로드된 모듈의 정보입니다.
@@ -153,7 +148,7 @@ namespace Framework.Module
 
 								// 오버헤드를 감수하고 모듈의 정상 여부를 검사함.
 								// 만약 모듈이 정상적으로 구현되지 않았다면 NotImplementedException 예외를 반환할 것임.
-								Temp.IVulnerableCheck("TEST_Address");
+								Temp.IVulnerableCheck("localhost");
 								Temp.IVulnerableInfo();
 
 								// 정상적으로 로드되었을 경우, 추가.

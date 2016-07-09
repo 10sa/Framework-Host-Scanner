@@ -38,7 +38,7 @@ namespace Framework
 				// 모듈 호출 여부에 따른 작동방식 (UI에서 쓰임)
 				if (!(ModuleControll.Modules.IndexOf(i).Status == ModuleStatus.Call))
 					continue;
-
+                
 				try
 				{
 					if (ModuleControll.Modules.IndexOf(i).Module.IVulnerableCheck(Address))
@@ -53,5 +53,6 @@ namespace Framework
 
 			return Info;
 		}
+
 	}
 }

@@ -41,9 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HeartBleed.cs" />
-    <Compile Include="ShellShock.cs" />
+    <Compile Include="HttpWeb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SSL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework\Framework.csproj">

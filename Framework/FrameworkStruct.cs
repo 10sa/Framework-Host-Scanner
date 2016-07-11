@@ -60,42 +60,55 @@ namespace Framework.Struct
 	/// <summary>
 	/// 불러온 모듈의 정보를 저장합니다.
 	/// </summary>
-	public struct ModuleMetaData
+	public struct ModuleData
 	{
-		/// <summary>
+        /// <summary>
+        /// 파라매터로 전달된 값으로 초기화합니다.
+        /// </summary>
+        /// <param name="Module">모듈의 인스턴스입니다.</param>
+        /// <param name="Name">모듈의 이름입니다.</param>
+        /// <param name="Info">모듈의 호출 정보입니다.</param>
+		public ModuleData(IVulnerableModuleBase Module, string Name, ModuleStatus Info)
+		{
+            try
+            {
+                this.Module = Module;
+                this.Name = Name;
+                Status = Info;
+            }
+			catch(NullReferenceException)
+            {
+                throw new NullReferenceException("잘못된 파라메터 값 입니다!");
+            }
+		}
+
+        /// <summary>
 		/// 호출할 모듈의 리스트입니다.
 		/// </summary>
 		public IVulnerableModuleBase Module { get; private set; }
 
-		/// <summary>
-		/// 호출할 모듈의 이름입니다.
-		/// </summary>
-		private string Name;
+        /// <summary>
+        /// 호출할 모듈의 이름입니다.
+        /// </summary>
+        private string Name;
 
-		/// <summary>
-		/// 모듈의 상태입니다.
-		/// </summary>
-		public ModuleStatus Status;
-
-		public ModuleMetaData(IVulnerableModuleBase Module, string Name, ModuleStatus Info)
-		{
-			this.Module = Module;
-			this.Name = Name;
-			Status = Info;
-		}
-	}
+        /// <summary>
+        /// 모듈의 상태입니다.
+        /// </summary>
+        public ModuleStatus Status;
+    }
 
     /// <summary>
     /// 모듈의 호출 결과를 저장하는 구조체입니다.
     /// </summary>
     public struct ModuleCallResult
     {
-        public List<ModuleMetaData> Modules { get; private set; }
+        public List<ModuleData> Modules { get; private set; }
         public List<CallResult> Results { get; private set; }
 
-        public ModuleCallResult(ModuleMetaData Module, CallResult Result)
+        public ModuleCallResult(ModuleData Module, CallResult Result)
         {
-            Modules = new List<ModuleMetaData>();
+            Modules = new List<ModuleData>();
             Results = new List<CallResult>();
 
             try
@@ -105,6 +118,7 @@ namespace Framework.Struct
             }
             catch(NullReferenceException)
             {
+                // 코드 개선이 필요함.
                 if(Modules.Count != Results.Count)
                 {
                     if ( Modules.Count < Results.Count )

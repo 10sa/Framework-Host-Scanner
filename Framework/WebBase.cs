@@ -109,7 +109,7 @@ namespace Framework.Module.Base
         }
 
         /// <summary>
-        /// HTTP 요청 후 서버측에서 반환하는 헤더를 Response_Header 인스턴스에 저장합니다.
+        /// HTTP 요청 후 서버측에서 반환하는 헤더를 ResponseHeader 인스턴스에 저장합니다.
         /// </summary>
         /// <param name="Response">서버측에서 반환하는 데이터를 포함한 WebResponse 클래스입니다.</param>
 		private void GetHeader(WebResponse Response)

@@ -15,12 +15,12 @@ namespace Framework.Module
 	/// <summary>
 	/// 모듈의 데이터를 저장하고 관리하는 클래스입니다.
 	/// </summary>
-	public class ModuleData
+	public class ModuleDataController
 	{
 		/// <summary>
 		/// 모듈 데이터를 저장하는 리스트입니다.
 		/// </summary>
-		public List<ModuleMetaData> Data { get; private set; } = new List<ModuleMetaData>();
+		public List<ModuleData> Data { get; private set; } = new List<ModuleData>();
 
 		/// <summary>
 		/// 모듈 데이터를 저장하는 리스트의 길이입니다.
@@ -32,7 +32,7 @@ namespace Framework.Module
 		/// </summary>
 		/// <param name="index">모듈의 위치 정보입니다.</param>
 		/// <returns>모듈의 정보입니다.</returns>
-		public ModuleMetaData IndexOf(int index)
+		public ModuleData IndexOf(int index)
 		{
 			return Data[index];
 		}
@@ -53,7 +53,7 @@ namespace Framework.Module
 		/// <param name="Flag">모듈의 상태입니다.</param>
 		public void Add(IVulnerableModuleBase Module, string Name, ModuleStatus Flag)
 		{
-			Data.Add(new ModuleMetaData(Module, Name, Flag));
+            Data.Add(new ModuleData(Module, Name, Flag));
 		}
 	}
 
@@ -76,7 +76,7 @@ namespace Framework.Module
 		/// <summary>
 		/// 로드된 모듈의 정보입니다.
 		/// </summary>
-		public ModuleData Modules { get; private set; } = new ModuleData();
+		public ModuleDataController Modules { get; private set; } = new ModuleDataController();
 
 		/// <summary>
 		/// 모듈을 다시 로드합니다.

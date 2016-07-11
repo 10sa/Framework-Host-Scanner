@@ -33,9 +33,19 @@ namespace Framework.Enum
     public enum ModuleStatus
     {
         /// <summary>
-        /// 모듈을 호출함을 나타냅니다.
+        /// 모듈을 표준 호출함을 나타냅니다.
         /// </summary>
         Call,
+
+        /// <summary>
+        /// 모듈을 비동기식으로 호출함을 나타냅니다.
+        /// </summary>
+        AsyncCall,
+
+        /// <summary>
+        /// 모듈을 스레드를 생성하여 호출함을 나타냅니다.
+        /// </summary>
+        ThreadCall,
 
         /// <summary>
         /// 모듈을 호출하지 않음을 나타냅니다.

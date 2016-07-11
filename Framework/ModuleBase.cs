@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Framework.Enum;
 
 namespace Framework.Module.Base
 {
@@ -26,8 +27,8 @@ namespace Framework.Module.Base
         /// 취약점 점검을 시작하는 인터페이스입니다. 프레임워크에서 이 메소드를 호출합니다.
         /// </summary>
         /// <param name="address">타겟 URI 주소입니다.</param>
-        /// <returns>모듈이 점검한 취약점의 여부입니다.</returns>
-        bool IVulnerableCheck(string address);
+        /// <returns>모듈의 반환 정보입니다.</returns>
+        CallResult IVulnerableCheck(string address);
 
         /// <summary>
         /// 취약점이 있을시 추가되는 설명입니다.

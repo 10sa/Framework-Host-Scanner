@@ -22,6 +22,11 @@ namespace Framework.Enum
         Safe,
 
         /// <summary>
+        /// 취약점이 아닌 일반 정보를 반환했음을 나타냅니다.
+        /// </summary>
+        Status,
+
+        /// <summary>
         /// 예외를 반환했음을 나타냅니다.
         /// </summary>
         Exception

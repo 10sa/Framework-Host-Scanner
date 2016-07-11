@@ -35,15 +35,10 @@ namespace Framework
 
 			for (int i = 0; i <= ModuleControll.Modules.Lenght; i++)
 			{
-				// 모듈 호출 여부에 따른 작동방식 (UI에서 쓰임)
-				if (!(ModuleControll.Modules.IndexOf(i).Status == ModuleStatus.Call))
-					continue;
-                
 				try
 				{
-					if (ModuleControll.Modules.IndexOf(i).Module.IVulnerableCheck(Address))
-						Info.Add(CallResult.Unsafe);
-				}
+                    Info.Add(ModuleControll.Modules.IndexOf(i).Module.IVulnerableCheck(Address));
+                }
 				catch (Exception)
 				{
 					// 모듈의 예외 반환을 처리하기 위한 에러처리.

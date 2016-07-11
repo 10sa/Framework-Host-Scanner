@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.Module.Base;
+using Framework.Enum;
 
 namespace Modules.HttpWeb
 {
@@ -12,35 +13,16 @@ namespace Modules.HttpWeb
     /// </summary>
     public class ShellShock : WebBase, IVulnerableModuleBase
     {
-        /// <summary>
-        /// 보안 취약점의 정보입니다.
-        /// </summary>
-        private string VPInfo;
+		/// <summary>
+		/// ShellShock 취약점을 탐색하기 위한 헤더입니다.
+		/// </summary>
+		private const string Agent = "ShellShock: Vulnerable!";
+		public string IVulnerableInfo { get; private set; }
 
-        /// <summary>
-        /// ShellShock 취약점을 탐색하기 위한 헤더입니다.
-        /// </summary>
-        private const string Agent = "ShellShock: Vulnerable!";
+		public string ModuleName { get { return "ShellShock Module"; } }
+        public string ModuleVer { get { return "0.1v"; } }
 
-
-        public string ModuleName
-        {
-            get
-            {
-                return "ShellShock Module";
-            }
-        }
-
-
-        public string ModuleVer
-        {
-            get
-            {
-                return "0.1v";
-            }
-        }
-
-        public bool IVulnerableCheck(string address)
+		public CallResult IVulnerableCheck(string address)
         {
             // 초기 서버 주소를 설정합니다.
 			try
@@ -55,27 +37,22 @@ namespace Modules.HttpWeb
             return ShellShockCheck();
         }
 
-        public string IVulnerableInfo()
-        {
-            return VPInfo;
-        }
-
         /// <summary>
         /// 쉘쇼크 취약점을 검색하는 메소드입니다.
         /// </summary>
         /// <returns>보안 취약점이 있을시 true, 없을시 false를 반환합니다.</returns>
-        private bool ShellShockCheck()
+        private CallResult ShellShockCheck()
         {
             // 깊이 탐색 알고리즘 구현하기.
 			// HTML 파싱이 필요함.
             RequestEx(true, true, true, GetRequestHeaders());
             if (ResponseHeader.Contains(Agent))
             {
-                VPInfo = "서버에 쉘 쇼크 보안 취약점이 존재합니다.\n";
-                return true;
+                IVulnerableInfo = "서버에 쉘 쇼크 보안 취약점이 존재합니다.\n";
+				return CallResult.Unsafe;
             }
 
-            return false;
+			return CallResult.Safe;
         }
 
         /// <summary>
@@ -90,5 +67,5 @@ namespace Modules.HttpWeb
 
             return Packet;
         }
-    }
+	}
 }

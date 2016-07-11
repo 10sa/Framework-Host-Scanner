@@ -24,16 +24,16 @@ namespace Framework.Module.Base
         string ModuleVer { get; }
 
         /// <summary>
-        /// 취약점 점검을 시작하는 인터페이스입니다. 프레임워크에서 이 메소드를 호출합니다.
-        /// </summary>
-        /// <param name="address">타겟 URI 주소입니다.</param>
-        /// <returns>모듈의 반환 정보입니다.</returns>
-        CallResult IVulnerableCheck(string address);
-
-        /// <summary>
         /// 취약점이 있을시 추가되는 설명입니다.
         /// </summary>
         /// <returns>표시되는 설명입니다.</returns>
-        string IVulnerableInfo();
-    }
+        string IVulnerableInfo { get; }
+
+		/// <summary>
+		/// 취약점 점검을 시작하는 인터페이스입니다. 프레임워크에서 이 메소드를 호출합니다.
+		/// </summary>
+		/// <param name="address">타겟 URI 주소입니다.</param>
+		/// <returns>모듈의 반환 정보입니다.</returns>
+		CallResult IVulnerableCheck(string address);
+	}
 }

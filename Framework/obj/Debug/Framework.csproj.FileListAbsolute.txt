@@ -1,5 +1,0 @@
-C:\Users\User\Documents\GitHub\ScannerFramework\Framework\bin\Debug\Framework.dll
-C:\Users\User\Documents\GitHub\ScannerFramework\Framework\bin\Debug\Framework.pdb
-C:\Users\User\Documents\GitHub\ScannerFramework\Framework\obj\Debug\Framework.dll
-C:\Users\User\Documents\GitHub\ScannerFramework\Framework\obj\Debug\Framework.pdb
-C:\Users\User\Documents\GitHub\ScannerFramework\Framework\obj\Debug\Framework.csprojResolveAssemblyReference.cache

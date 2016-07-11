@@ -33,7 +33,7 @@ namespace Framework.Enum
     };
 
     /// <summary>
-    /// 모듈의 상태입니다.
+    /// 모듈의 호출 규약 및 상태입니다.
     /// </summary>
     public enum ModuleStatus
     {
@@ -42,15 +42,16 @@ namespace Framework.Enum
         /// </summary>
         Call,
 
+		// 현재 미지원, 지원 예정.
         /// <summary>
         /// 모듈을 비동기식으로 호출함을 나타냅니다.
         /// </summary>
-        AsyncCall,
+        // AsyncCall,
 
         /// <summary>
         /// 모듈을 스레드를 생성하여 호출함을 나타냅니다.
         /// </summary>
-        ThreadCall,
+        // ThreadCall,
 
         /// <summary>
         /// 모듈을 호출하지 않음을 나타냅니다.

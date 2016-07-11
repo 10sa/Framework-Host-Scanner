@@ -1,9 +1,0 @@
-C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\Modules.dll
-C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\Modules.pdb
-C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\Framework.dll
-C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\Framework.pdb
-C:\Users\User\Documents\GitHub\ScannerFramework\Modules\obj\Debug\Modules.csprojResolveAssemblyReference.cache
-C:\Users\User\Documents\GitHub\ScannerFramework\Modules\obj\Debug\Modules.dll
-C:\Users\User\Documents\GitHub\ScannerFramework\Modules\obj\Debug\Modules.pdb
-C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\Modules.dll.CodeAnalysisLog.xml
-C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\Modules.dll.lastcodeanalysissucceeded

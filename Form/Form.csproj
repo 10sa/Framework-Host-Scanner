@@ -100,6 +100,10 @@
       <Project>{54a04c31-8b2d-4ad4-8241-4ba633454405}</Project>
       <Name>Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modules\Modules.csproj">
+      <Project>{4c2effa7-4ab8-46b1-97a4-ff0a23682a91}</Project>
+      <Name>Modules</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -78,7 +78,7 @@ namespace Framework.Struct
             }
 			catch(NullReferenceException)
             {
-                throw new NullReferenceException("잘못된 파라메터 값 입니다!");
+                throw new NullReferenceException("잘못된 값 입니다!");
             }
 		}
 
@@ -99,34 +99,34 @@ namespace Framework.Struct
     }
 
     /// <summary>
-    /// 모듈의 호출 결과를 저장하는 구조체입니다.
+    /// 모듈의 호출 결과와 정보를 저장하는 구조체입니다.
     /// </summary>
     public struct ModuleCallResult
     {
-        public List<ModuleData> Modules { get; private set; }
-        public List<CallResult> Results { get; private set; }
+		/// <summary>
+		/// 모듈의 정보입니다.
+		/// </summary>
+        public ModuleData Module { get; set; }
 
+		/// <summary>
+		/// 모듈의 호출 결과입니다.
+		/// </summary>
+        public CallResult Result { get; set; }
+
+		/// <summary>
+		/// 인스턴스를 호출 결과로 전달받은 파라매터로 초기화합니다.
+		/// </summary>
+		/// <param name="Module">호출한 모듈의 ModuleData 구조체입니다.</param>
+		/// <param name="Result">모듈 호출의 결과입니다.</param>
         public ModuleCallResult(ModuleData Module, CallResult Result)
         {
-            Modules = new List<ModuleData>();
-            Results = new List<CallResult>();
-
             try
             {
-                Modules.Add(Module);
-                Results.Add(Result);
+				this.Module = Module;
+				this.Result = Result;
             }
             catch(NullReferenceException)
             {
-                // 코드 개선이 필요함.
-                if(Modules.Count != Results.Count)
-                {
-                    if ( Modules.Count < Results.Count )
-                        Results.RemoveAt(Results.Count);
-                    else
-                        Modules.RemoveAt(Modules.Count);
-                }
-
                 throw new NullReferenceException();
             }
         }

@@ -149,7 +149,6 @@ namespace Framework.Module
 								// 오버헤드를 감수하고 모듈의 정상 여부를 검사함.
 								// 만약 모듈이 정상적으로 구현되지 않았다면 NotImplementedException 예외를 반환할 것임.
 								Temp.IVulnerableCheck("localhost");
-								Temp.IVulnerableInfo();
 
 								// 정상적으로 로드되었을 경우, 추가.
 								AddVulnerablePointCheckModule(Temp);
@@ -159,6 +158,10 @@ namespace Framework.Module
 								// 인터페이스를 상속하는 클래스를 찾았으나 인터페이스 메소드가 제대로 정의되지 않았을 경우 예외처리함.
 								// Overload 된 메소드 자체가 에러 처리를 위한 메소드임.
 								AddVulnerablePointCheckModule(Temp, Module.Name);
+							}
+							catch (NullReferenceException)
+							{
+								// Null 반환이 이뤄지는게 가능함, 무시로 처리할것.
 							}
 
 						}

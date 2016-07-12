@@ -201,7 +201,7 @@
     <value>671, 168</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>WebServer Vulnerable Point Checker</value>
+    <value>WebScanner</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

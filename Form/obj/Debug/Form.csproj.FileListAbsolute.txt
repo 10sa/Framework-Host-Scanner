@@ -4,3 +4,4 @@ C:\Users\USER\Documents\Github\Form\obj\Debug\Form.pdb
 C:\Users\USER\Source\Repos\ScannerFramework\Form\bin\Debug\Form.exe.config
 C:\Users\USER\Source\Repos\ScannerFramework\Form\obj\Debug\Form.exe
 C:\Users\USER\Source\Repos\ScannerFramework\Form\obj\Debug\Form.pdb
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Debug\Form.exe.config

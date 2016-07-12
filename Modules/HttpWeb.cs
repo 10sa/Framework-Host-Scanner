@@ -112,7 +112,7 @@ namespace Modules.HttpWeb
 					{
 						if(Parsing.DocumentNode.SelectSingleNode("//title").InnerText.Contains("phpinfo()"))
 						{
-							IVulnerableInfo = Link;
+							IVulnerableInfo = string.Format("Find a PHP Info File : {0}", Link);
 							return true;
 						}
 					}

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework.Module.Base;
 using Framework.Enum;
+using HtmlAgilityPack;
 
 namespace Modules.HttpWeb
 {
@@ -67,5 +68,71 @@ namespace Modules.HttpWeb
 
             return Packet;
         }
+	}
+
+	public class VulnerableFileFinder : WebBase, IVulnerableModuleBase
+	{
+		public string IVulnerableInfo { get; private set; }
+		public string ModuleName { get { return "Vulnerable File Finder"; } }
+		public string ModuleVer { get { return "1.0v"; } }
+
+		List<string> Links = new List<string>();
+
+		public CallResult IVulnerableCheck(string address)
+		{
+			ServerAddress = MakeUrl(address);
+			Request(true);
+
+			if(Checking())
+				return CallResult.Unsafe;
+
+			return CallResult.Safe;
+		}
+
+		private bool Checking()
+		{
+			HtmlDocument Parsing = new HtmlDocument();
+			Parsing.LoadHtml(ResponseEntity);
+
+			// 깊이 탐색 알고리즘 필요
+			foreach(var Tag in Parsing.DocumentNode.SelectNodes("//a[@href]"))
+			{
+				// 리다이렉트 링크가 원래 서버 주소와 일치하는지 검사. (만약 검사되지 않을시 무한반복할수 있음.)
+				string temp = Tag.GetAttributeValue("href", string.Empty);
+				if(temp.Contains(ServerAddress.AbsoluteUri))
+				{
+					Links.Add(temp);
+				}
+
+				foreach(var Link in Links)
+				{
+					Uri ParsingUri = new Uri(Link);
+
+					if(ParsingUri.AbsolutePath.Contains("phpinfo.php"))
+					{
+						if(Parsing.DocumentNode.SelectSingleNode("//title").InnerText.Contains("phpinfo()"))
+						{
+							IVulnerableInfo = Link;
+							return true;
+						}
+					}
+
+				}
+			}
+
+			return true;
+		}
+	}
+
+	public class AllowsMethodChecker : WebBase, IVulnerableModuleBase
+	{
+		public string IVulnerableInfo { get; private set; }
+		public string ModuleName { get { return "Allows Methods Checker"; } }
+		public string ModuleVer { get { return "1.0v"; } }
+
+		public CallResult IVulnerableCheck(string address)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

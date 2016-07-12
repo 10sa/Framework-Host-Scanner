@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Framework.ScannerFramework">
+    <Position X="11.25" Y="1.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEI=</HashCode>
+      <FileName>FrameworkCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Framework.Module.ModuleDataController">
+    <Position X="8.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAABAAAA=</HashCode>
+      <FileName>FrameworkModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Framework.Module.ModuleController">
+    <Position X="0.5" Y="1.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAEAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>FrameworkModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Framework.Module.Base.WebBase">
+    <Position X="5.25" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAAAAAAAAAEQBAAAQAAAAgAAAAAACAAAJAgA=</HashCode>
+      <FileName>WebBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Struct Name="Framework.Struct.VulnerablePointModuleInfo">
+    <Position X="17.75" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAIAICAAAAAAAAAAAA=</HashCode>
+      <FileName>FrameworkStruct.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Framework.Struct.ModuleLoadErrorList">
+    <Position X="15.75" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FrameworkStruct.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Framework.Struct.ModuleData">
+    <Position X="21" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>FrameworkStruct.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Framework.Struct.ModuleCallResult">
+    <Position X="18.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACEAAAAA=</HashCode>
+      <FileName>FrameworkStruct.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Framework.Module.Base.Headers">
+    <Position X="15.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>WebBase.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Framework.Module.Base.IVulnerableModuleBase">
+    <Position X="19.25" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAgBAACAAA=</HashCode>
+      <FileName>ModuleBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Framework.Enum.CallResult">
+    <Position X="15.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>FrameworkEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Framework.Enum.ModuleStatus">
+    <Position X="17.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FrameworkEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

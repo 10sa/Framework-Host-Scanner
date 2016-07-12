@@ -35,14 +35,15 @@ namespace Framework
 
 			for (int i = 0; i <= ModuleControll.Modules.Lenght; i++)
 			{
+				// 호출구조 개선할것. (복잡함)
 				try
 				{
-					Info.Add(new ModuleCallResult(ModuleControll.Modules.IndexOf(i), ModuleControll.Modules.IndexOf(i).Module.IVulnerableCheck(Address)));
+					Info.Add(new ModuleCallResult(ModuleControll.Modules.Data[i], ModuleControll.Modules.Data[i].Module.IVulnerableCheck(Address), ModuleControll.Modules.Data[i].Module.IVulnerableInfo));
                 }
 				catch (Exception)
 				{
 					// 모듈의 예외 반환을 처리하기 위한 에러처리.
-					Info.Add(new ModuleCallResult(ModuleControll.Modules.IndexOf(i), CallResult.Exception));
+					Info.Add(new ModuleCallResult(ModuleControll.Modules.Data[i], CallResult.Exception, ModuleControll.Modules.Data[i].Module.IVulnerableInfo));
 				}
 			}
 

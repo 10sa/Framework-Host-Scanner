@@ -28,16 +28,6 @@ namespace Framework.Module
 		public int Lenght { get { return Data.Count; } }
 
 		/// <summary>
-		/// 파라매터로 전달된 위치에 있는 모듈 데이터를 반환합니다.
-		/// </summary>
-		/// <param name="index">모듈의 위치 정보입니다.</param>
-		/// <returns>모듈의 정보입니다.</returns>
-		public ModuleData IndexOf(int index)
-		{
-			return Data[index];
-		}
-
-		/// <summary>
 		/// 모듈 데이터를 저장한 리스트를 초기화합니다.
 		/// </summary>
 		public void Clear()

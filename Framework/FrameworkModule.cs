@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.Windows.Forms;
 
 using Framework.Struct;
 using Framework.Enum;
@@ -51,7 +52,7 @@ namespace Framework.Module
 	/// <summary>
 	/// 모듈의 로드 및 관리를 담당하는 모듈 컨트롤러 클래스입니다.
 	/// </summary>
-	public class ModuleController
+	public class ModuleController : ModuleDataController
 	{
         /// <summary>
         /// 모듈 컨트롤러 클래스를 초기화합니다.
@@ -64,16 +65,11 @@ namespace Framework.Module
         }
 
 		/// <summary>
-		/// 로드된 모듈의 정보입니다.
-		/// </summary>
-		public ModuleDataController Modules { get; private set; } = new ModuleDataController();
-
-		/// <summary>
 		/// 모듈을 다시 로드합니다.
 		/// </summary>
 		public void Reload()
 		{
-			Modules.Clear();
+			Data.Clear();
 			ModuleLoad();
 		}
 
@@ -83,7 +79,7 @@ namespace Framework.Module
 		/// <param name="Module">추가될 모듈입니다.</param>
 		protected void AddVulnerablePointCheckModule(IVulnerableModuleBase Module)
 		{
-			Modules.Add(Module, Module.ModuleName, ModuleStatus.Call);
+			Add(Module, Module.ModuleName, ModuleStatus.Call);
 		}
 
 		/// <summary>
@@ -93,7 +89,7 @@ namespace Framework.Module
 		/// <param name="Name">모듈의 이름입니다.</param>
 		public void AddVulnerablePointCheckModule(IVulnerableModuleBase Module, string Name)
 		{
-			Modules.Add(Module, Name, ModuleStatus.Error);
+			Add(Module, Name, ModuleStatus.Error);
 		}
 
 		/// <summary>
@@ -140,6 +136,8 @@ namespace Framework.Module
 								// 만약 모듈이 정상적으로 구현되지 않았다면 NotImplementedException 예외를 반환할 것임.
 								Temp.IVulnerableCheck("localhost");
 
+
+								
 								// 정상적으로 로드되었을 경우, 추가.
 								AddVulnerablePointCheckModule(Temp);
 							}
@@ -147,13 +145,8 @@ namespace Framework.Module
 							{
 								// 인터페이스를 상속하는 클래스를 찾았으나 인터페이스 메소드가 제대로 정의되지 않았을 경우 예외처리함.
 								// Overload 된 메소드 자체가 에러 처리를 위한 메소드임.
-								AddVulnerablePointCheckModule(Temp, Module.Name);
+								AddVulnerablePointCheckModule(Temp, Temp.ModuleName);
 							}
-							catch (NullReferenceException)
-							{
-								// Null 반환이 이뤄지는게 가능함, 무시로 처리할것.
-							}
-
 						}
 
 					}

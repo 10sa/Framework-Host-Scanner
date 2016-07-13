@@ -90,7 +90,7 @@ namespace Framework.Struct
         /// <summary>
         /// 호출할 모듈의 이름입니다.
         /// </summary>
-        private string Name;
+        public string Name;
 
         /// <summary>
         /// 모듈의 상태입니다.

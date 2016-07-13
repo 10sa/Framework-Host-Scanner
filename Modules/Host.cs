@@ -12,7 +12,6 @@ namespace Modules.Host.TCP
     public class DNSAnalysor : IVulnerableModuleBase
     {
 		public string IVulnerableInfo { get; private set; }
-
 		public string ModuleName { get { return "DNSAnalysor"; } }
         public string ModuleVer { get { return "1.0v"; } }
 

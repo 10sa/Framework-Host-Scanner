@@ -5,3 +5,6 @@ C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\Framework.pdb
 C:\Users\User\Documents\GitHub\ScannerFramework\Modules\obj\Debug\Modules.csprojResolveAssemblyReference.cache
 C:\Users\User\Documents\GitHub\ScannerFramework\Modules\obj\Debug\Modules.dll
 C:\Users\User\Documents\GitHub\ScannerFramework\Modules\obj\Debug\Modules.pdb
+C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\HtmlAgilityPack.dll
+C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\HtmlAgilityPack.xml

@@ -32,6 +32,9 @@
 			this.ServerAddress_textbox = new MetroFramework.Controls.MetroTextBox();
 			this.StartCheck_button = new MetroFramework.Controls.MetroButton();
 			this.ServerAddressTextbox_Desc_Label = new MetroFramework.Controls.MetroLabel();
+			this.metroButton1 = new MetroFramework.Controls.MetroButton();
+			this.ModuleStatusGrid = new System.Windows.Forms.DataGridView();
+			((System.ComponentModel.ISupportInitialize)(this.ModuleStatusGrid)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// ServerAddress_textbox
@@ -51,11 +54,30 @@
 			resources.ApplyResources(this.ServerAddressTextbox_Desc_Label, "ServerAddressTextbox_Desc_Label");
 			this.ServerAddressTextbox_Desc_Label.Name = "ServerAddressTextbox_Desc_Label";
 			// 
+			// metroButton1
+			// 
+			resources.ApplyResources(this.metroButton1, "metroButton1");
+			this.metroButton1.Name = "metroButton1";
+			// 
+			// ModuleStatusGrid
+			// 
+			this.ModuleStatusGrid.AllowUserToAddRows = false;
+			this.ModuleStatusGrid.AllowUserToDeleteRows = false;
+			this.ModuleStatusGrid.AllowUserToResizeColumns = false;
+			this.ModuleStatusGrid.AllowUserToResizeRows = false;
+			this.ModuleStatusGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			resources.ApplyResources(this.ModuleStatusGrid, "ModuleStatusGrid");
+			this.ModuleStatusGrid.Name = "ModuleStatusGrid";
+			this.ModuleStatusGrid.ReadOnly = true;
+			this.ModuleStatusGrid.RowTemplate.Height = 23;
+			// 
 			// MainForm
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+			this.Controls.Add(this.ModuleStatusGrid);
+			this.Controls.Add(this.metroButton1);
 			this.Controls.Add(this.ServerAddressTextbox_Desc_Label);
 			this.Controls.Add(this.StartCheck_button);
 			this.Controls.Add(this.ServerAddress_textbox);
@@ -65,6 +87,7 @@
 			this.Style = MetroFramework.MetroColorStyle.Silver;
 			this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
 			this.Load += new System.EventHandler(this.MainForm_Load);
+			((System.ComponentModel.ISupportInitialize)(this.ModuleStatusGrid)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -75,6 +98,8 @@
 		private MetroFramework.Controls.MetroTextBox ServerAddress_textbox;
 		private MetroFramework.Controls.MetroButton StartCheck_button;
 		private MetroFramework.Controls.MetroLabel ServerAddressTextbox_Desc_Label;
+		private MetroFramework.Controls.MetroButton metroButton1;
+		private System.Windows.Forms.DataGridView ModuleStatusGrid;
 	}
 }
 

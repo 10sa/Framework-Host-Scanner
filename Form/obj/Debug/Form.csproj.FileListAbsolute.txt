@@ -19,3 +19,6 @@ C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Debug\Framework.pdb
 C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Debug\Modules.pdb
 C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Debug\Form.exe
 C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Debug\Form.pdb
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Debug\HtmlAgilityPack.dll
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Debug\HtmlAgilityPack.xml

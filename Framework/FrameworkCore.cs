@@ -33,17 +33,17 @@ namespace Framework
 		{
 			List<ModuleCallResult> Info = new List<ModuleCallResult>();
 
-			for (int i = 0; i <= ModuleControll.Modules.Lenght; i++)
+			for (int i = 0; i <= ModuleControll.Lenght; i++)
 			{
 				// 호출구조 개선할것. (복잡함)
 				try
 				{
-					Info.Add(new ModuleCallResult(ModuleControll.Modules.Data[i], ModuleControll.Modules.Data[i].Module.IVulnerableCheck(Address), ModuleControll.Modules.Data[i].Module.IVulnerableInfo));
+					Info.Add(new ModuleCallResult(ModuleControll.Data[i], ModuleControll.Data[i].Module.IVulnerableCheck(Address), ModuleControll.Data[i].Module.IVulnerableInfo));
                 }
 				catch (Exception)
 				{
 					// 모듈의 예외 반환을 처리하기 위한 에러처리.
-					Info.Add(new ModuleCallResult(ModuleControll.Modules.Data[i], CallResult.Exception, ModuleControll.Modules.Data[i].Module.IVulnerableInfo));
+					Info.Add(new ModuleCallResult(ModuleControll.Data[i], CallResult.Exception, ModuleControll.Data[i].Module.IVulnerableInfo));
 				}
 			}
 

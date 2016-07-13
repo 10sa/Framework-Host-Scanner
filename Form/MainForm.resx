@@ -138,10 +138,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ServerAddress_textbox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="StartCheck_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>529, 99</value>
+    <value>529, 548</value>
   </data>
   <data name="StartCheck_button.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 46</value>
@@ -150,7 +150,7 @@
     <value>1</value>
   </data>
   <data name="StartCheck_button.Text" xml:space="preserve">
-    <value>Check</value>
+    <value>Start</value>
   </data>
   <data name="&gt;&gt;StartCheck_button.Name" xml:space="preserve">
     <value>StartCheck_button</value>
@@ -162,7 +162,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;StartCheck_button.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="ServerAddressTextbox_Desc_Label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -189,6 +189,51 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ServerAddressTextbox_Desc_Label.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="metroButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>404, 548</value>
+  </data>
+  <data name="metroButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 46</value>
+  </data>
+  <data name="metroButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="metroButton1.Text" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="&gt;&gt;metroButton1.Name" xml:space="preserve">
+    <value>metroButton1</value>
+  </data>
+  <data name="&gt;&gt;metroButton1.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroButton1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroButton1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ModuleStatusGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 94</value>
+  </data>
+  <data name="ModuleStatusGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>625, 448</value>
+  </data>
+  <data name="ModuleStatusGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ModuleStatusGrid.Name" xml:space="preserve">
+    <value>ModuleStatusGrid</value>
+  </data>
+  <data name="&gt;&gt;ModuleStatusGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ModuleStatusGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ModuleStatusGrid.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -198,7 +243,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>671, 168</value>
+    <value>671, 617</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>WebScanner</value>

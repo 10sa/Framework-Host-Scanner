@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework.Module.Base;
 using Framework.Enum;
+using System.Net;
 using HtmlAgilityPack;
 
 namespace Modules.HttpWeb
@@ -25,28 +26,26 @@ namespace Modules.HttpWeb
 
 		public CallResult IVulnerableCheck(string address)
         {
-            // 초기 서버 주소를 설정합니다.
+			SetAddress(address);
 			try
 			{
-				ServerAddress = MakeUrl(address);
+				return ShellShockCheck(address);
 			}
-			catch(Exception)
+			catch(Exception exp)
 			{
-				throw new UriFormatException("주소를 URI로 변경할수 없습니다!");
+				throw exp;
 			}
-
-            return ShellShockCheck();
         }
 
         /// <summary>
         /// 쉘쇼크 취약점을 검색하는 메소드입니다.
         /// </summary>
         /// <returns>보안 취약점이 있을시 true, 없을시 false를 반환합니다.</returns>
-        private CallResult ShellShockCheck()
+        private CallResult ShellShockCheck(string Address)
         {
             // 깊이 탐색 알고리즘 구현하기.
 			// HTML 파싱이 필요함.
-            RequestEx(true, true, true, GetRequestHeaders());
+            RequestEx(Address, true, true, true, GetRequestHeaders());
             if (ResponseHeader.Contains(Agent))
             {
                 IVulnerableInfo = "서버에 쉘 쇼크 보안 취약점이 존재합니다.\n";
@@ -80,8 +79,9 @@ namespace Modules.HttpWeb
 
 		public CallResult IVulnerableCheck(string address)
 		{
-			ServerAddress = MakeUrl(address);
-			Request(true);
+			SetAddress(address);
+
+			Request(address, true);
 
 			if(Checking())
 				return CallResult.Unsafe;
@@ -122,7 +122,7 @@ namespace Modules.HttpWeb
 
 			return true;
 		}
-	}
+	} 
 
 	public class AllowsMethodChecker : WebBase, IVulnerableModuleBase
 	{
@@ -132,7 +132,7 @@ namespace Modules.HttpWeb
 
 		public CallResult IVulnerableCheck(string address)
 		{
-			throw new NotImplementedException();
+			return CallResult.Status;
 		}
 	}
 }

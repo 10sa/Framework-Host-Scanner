@@ -40,8 +40,8 @@ namespace _2016_KOI
 			foreach(var ModuleData in Scanner.ModuleControll.Data)
 			{
 				MessageBox.Show(ModuleData.Name);
-				//string[] Data = new string[] { ModuleData.Name, ModuleData.Module.ModuleVer, ModuleData.Status.ToString() };
-				//ModuleStatusGrid.Rows.Add(Data);
+				string[] Data = new string[] { ModuleData.Name, ModuleData.Module.ModuleVer, ModuleData.Status.ToString() };
+				ModuleStatusGrid.Rows.Add(Data);
 			}
 		}
 

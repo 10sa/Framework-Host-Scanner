@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Framework.Module.Base
 {
@@ -44,6 +45,7 @@ namespace Framework.Module.Base
 		protected void SetAddress(string Address)
 		{
 			HttpRequest = (HttpWebRequest)WebRequest.Create(MakeUrl(Address));
+			HttpRequest.Method = "HEAD";
 		}
 
 		/// <summary>
@@ -52,20 +54,18 @@ namespace Framework.Module.Base
 		/// <param name="GetEntity">엔티티 본문을 Response_Entity 인스턴스에 저장할지에 대한 여부입니다.</param>
 		public void Request(string Address, bool GetEntity)
 		{
+			SetAddress(Address);
 			try
 			{
-				HttpRequest.GetRequestStream();
+				WebResponse Response = HttpRequest.GetResponse();
+				GetHeader(Response);
+				if(GetEntity)
+					this.GetEntity(Response);
 			}
-			catch (Exception exp)
+			catch(Exception exp)
 			{
 				throw exp;
 			}
-			
-			WebResponse Response = HttpRequest.GetResponse();
-
-			GetHeader(Response);
-			if (GetEntity)
-				this.GetEntity(Response);
 		}
 
 		// 오버로드로 구현할까?...
@@ -78,13 +78,14 @@ namespace Framework.Module.Base
         /// <param name="Headers">헤더의 키와 값을 저장한 구조체입니다.</param>
         public void RequestEx(string Address, bool GetEntitiy, bool CallRequestMethod, bool ClearAndAdd, Headers Headers)
         {
+			SetAddress(Address);
 			if ( Headers.Key.Count != Headers.Value.Count )
 				throw new Exception("키 리스트와 값 리스트의 크기가 맞지 않습니다.");
 
             if (ClearAndAdd)
                 RemoveAllHeaders();
 
-            for(int i=0; i<=Headers.Key.Count; i++)
+            for(int i=0; i<Headers.Key.Count; i++)
             {
 				HttpRequest.Headers.Add(Headers.Key[i], Headers.Value[i]);
             }
@@ -119,6 +120,7 @@ namespace Framework.Module.Base
         /// <param name="Response">서버측에서 반환하는 데이터를 포함한 WebResponse 클래스입니다.</param>
 		private void GetHeader(WebResponse Response)
 		{
+			MessageBox.Show(Response.Headers.ToString());
 			ResponseHeader = Response.Headers.ToString();
 
 			return;

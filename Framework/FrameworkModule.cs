@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Net;
 
 using Framework.Struct;
 using Framework.Enum;
@@ -136,12 +137,15 @@ namespace Framework.Module
 								// 만약 모듈이 정상적으로 구현되지 않았다면 NotImplementedException 예외를 반환할 것임.
 								Temp.IVulnerableCheck("localhost");
 
-
-								
 								// 정상적으로 로드되었을 경우, 추가.
 								AddVulnerablePointCheckModule(Temp);
 							}
-							catch (NotImplementedException)
+							catch (WebException)
+							{
+								// 주소 자체가 localhost 이기 때문에 충분히 예외 발생이 가능함.
+								AddVulnerablePointCheckModule(Temp);
+							}
+							catch(Exception)
 							{
 								// 인터페이스를 상속하는 클래스를 찾았으나 인터페이스 메소드가 제대로 정의되지 않았을 경우 예외처리함.
 								// Overload 된 메소드 자체가 에러 처리를 위한 메소드임.

@@ -31,11 +31,20 @@ namespace Modules.HttpWeb
 			{
 				return ShellShockCheck(address);
 			}
+			catch(NullReferenceException)
+			{
+				if(HttpRequest == null)
+					System.Windows.Forms.MessageBox.Show("Request Var Is Null!");
+				else
+					System.Windows.Forms.MessageBox.Show("Not.");
+
+				return CallResult.Exception;
+			}
 			catch(Exception exp)
 			{
 				throw exp;
 			}
-        }
+		}
 
         /// <summary>
         /// 쉘쇼크 취약점을 검색하는 메소드입니다.
@@ -81,7 +90,14 @@ namespace Modules.HttpWeb
 		{
 			SetAddress(address);
 
-			Request(address, true);
+			try
+			{
+				Request(address, true);
+			}
+			catch (Exception exp)
+			{
+				throw exp;
+			}
 
 			if(Checking())
 				return CallResult.Unsafe;

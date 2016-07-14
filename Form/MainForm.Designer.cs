@@ -32,7 +32,7 @@
 			this.ServerAddress_textbox = new MetroFramework.Controls.MetroTextBox();
 			this.StartCheck_button = new MetroFramework.Controls.MetroButton();
 			this.ServerAddressTextbox_Desc_Label = new MetroFramework.Controls.MetroLabel();
-			this.metroButton1 = new MetroFramework.Controls.MetroButton();
+			this.ReloadButton = new MetroFramework.Controls.MetroButton();
 			this.ModuleStatusGrid = new System.Windows.Forms.DataGridView();
 			((System.ComponentModel.ISupportInitialize)(this.ModuleStatusGrid)).BeginInit();
 			this.SuspendLayout();
@@ -54,10 +54,11 @@
 			resources.ApplyResources(this.ServerAddressTextbox_Desc_Label, "ServerAddressTextbox_Desc_Label");
 			this.ServerAddressTextbox_Desc_Label.Name = "ServerAddressTextbox_Desc_Label";
 			// 
-			// metroButton1
+			// ReloadButton
 			// 
-			resources.ApplyResources(this.metroButton1, "metroButton1");
-			this.metroButton1.Name = "metroButton1";
+			resources.ApplyResources(this.ReloadButton, "ReloadButton");
+			this.ReloadButton.Name = "ReloadButton";
+			this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
 			// 
 			// ModuleStatusGrid
 			// 
@@ -77,7 +78,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
 			this.Controls.Add(this.ModuleStatusGrid);
-			this.Controls.Add(this.metroButton1);
+			this.Controls.Add(this.ReloadButton);
 			this.Controls.Add(this.ServerAddressTextbox_Desc_Label);
 			this.Controls.Add(this.StartCheck_button);
 			this.Controls.Add(this.ServerAddress_textbox);
@@ -98,7 +99,7 @@
 		private MetroFramework.Controls.MetroTextBox ServerAddress_textbox;
 		private MetroFramework.Controls.MetroButton StartCheck_button;
 		private MetroFramework.Controls.MetroLabel ServerAddressTextbox_Desc_Label;
-		private MetroFramework.Controls.MetroButton metroButton1;
+		private MetroFramework.Controls.MetroButton ReloadButton;
 		private System.Windows.Forms.DataGridView ModuleStatusGrid;
 	}
 }

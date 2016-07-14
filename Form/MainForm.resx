@@ -191,28 +191,28 @@
   <data name="&gt;&gt;ServerAddressTextbox_Desc_Label.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="metroButton1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ReloadButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>404, 548</value>
   </data>
-  <data name="metroButton1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ReloadButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 46</value>
   </data>
-  <data name="metroButton1.TabIndex" type="System.Int32, mscorlib">
+  <data name="ReloadButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="metroButton1.Text" xml:space="preserve">
+  <data name="ReloadButton.Text" xml:space="preserve">
     <value>Reload</value>
   </data>
-  <data name="&gt;&gt;metroButton1.Name" xml:space="preserve">
-    <value>metroButton1</value>
+  <data name="&gt;&gt;ReloadButton.Name" xml:space="preserve">
+    <value>ReloadButton</value>
   </data>
-  <data name="&gt;&gt;metroButton1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ReloadButton.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;metroButton1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ReloadButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;metroButton1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ReloadButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="ModuleStatusGrid.Location" type="System.Drawing.Point, System.Drawing">

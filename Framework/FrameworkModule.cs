@@ -135,6 +135,7 @@ namespace Framework.Module
 
 								// 오버헤드를 감수하고 모듈의 정상 여부를 검사함.
 								// 만약 모듈이 정상적으로 구현되지 않았다면 NotImplementedException 예외를 반환할 것임.
+								
 								Temp.IVulnerableCheck("localhost");
 
 								// 정상적으로 로드되었을 경우, 추가.

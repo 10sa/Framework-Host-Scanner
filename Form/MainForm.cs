@@ -16,7 +16,7 @@ namespace _2016_KOI
 {
 	public partial class MainForm : MetroForm
 	{
-        ScannerFramework sf = new ScannerFramework();
+		ScannerFramework Scanner;
 
 		public MainForm ()
 		{
@@ -34,20 +34,48 @@ namespace _2016_KOI
 			ModuleStatusGrid.Columns[1].Name = "모듈 버전";
 			ModuleStatusGrid.Columns[2].Name = "모듈 상태";
 
-			ScannerFramework Scanner = new ScannerFramework();
-			
-			
-			foreach(var ModuleData in Scanner.ModuleControll.Data)
+			BackgroundWorker FormLoadWorker = new BackgroundWorker();
+			FormLoadWorker.DoWork += (a, b) =>
 			{
-				MessageBox.Show(ModuleData.Name);
-				string[] Data = new string[] { ModuleData.Name, ModuleData.Module.ModuleVer, ModuleData.Status.ToString() };
-				ModuleStatusGrid.Rows.Add(Data);
-			}
+				Scanner = new ScannerFramework();
+			};
+
+			FormLoadWorker.RunWorkerCompleted += AsyncAddtionCallback;
+			FormLoadWorker.RunWorkerAsync();
 		}
 
 		private void StartCheck_button_Click (object sender, EventArgs e)
 		{
             
         }
+
+		private void ReloadButton_Click(object sender, EventArgs e)
+		{
+			ReloadButton.Enabled = false;
+			ModuleStatusGrid.Rows.Clear();
+			BackgroundWorker AsyncWorker = new BackgroundWorker();
+			AsyncWorker.DoWork += (a, b) =>
+			{
+				Scanner.ModuleControll.Reload();
+			};
+			AsyncWorker.RunWorkerCompleted += AsyncAddtionCallback;
+			AsyncWorker.RunWorkerCompleted += (a, b) =>
+			{
+				ReloadButton.Enabled = true;
+			};
+
+			AsyncWorker.RunWorkerAsync();
+		}
+
+
+		// 여러 Worker 에서 사용되는 Callback 메소드.
+		private void AsyncAddtionCallback(object sender, RunWorkerCompletedEventArgs e)
+		{
+			foreach(var Data in Scanner.ModuleControll.Data)
+			{
+				string[] Row = new string[] { Data.Name, Data.Module.ModuleVer, Data.Status.ToString() };
+				ModuleStatusGrid.Rows.Add(Row);
+			}
+		}
 	}
 }

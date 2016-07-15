@@ -33,7 +33,7 @@ namespace Framework
 		{
 			List<ModuleCallResult> Info = new List<ModuleCallResult>();
 
-			for (int i = 0; i <= ModuleControll.Lenght; i++)
+			for (int i = 0; i <= ModuleControll.Lenght-1; i++)
 			{
 				// 호출구조 개선할것. (복잡함)
 				try

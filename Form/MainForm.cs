@@ -34,6 +34,8 @@ namespace _2016_KOI
 			ModuleStatusGrid.Columns[1].Name = "모듈 버전";
 			ModuleStatusGrid.Columns[2].Name = "모듈 상태";
 
+			StartCheck_button.Enabled = false;
+			ReloadButton.Enabled = false;
 			BackgroundWorker FormLoadWorker = new BackgroundWorker();
 			FormLoadWorker.DoWork += (a, b) =>
 			{
@@ -41,23 +43,44 @@ namespace _2016_KOI
 			};
 
 			FormLoadWorker.RunWorkerCompleted += AsyncAddtionCallback;
+			FormLoadWorker.RunWorkerCompleted += (a, b) =>
+			{
+				StartCheck_button.Enabled = true;
+				ReloadButton.Enabled = true;
+			};
+
 			FormLoadWorker.RunWorkerAsync();
 		}
 
 		private void StartCheck_button_Click (object sender, EventArgs e)
 		{
-            
+			StartCheck_button.Enabled = false;
+			ReloadButton.Enabled = false;
+
+			BackgroundWorker AsyncWorker = new BackgroundWorker();
+			AsyncWorker.DoWork += (a, b) =>
+			{
+				Scanner.VulnerablePointCheck(ServerAddress_textbox.Text);
+			};
+			AsyncWorker.RunWorkerCompleted += (a, b) =>
+			{
+				StartCheck_button.Enabled = false;
+				MessageBox.Show("Progress Done.");
+			};
+
         }
 
 		private void ReloadButton_Click(object sender, EventArgs e)
 		{
 			ReloadButton.Enabled = false;
 			ModuleStatusGrid.Rows.Clear();
+
 			BackgroundWorker AsyncWorker = new BackgroundWorker();
 			AsyncWorker.DoWork += (a, b) =>
 			{
 				Scanner.ModuleControll.Reload();
 			};
+
 			AsyncWorker.RunWorkerCompleted += AsyncAddtionCallback;
 			AsyncWorker.RunWorkerCompleted += (a, b) =>
 			{

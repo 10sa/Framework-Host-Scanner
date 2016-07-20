@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder" version="2015.1.12.0" projectFile="C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\ScannerFrameworkHelper.shfbproj" started="2016-07-20 오후 11:58:00">
+<shfbBuild product="Sandcastle Help File Builder" version="2015.1.12.0" projectFile="C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\ScannerFrameworkHelper.shfbproj" started="2016-07-21 오전 12:01:51">
 <buildStep step="Initializing">
 Finding tools...
 The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
@@ -40,16 +40,16 @@ Copying XML comments files
 Generating shared content files (ko-KR, 한국어 (대한민국))...
 SHFB: Warning BE0003: Sandcastle shared content for the &#39;ko-KR, 한국어 (대한민국)&#39; language could not be found.  Using &#39;en-US, English (US)&#39; defaults.
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00.0065
+</plugIn>    Last step completed in 00:00:00.0060
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0005
+    Last step completed in 00:00:00.0010
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
 [C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe]
-빌드 시작: 2016-07-20 오후 11:58:01
+빌드 시작: 2016-07-21 오전 12:01:52
 1 노드의 &quot;C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\GenerateRefInfo.proj&quot; 프로젝트(기본 대상)입니다.
 PrepareForBuild:
   &quot;obj\Debug\&quot; 디렉터리를 만들고 있습니다.
@@ -68,13 +68,13 @@ GenerateRefInfo:
 
 빌드했습니다.
 
-경과 시간: 00:00:00.46
-    Last step completed in 00:00:00.5766
+경과 시간: 00:00:00.44
+    Last step completed in 00:00:00.5660
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
 [C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe]
-빌드 시작: 2016-07-20 오후 11:58:02
+빌드 시작: 2016-07-21 오전 12:01:52
 1 노드의 &quot;C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\TransformManifest.proj&quot; 프로젝트(기본 대상)입니다.
 TransformManifest:
   XslTransform (v2015.1.12.0)
@@ -99,12 +99,12 @@ TransformManifest:
 
 빌드했습니다.
 
-경과 시간: 00:00:00.78
-    Last step completed in 00:00:00.9116
+경과 시간: 00:00:00.73
+    Last step completed in 00:00:00.8564
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.7253
+    Last step completed in 00:00:00.7449
 </buildStep>
 <buildStep step="CopyConceptualContent">
 Copying conceptual content...
@@ -119,7 +119,7 @@ Generating conceptual topic files
     C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Content\VersionHistory\VersionHistory.aml -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\ddueXml\eb477d8c-a335-488b-b87e-b647a6260f23.xml
     Parsing topic file &#39;C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Content\VersionHistory\v1.0.0.0.aml&#39;
     C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Content\VersionHistory\v1.0.0.0.aml -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\ddueXml\56f75318-ba62-4ea7-b80d-e36337c9373b.xml
-    Last step completed in 00:00:00.0380
+    Last step completed in 00:00:00.0331
 </buildStep>
 <buildStep step="CreateConceptualTopicConfigs">
 Creating conceptual topic configuration files...
@@ -131,17 +131,16 @@ Creating conceptual topic configuration files...
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
 C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\icons\Help.png -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\HtmlHelp1\icons\Help.png
-C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\icons\Help.png -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\Help.png
-    Last step completed in 00:00:00.0070
+    Last step completed in 00:00:00.0040
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
-    Last step completed in 00:00:00.0005
+    Last step completed in 00:00:00.0010
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
 [C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe]
-빌드 시작: 2016-07-20 오후 11:58:03
+빌드 시작: 2016-07-21 오전 12:01:54
 1 노드의 &quot;C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\GenerateIntermediateTOC.proj&quot; 프로젝트(기본 대상)입니다.
 GenerateIntermediateTOC:
   XslTransform (v2015.1.12.0)
@@ -154,25 +153,25 @@ GenerateIntermediateTOC:
 
 경과 시간: 00:00:00.09
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00.1967
+    Last step completed in 00:00:00.1982
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
     conceptual.config
-    Last step completed in 00:00:00.4054
+    Last step completed in 00:00:00.3855
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\sandcastle.config
 C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\conceptual.config
     Removing unused ExampleComponent.
-    Last step completed in 00:00:00.7601
+    Last step completed in 00:00:00.3805
 </buildStep>
 <buildStep step="BuildConceptualTopics">
 Building conceptual help topics...
 [C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe]
-빌드 시작: 2016-07-20 오후 11:58:05
+빌드 시작: 2016-07-21 오전 12:01:55
 1 노드의 &quot;C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildConceptualTopics.proj&quot; 프로젝트(기본 대상)입니다.
 BuildConceptualTopics:
   BuildAssembler (v2015.1.12.0)
@@ -186,13 +185,13 @@ BuildConceptualTopics:
 
 빌드했습니다.
 
-경과 시간: 00:00:02.97
-    Last step completed in 00:00:03.8123
+경과 시간: 00:00:02.71
+    Last step completed in 00:00:03.1721
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
 [C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe]
-빌드 시작: 2016-07-20 오후 11:58:08
+빌드 시작: 2016-07-21 오전 12:01:58
 1 노드의 &quot;C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj&quot; 프로젝트(기본 대상)입니다.
 BuildReferenceTopics:
   BuildAssembler (v2015.1.12.0)
@@ -262,96 +261,6 @@ BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unk
 BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Theme&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.Dispose(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.FocusMe&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnActivated(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnClosed(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnClosing(System.ComponentModel.CancelEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnEnabledChanged(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnHandleCreated(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnLoad(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnMouseDown(System.Windows.Forms.MouseEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnPaint(System.Windows.Forms.PaintEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnPaintBackground(System.Windows.Forms.PaintEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnResizeEnd(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.RemoveCloseButton&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.SetVisibleCore(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.WndProc(System.Windows.Forms.Message@)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.BackColor&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.BorderStyle&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.CreateParams&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.DefaultPadding&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.DisplayHeader&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.MdiParent&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.Movable&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.Padding&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.Resizable&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.ShadowType&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Site&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Style&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.StyleManager&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.TextAlign&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Theme&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.Dispose(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.FocusMe&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnActivated(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnClosed(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnClosing(System.ComponentModel.CancelEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnEnabledChanged(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnHandleCreated(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnLoad(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnMouseDown(System.Windows.Forms.MouseEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnPaint(System.Windows.Forms.PaintEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnPaintBackground(System.Windows.Forms.PaintEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnResizeEnd(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.RemoveCloseButton&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.SetVisibleCore(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.WndProc(System.Windows.Forms.Message@)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.Dispose(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.FocusMe&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
@@ -411,40 +320,8 @@ BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.In
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Theme&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.BackColor&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.BorderStyle&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.CreateParams&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.DefaultPadding&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.DisplayHeader&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.MdiParent&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.Movable&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.Padding&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.Resizable&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.ShadowType&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Site&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Style&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.StyleManager&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.TextAlign&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Theme&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.InfoForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Overload:Form.InfoForm.Dispose] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.Dispose(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Overload:Form.InfoForm.Dispose] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.Dispose(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [F:Form.InfoForm.InfoTextBox] Missing &lt;summary&gt; documentation [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [F:Form.InfoForm.InfoTextBox] Unknown reference link target &#39;T:MetroFramework.Controls.MetroTextBox&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [F:Form.InfoForm.InfoTextBox] Unknown reference link target &#39;T:MetroFramework.Controls.MetroTextBox&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [T:Form.MainForm] Missing &lt;summary&gt; documentation [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
@@ -508,96 +385,6 @@ BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unk
 BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Theme&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.Dispose(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.FocusMe&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnActivated(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnClosed(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnClosing(System.ComponentModel.CancelEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnEnabledChanged(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnHandleCreated(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnLoad(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnMouseDown(System.Windows.Forms.MouseEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnPaint(System.Windows.Forms.PaintEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnPaintBackground(System.Windows.Forms.PaintEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnResizeEnd(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.RemoveCloseButton&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.SetVisibleCore(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.WndProc(System.Windows.Forms.Message@)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.BackColor&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.BorderStyle&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.CreateParams&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.DefaultPadding&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.DisplayHeader&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.MdiParent&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.Movable&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.Padding&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.Resizable&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.ShadowType&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Site&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Style&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.StyleManager&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.TextAlign&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Theme&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.Dispose(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.FocusMe&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnActivated(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnClosed(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnClosing(System.ComponentModel.CancelEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnEnabledChanged(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnHandleCreated(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnLoad(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnMouseDown(System.Windows.Forms.MouseEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnPaint(System.Windows.Forms.PaintEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnPaintBackground(System.Windows.Forms.PaintEventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.OnResizeEnd(System.EventArgs)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.RemoveCloseButton&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.SetVisibleCore(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.WndProc(System.Windows.Forms.Message@)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.Dispose(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.FocusMe&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Methods.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
@@ -657,37 +444,6 @@ BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.Ma
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Theme&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.BackColor&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.BorderStyle&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.CreateParams&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.DefaultPadding&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.DisplayHeader&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.MdiParent&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.Movable&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.Padding&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.Resizable&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.ShadowType&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Site&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Style&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.StyleManager&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Forms.MetroForm.TextAlign&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Forms.MetroForm&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;P:MetroFramework.Controls.MetroFormBase.Theme&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Properties.T:Form.MainForm] Unknown reference link target &#39;T:MetroFramework.Controls.MetroFormBase&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [Overload:Form.MainForm.Dispose] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.Dispose(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [Overload:Form.MainForm.Dispose] Unknown reference link target &#39;M:MetroFramework.Forms.MetroForm.Dispose(System.Boolean)&#39;. [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [T:Modules.Host.TCP.DNSAnalysor] Missing &lt;summary&gt; documentation [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [M:Modules.Host.TCP.DNSAnalysor.IVulnerableCheck(System.String)] Missing &lt;summary&gt; documentation [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
@@ -718,22 +474,19 @@ BuildAssembler : warning : ShowMissingComponent: [P:Modules.HttpWeb.VulnerableFi
 BuildAssembler : warning : ShowMissingComponent: [P:Modules.HttpWeb.VulnerableFileFinder.ModuleName] Missing &lt;summary&gt; documentation [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ShowMissingComponent: [P:Modules.HttpWeb.VulnerableFileFinder.ModuleVer] Missing &lt;summary&gt; documentation [C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj]
   Processed 137 topic(s)
-  517 warning(s)
+  274 warning(s)
   CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 4 of 15.
   CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 5 of 30.
 &quot;C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\BuildReferenceTopics.proj&quot; 프로젝트를 빌드했습니다(기본 대상).
 
 빌드했습니다.
 
-경과 시간: 00:00:09.90
-    Last step completed in 00:00:10.0396
+경과 시간: 00:00:07.92
+    Last step completed in 00:00:08.0493
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
-
-Clearing any prior web output
-    Did not delete folder &#39;C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\icons&#39; as it contains read-only or hidden folders/files
-    Last step completed in 00:00:00.1030
+    Last step completed in 00:00:00.0020
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
@@ -749,13 +502,7 @@ Processed 140 HTML files
 Sorting keywords and generating See Also indices
 Saving HTML Help 1 keyword index to C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Scanner Framework Ref Document.hhk
 Saving HTML Help 1 table of contents to C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Scanner Framework Ref Document.hhc
-
-Processing website files in C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website
-Processed 140 HTML files
-Sorting keywords and generating See Also indices
-Saving website keyword index to C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\WebKI.xml
-Saving website table of contents to C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\WebTOC.xml
-    Last step completed in 00:00:00.5777
+    Last step completed in 00:00:00.3704
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
@@ -822,87 +569,11 @@ C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyle
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\HtmlHelp1\styles\branding.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\AlertCaution.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertNote.png -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\AlertNote.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\AlertSecurity.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CFW.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\CFW.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CodeExample.png -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\CodeExample.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\favicon.ico -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\favicon.ico
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privclass.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\privclass.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\privdelegate.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\privenumeration.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privevent.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\privevent.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privextension.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\privextension.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privfield.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\privfield.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privinterface.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\privinterface.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privmethod.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\privmethod.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privproperty.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\privproperty.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privstructure.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\privstructure.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protclass.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\protclass.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\protdelegate.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\protenumeration.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protevent.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\protevent.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protextension.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\protextension.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protfield.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\protfield.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protinterface.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\protinterface.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protmethod.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\protmethod.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protoperator.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\protoperator.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protproperty.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\protproperty.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protstructure.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\protstructure.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubclass.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\pubclass.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\pubdelegate.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\pubenumeration.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubevent.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\pubevent.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubextension.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\pubextension.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubfield.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\pubfield.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\pubinterface.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\pubmethod.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\puboperator.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\puboperator.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\pubproperty.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\pubstructure.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\SectionCollapsed.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\SectionExpanded.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\slMobile.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\slMobile.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\static.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\static.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\xna.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\xna.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\scripts\branding.js -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\scripts\branding.js
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-cs-CZ.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-de-DE.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-en-US.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-es-ES.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-fr-FR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-Help1.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help2.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-Help2.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-HelpViewer.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-it-IT.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-ja-JP.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-ko-KR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-pl-PL.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-pt-BR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-ru-RU.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-tr-TR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Website.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-Website.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-zh-CN.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding-zh-TW.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\styles\branding.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\index.html -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\index.html
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\search.html -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\search.html
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\SearchHelp.aspx -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\SearchHelp.aspx
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\SearchHelp.inc.php -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\SearchHelp.inc.php
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\SearchHelp.php -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\SearchHelp.php
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\Web.Config -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\Web.Config
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\Search.png -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\Search.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocClose.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\TocClose.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocCollapsed.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\TocCollapsed.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocExpanded.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\TocExpanded.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocOpen.gif -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\icons\TocOpen.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\branding-Website.js -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\scripts\branding-Website.js
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\jquery-1.11.0.min.js -&gt; C:\Users\User\Documents\GitHub\ScannerFramework\Documentation1\Help\Working\Output\Website\scripts\jquery-1.11.0.min.js
-    Last step completed in 00:00:00.6694
+    Last step completed in 00:00:00.2705
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating HTML Help 1 table of contents file...
-    Last step completed in 00:00:00.0005
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="GenerateHelpFileIndex">
 Generating HTML Help 1 index file...
@@ -910,7 +581,7 @@ Generating HTML Help 1 index file...
 </buildStep>
 <buildStep step="GenerateHelpProject">
 Generating HTML Help 1 project file...
-    Last step completed in 00:00:00.0035
+    Last step completed in 00:00:00.0070
 </buildStep>
 <buildStep step="CompilingHelpFile">
 Compiling HTML Help 1 file...
@@ -943,35 +614,15 @@ Compiling HTML Help 1 file...
   
   Compression decreased file by 1,590,269 bytes.
   
-    Last step completed in 00:00:01.6117
-</buildStep>
-<buildStep step="GenerateHelpFormatTableOfContents">
-Generating website table of contents file...
-    Last step completed in 00:00:00.0000
-</buildStep>
-<buildStep step="GenerateFullTextIndex">
-Generating full-text index for the website...
-
-<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-Adding lightweight search and TOC elements to each topic...
-</plugIn>    Last step completed in 00:00:01.3843
-</buildStep>
-<buildStep step="CopyingWebsiteFiles">
-Copying website files to output folder...
-
-Copied 100 files
-Copied 200 files
-Copied 300 files
-Copied 371 files for the website content
-    Last step completed in 00:00:01.3040
+    Last step completed in 00:00:01.5701
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00.1664
+    Last step completed in 00:00:00.0611
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 2016-07-20 오후 11:58:24.  Total time: 00:00:24.4035
+Build completed successfully at 2016-07-21 오전 12:02:08.  Total time: 00:00:17.7814
 
 </buildStep>
 </shfbBuild>

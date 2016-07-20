@@ -1,5 +1,7 @@
+C:\Users\User\Documents\GitHub\ScannerFramework\Framework\bin\Debug\XMLOutput.xml
 C:\Users\User\Documents\GitHub\ScannerFramework\Framework\bin\Debug\Framework.dll
 C:\Users\User\Documents\GitHub\ScannerFramework\Framework\bin\Debug\Framework.pdb
 C:\Users\User\Documents\GitHub\ScannerFramework\Framework\obj\Debug\Framework.dll
 C:\Users\User\Documents\GitHub\ScannerFramework\Framework\obj\Debug\Framework.pdb
-C:\Users\User\Documents\GitHub\ScannerFramework\Framework\obj\Debug\Framework.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\ScannerFramework\Framework\bin\Debug\Framework.dll.CodeAnalysisLog.xml
+C:\Users\User\Documents\GitHub\ScannerFramework\Framework\bin\Debug\Framework.dll.lastcodeanalysissucceeded

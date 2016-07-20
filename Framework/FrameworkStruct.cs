@@ -123,6 +123,7 @@ namespace Framework.Struct
 		/// </summary>
 		/// <param name="Module">호출한 모듈의 ModuleData 구조체입니다.</param>
 		/// <param name="Result">모듈 호출의 결과입니다.</param>
+		/// <param name="Info">모듈 호출의 정보입니다.</param>
         public ModuleCallResult(ModuleData Module, CallResult Result, string Info)
         {
             try

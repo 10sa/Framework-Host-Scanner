@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Framework.Enum
 {
-    /// <summary>
-    /// 모듈 호출 후 모듈이 반환하는 값입니다.
-    /// </summary>
-    public enum CallResult
+	/// <summary>
+	/// 모듈 호출 후 모듈이 반환하는 값입니다.
+	/// </summary>
+	public enum CallResult
     {
         /// <summary>
         /// 취약점이 있음을 나타냅니다.

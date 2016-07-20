@@ -11,6 +11,9 @@ using MetroFramework.Forms;
 
 namespace Form
 {
+	/// <summary>
+	/// 모듈의 호출 후 정보를 담기 위한 폼입니다.
+	/// </summary>
 	public partial class InfoForm : MetroForm
 	{
 		public InfoForm()

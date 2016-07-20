@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="Add method" Url="html/469892f0-a678-b94d-494d-0951bf7469c9.htm" />
+  <HelpKINode Title="AddVulnerablePointCheckModule method" Url="html/1266324f-2335-3f86-3c26-cd84962b3f28.htm" />
+  <HelpKINode Title="AllowsMethodChecker class">
+    <HelpKINode Title="AllowsMethodChecker Class" Url="html/04e3cfd9-7651-dc16-9dd2-052080dd662c.htm" />
+    <HelpKINode Title="about AllowsMethodChecker class" Url="html/04e3cfd9-7651-dc16-9dd2-052080dd662c.htm" />
+    <HelpKINode Title="constructor" Url="html/227f02a4-318d-8af7-ad7a-485acc4865ea.htm" />
+    <HelpKINode Title="methods" Url="html/a3e550ca-6ad7-5de1-cd13-1020ca23f8a1.htm" />
+    <HelpKINode Title="properties" Url="html/250ba146-c712-e512-fae5-465c30286523.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AllowsMethodChecker.AllowsMethodChecker constructor" Url="html/227f02a4-318d-8af7-ad7a-485acc4865ea.htm" />
+  <HelpKINode Title="AllowsMethodChecker.IVulnerableCheck method" Url="html/49428fd4-7441-07e6-900c-7fb9e74afdfd.htm" />
+  <HelpKINode Title="AllowsMethodChecker.IVulnerableInfo property" Url="html/0f11110f-6bc8-fc22-6805-305a74423002.htm" />
+  <HelpKINode Title="AllowsMethodChecker.ModuleName property" Url="html/c66c1197-f59d-a274-5027-30fe12145b52.htm" />
+  <HelpKINode Title="AllowsMethodChecker.ModuleVer property" Url="html/a7c689b4-19b7-919f-2fb5-a0ed0db4b6d0.htm" />
+  <HelpKINode Title="Call enumeration member" Url="html/898261b5-2ffd-fabd-aaf2-e9e628b2f74b.htm" />
+  <HelpKINode Title="CallResult enumeration" Url="html/7f8c44a3-57d9-724e-e57a-4793c5c90e1c.htm" />
+  <HelpKINode Title="Clear method" Url="html/23c96b36-48b5-1d08-a069-92129e75a354.htm" />
+  <HelpKINode Title="Data property" Url="html/f9db0e06-b6bc-31af-f870-27586f6aaa9f.htm" />
+  <HelpKINode Title="Dispose method">
+    <HelpKINode Title="InfoForm.Dispose Method " Url="html/c8a0a5ba-df3a-ea2e-be8e-fa3a6f09d5f6.htm" />
+    <HelpKINode Title="MainForm.Dispose Method " Url="html/18971730-c3fc-0372-abd0-eb65864a3785.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DNSAnalysor class">
+    <HelpKINode Title="DNSAnalysor Class" Url="html/2fd54dea-e9dd-3a3c-7042-5e4f5d7be758.htm" />
+    <HelpKINode Title="about DNSAnalysor class" Url="html/2fd54dea-e9dd-3a3c-7042-5e4f5d7be758.htm" />
+    <HelpKINode Title="constructor" Url="html/94df99b4-09a1-461a-476d-212c2481defe.htm" />
+    <HelpKINode Title="methods" Url="html/f61d63a7-02d0-32ee-e59b-fac4b17c14a3.htm" />
+    <HelpKINode Title="properties" Url="html/125fcff3-235d-aa8a-6473-1998c4c3e4d7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DNSAnalysor.DNSAnalysor constructor" Url="html/94df99b4-09a1-461a-476d-212c2481defe.htm" />
+  <HelpKINode Title="DNSAnalysor.IVulnerableCheck method" Url="html/ca2296e4-df48-b650-5043-5c771466fd8f.htm" />
+  <HelpKINode Title="DNSAnalysor.IVulnerableInfo property" Url="html/8c465fa3-999a-a91b-1b54-cf0cac4e7c1d.htm" />
+  <HelpKINode Title="DNSAnalysor.ModuleName property" Url="html/e1e56e59-7a76-fd11-763e-bcbdd1b7b52c.htm" />
+  <HelpKINode Title="DNSAnalysor.ModuleVer property" Url="html/b620f75d-5536-c9ac-d3bb-515827c85e07.htm" />
+  <HelpKINode Title="DontCall enumeration member" Url="html/898261b5-2ffd-fabd-aaf2-e9e628b2f74b.htm" />
+  <HelpKINode Title="Error enumeration member" Url="html/898261b5-2ffd-fabd-aaf2-e9e628b2f74b.htm" />
+  <HelpKINode Title="ErrorModuleInfo field" Url="html/91ad7d0d-ed0d-e6cc-dbc6-bd6ebf1cc72c.htm" />
+  <HelpKINode Title="ErrorModuleName field" Url="html/9d607f61-210d-a6ad-6684-5c101007ee42.htm" />
+  <HelpKINode Title="Exception enumeration member" Url="html/7f8c44a3-57d9-724e-e57a-4793c5c90e1c.htm" />
+  <HelpKINode Title="Form namespace" Url="html/4705ff10-3bf6-d24d-cba8-61f25035782a.htm" />
+  <HelpKINode Title="Form.InfoForm class" Url="html/c278a64d-c524-5fbe-e82c-f97afed84dc1.htm" />
+  <HelpKINode Title="Form.MainForm class" Url="html/9858b29f-4c3b-eb1e-29c6-3f824e92c046.htm" />
+  <HelpKINode Title="Framework namespace" Url="html/4e22b2f5-42b7-7d12-eef6-35f529fcad0e.htm" />
+  <HelpKINode Title="Framework.Enum namespace" Url="html/0d51de7f-3af4-5aef-ac7a-51ce0a4fd23d.htm" />
+  <HelpKINode Title="Framework.Enum.CallResult enumeration" Url="html/7f8c44a3-57d9-724e-e57a-4793c5c90e1c.htm" />
+  <HelpKINode Title="Framework.Enum.ModuleStatus enumeration" Url="html/898261b5-2ffd-fabd-aaf2-e9e628b2f74b.htm" />
+  <HelpKINode Title="Framework.Module namespace" Url="html/a2572a97-4078-8e11-e444-26c55c67afea.htm" />
+  <HelpKINode Title="Framework.Module.Base namespace" Url="html/963314d3-af0a-a4c2-d088-8427a4fab660.htm" />
+  <HelpKINode Title="Framework.Module.Base.Headers structure" Url="html/4604aa71-37ac-0414-b97e-68fa607f85d8.htm" />
+  <HelpKINode Title="Framework.Module.Base.IVulnerableModuleBase interface" Url="html/14c33d44-b339-b3d6-91a7-42a7ce520d5d.htm" />
+  <HelpKINode Title="Framework.Module.Base.WebBase class" Url="html/4086e1c7-6fc2-f488-9c6c-66784becb241.htm" />
+  <HelpKINode Title="Framework.Module.ModuleController class" Url="html/3fed9346-0dba-cf13-fc0b-530e5f695e58.htm" />
+  <HelpKINode Title="Framework.Module.ModuleDataController class" Url="html/f1de2eed-352e-9cd3-aeba-76aca089ea09.htm" />
+  <HelpKINode Title="Framework.ScannerFramework class" Url="html/624665fa-b3c4-e9ef-0600-f14cc733614c.htm" />
+  <HelpKINode Title="Framework.Struct namespace" Url="html/7f58098a-b9ef-a6b0-4346-8f45591ca82f.htm" />
+  <HelpKINode Title="Framework.Struct.ModuleCallResult structure" Url="html/b504b9f7-ae00-bb00-acf5-05ebce01249c.htm" />
+  <HelpKINode Title="Framework.Struct.ModuleData structure" Url="html/a497f2fb-fd0b-23d5-de29-3d974be7c245.htm" />
+  <HelpKINode Title="Framework.Struct.ModuleLoadErrorList structure" Url="html/e832e435-c231-36c1-5f46-876316a93b1f.htm" />
+  <HelpKINode Title="Framework.Struct.VulnerablePointModuleInfo structure" Url="html/e3bfd82f-115a-5281-90fb-8a9792d0d8b5.htm" />
+  <HelpKINode Title="Headers structure">
+    <HelpKINode Title="Headers Structure" Url="html/4604aa71-37ac-0414-b97e-68fa607f85d8.htm" />
+    <HelpKINode Title="about Headers structure" Url="html/4604aa71-37ac-0414-b97e-68fa607f85d8.htm" />
+    <HelpKINode Title="fields" Url="html/fa9767cb-f560-cca7-973c-b76db9cc481e.htm" />
+    <HelpKINode Title="methods" Url="html/148da1ee-aed1-20d6-8bbc-bc4f39f4bf72.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Headers.Key field" Url="html/3edde303-5516-2151-513c-c296046dfd4f.htm" />
+  <HelpKINode Title="Headers.Value field" Url="html/9da00cf6-edf3-00cc-2b03-6cb027b28c60.htm" />
+  <HelpKINode Title="HttpRequest property" Url="html/e1b9a3f6-5619-1126-9d11-54a11ef9fcc8.htm" />
+  <HelpKINode Title="Info property" Url="html/8d662574-f247-b542-50ff-60baafe6ea63.htm" />
+  <HelpKINode Title="InfoForm class">
+    <HelpKINode Title="InfoForm Class" Url="html/c278a64d-c524-5fbe-e82c-f97afed84dc1.htm" />
+    <HelpKINode Title="about InfoForm class" Url="html/c278a64d-c524-5fbe-e82c-f97afed84dc1.htm" />
+    <HelpKINode Title="constructor" Url="html/90be2562-f242-6db1-2ba0-686fdca21ba6.htm" />
+    <HelpKINode Title="events" Url="html/4e079980-8d12-bf62-60e2-8fdd7c19df82.htm" />
+    <HelpKINode Title="fields" Url="html/5c9c197e-858f-ba2a-fdc4-4023c43975bf.htm" />
+    <HelpKINode Title="methods" Url="html/8097d0ed-7ac1-8110-d207-ba33608b4769.htm" />
+    <HelpKINode Title="properties" Url="html/fa07b419-52be-0b51-dd50-cb9b7a8c0330.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InfoForm.Dispose method" Url="html/c8a0a5ba-df3a-ea2e-be8e-fa3a6f09d5f6.htm" />
+  <HelpKINode Title="InfoForm.InfoForm constructor" Url="html/90be2562-f242-6db1-2ba0-686fdca21ba6.htm" />
+  <HelpKINode Title="InfoForm.InfoTextBox field" Url="html/e7049c2b-9212-e7ec-4033-41189fc556df.htm" />
+  <HelpKINode Title="InfoTextBox field" Url="html/e7049c2b-9212-e7ec-4033-41189fc556df.htm" />
+  <HelpKINode Title="IVulnerableCheck method">
+    <HelpKINode Title="AllowsMethodChecker.IVulnerableCheck Method " Url="html/49428fd4-7441-07e6-900c-7fb9e74afdfd.htm" />
+    <HelpKINode Title="DNSAnalysor.IVulnerableCheck Method " Url="html/ca2296e4-df48-b650-5043-5c771466fd8f.htm" />
+    <HelpKINode Title="IVulnerableModuleBase.IVulnerableCheck Method " Url="html/beacc1af-183e-4e5f-7911-a66c4ce1bc61.htm" />
+    <HelpKINode Title="ShellShock.IVulnerableCheck Method " Url="html/1004a736-b0e8-f91c-ac37-141dc869bd08.htm" />
+    <HelpKINode Title="VulnerableFileFinder.IVulnerableCheck Method " Url="html/92d8a100-ae61-0b83-1391-89271056d96f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IVulnerableInfo property">
+    <HelpKINode Title="AllowsMethodChecker.IVulnerableInfo Property " Url="html/0f11110f-6bc8-fc22-6805-305a74423002.htm" />
+    <HelpKINode Title="DNSAnalysor.IVulnerableInfo Property " Url="html/8c465fa3-999a-a91b-1b54-cf0cac4e7c1d.htm" />
+    <HelpKINode Title="IVulnerableModuleBase.IVulnerableInfo Property " Url="html/b95377b5-b344-f29f-9469-ef193925b3e0.htm" />
+    <HelpKINode Title="ShellShock.IVulnerableInfo Property " Url="html/db2d283c-203b-de81-8497-da3bd4288562.htm" />
+    <HelpKINode Title="VulnerableFileFinder.IVulnerableInfo Property " Url="html/5dcb58f2-1e10-f490-92a8-ac55f76b57ef.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IVulnerableModuleBase interface">
+    <HelpKINode Title="IVulnerableModuleBase Interface" Url="html/14c33d44-b339-b3d6-91a7-42a7ce520d5d.htm" />
+    <HelpKINode Title="about IVulnerableModuleBase interface" Url="html/14c33d44-b339-b3d6-91a7-42a7ce520d5d.htm" />
+    <HelpKINode Title="methods" Url="html/9fffd5d1-7569-b27e-f753-3e8b0dd2458c.htm" />
+    <HelpKINode Title="properties" Url="html/25c4b27f-08e8-aa12-aef7-bbae20a00d39.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IVulnerableModuleBase.IVulnerableCheck method" Url="html/beacc1af-183e-4e5f-7911-a66c4ce1bc61.htm" />
+  <HelpKINode Title="IVulnerableModuleBase.IVulnerableInfo property" Url="html/b95377b5-b344-f29f-9469-ef193925b3e0.htm" />
+  <HelpKINode Title="IVulnerableModuleBase.ModuleName property" Url="html/cac88b95-7285-f9ca-c0c3-81649d8286a1.htm" />
+  <HelpKINode Title="IVulnerableModuleBase.ModuleVer property" Url="html/011af77e-aaa5-5f93-5d16-c33bbb2a5edc.htm" />
+  <HelpKINode Title="Key field" Url="html/3edde303-5516-2151-513c-c296046dfd4f.htm" />
+  <HelpKINode Title="Lenght property" Url="html/e982cff1-a866-bf0a-7469-6ec861d93d84.htm" />
+  <HelpKINode Title="MainForm class">
+    <HelpKINode Title="MainForm Class" Url="html/9858b29f-4c3b-eb1e-29c6-3f824e92c046.htm" />
+    <HelpKINode Title="about MainForm class" Url="html/9858b29f-4c3b-eb1e-29c6-3f824e92c046.htm" />
+    <HelpKINode Title="constructor" Url="html/a7833291-4670-4257-31fd-5a5f699fa53f.htm" />
+    <HelpKINode Title="events" Url="html/99800d44-c5c8-3d40-443c-8156f922a25e.htm" />
+    <HelpKINode Title="methods" Url="html/80f16040-9e26-d505-16b2-5e67501fa82b.htm" />
+    <HelpKINode Title="properties" Url="html/b4dba5a0-cfd2-4510-bb72-bd21545635ce.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MainForm.Dispose method" Url="html/18971730-c3fc-0372-abd0-eb65864a3785.htm" />
+  <HelpKINode Title="MainForm.MainForm constructor" Url="html/a7833291-4670-4257-31fd-5a5f699fa53f.htm" />
+  <HelpKINode Title="MakeUrl method" Url="html/997feb2f-59d7-91fe-c911-e343b8b0ede1.htm" />
+  <HelpKINode Title="Module property">
+    <HelpKINode Title="ModuleCallResult.Module Property " Url="html/401764d8-5104-d281-c623-b46ed9b270b5.htm" />
+    <HelpKINode Title="ModuleData.Module Property " Url="html/a5bcfd11-8511-d63b-99b3-119e7f819075.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModuleCallResult structure">
+    <HelpKINode Title="ModuleCallResult Structure" Url="html/b504b9f7-ae00-bb00-acf5-05ebce01249c.htm" />
+    <HelpKINode Title="about ModuleCallResult structure" Url="html/b504b9f7-ae00-bb00-acf5-05ebce01249c.htm" />
+    <HelpKINode Title="constructor" Url="html/3aec847f-68ed-05b2-177b-f379994cc7ec.htm" />
+    <HelpKINode Title="methods" Url="html/643fd02f-d067-3a67-c938-72cf8bfd240f.htm" />
+    <HelpKINode Title="properties" Url="html/a05702a9-49ca-cf56-7d41-e75b81939875.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModuleCallResult.Info property" Url="html/8d662574-f247-b542-50ff-60baafe6ea63.htm" />
+  <HelpKINode Title="ModuleCallResult.Module property" Url="html/401764d8-5104-d281-c623-b46ed9b270b5.htm" />
+  <HelpKINode Title="ModuleCallResult.ModuleCallResult constructor" Url="html/3aec847f-68ed-05b2-177b-f379994cc7ec.htm" />
+  <HelpKINode Title="ModuleCallResult.Result property" Url="html/c9527676-c27b-c065-c23a-ba413006dcc8.htm" />
+  <HelpKINode Title="ModuleControll field" Url="html/fcab42f5-a6b7-9f1b-4a5f-611f1522095a.htm" />
+  <HelpKINode Title="ModuleController class">
+    <HelpKINode Title="ModuleController Class" Url="html/3fed9346-0dba-cf13-fc0b-530e5f695e58.htm" />
+    <HelpKINode Title="about ModuleController class" Url="html/3fed9346-0dba-cf13-fc0b-530e5f695e58.htm" />
+    <HelpKINode Title="constructor" Url="html/99ee11d4-3557-0bcd-e328-721c172542f4.htm" />
+    <HelpKINode Title="methods" Url="html/7df519f8-63a3-cac6-8bc3-a776a11ad50b.htm" />
+    <HelpKINode Title="properties" Url="html/cf2b841e-19f1-d964-b0c7-3a5328d5c05f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModuleController.AddVulnerablePointCheckModule method" Url="html/1266324f-2335-3f86-3c26-cd84962b3f28.htm" />
+  <HelpKINode Title="ModuleController.ModuleController constructor" Url="html/99ee11d4-3557-0bcd-e328-721c172542f4.htm" />
+  <HelpKINode Title="ModuleController.ModuleLoad method" Url="html/08dc7fe2-15d7-970f-b7d3-d3a423848c39.htm" />
+  <HelpKINode Title="ModuleController.Reload method" Url="html/01ca7966-3601-e197-462a-0c77fe0071c0.htm" />
+  <HelpKINode Title="ModuleData structure">
+    <HelpKINode Title="ModuleData Structure" Url="html/a497f2fb-fd0b-23d5-de29-3d974be7c245.htm" />
+    <HelpKINode Title="about ModuleData structure" Url="html/a497f2fb-fd0b-23d5-de29-3d974be7c245.htm" />
+    <HelpKINode Title="constructor" Url="html/dab857b6-5bad-794f-8aba-3af5783b243f.htm" />
+    <HelpKINode Title="fields" Url="html/674d3fff-c9eb-9d36-8c86-082d259e7d0b.htm" />
+    <HelpKINode Title="methods" Url="html/67c65536-98ed-5557-9cbb-b804febc38d0.htm" />
+    <HelpKINode Title="properties" Url="html/6e596155-1291-b121-e189-def25568a885.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModuleData.Module property" Url="html/a5bcfd11-8511-d63b-99b3-119e7f819075.htm" />
+  <HelpKINode Title="ModuleData.ModuleData constructor" Url="html/dab857b6-5bad-794f-8aba-3af5783b243f.htm" />
+  <HelpKINode Title="ModuleData.Name field" Url="html/02f098f2-eb4b-9f57-c61c-239aa4f76416.htm" />
+  <HelpKINode Title="ModuleData.Status field" Url="html/eee8cc6b-4610-cd1c-5d83-cf2db4ed1991.htm" />
+  <HelpKINode Title="ModuleDataController class">
+    <HelpKINode Title="ModuleDataController Class" Url="html/f1de2eed-352e-9cd3-aeba-76aca089ea09.htm" />
+    <HelpKINode Title="about ModuleDataController class" Url="html/f1de2eed-352e-9cd3-aeba-76aca089ea09.htm" />
+    <HelpKINode Title="constructor" Url="html/4bff9649-54b1-cceb-94e0-5f59c4d53db8.htm" />
+    <HelpKINode Title="methods" Url="html/eeb98ee7-de84-feab-1a9e-40823103c8ab.htm" />
+    <HelpKINode Title="properties" Url="html/0057b5c1-9979-79cd-a26c-86c2439fd455.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModuleDataController.Add method" Url="html/469892f0-a678-b94d-494d-0951bf7469c9.htm" />
+  <HelpKINode Title="ModuleDataController.Clear method" Url="html/23c96b36-48b5-1d08-a069-92129e75a354.htm" />
+  <HelpKINode Title="ModuleDataController.Data property" Url="html/f9db0e06-b6bc-31af-f870-27586f6aaa9f.htm" />
+  <HelpKINode Title="ModuleDataController.Lenght property" Url="html/e982cff1-a866-bf0a-7469-6ec861d93d84.htm" />
+  <HelpKINode Title="ModuleDataController.ModuleDataController constructor" Url="html/4bff9649-54b1-cceb-94e0-5f59c4d53db8.htm" />
+  <HelpKINode Title="ModuleLoad method" Url="html/08dc7fe2-15d7-970f-b7d3-d3a423848c39.htm" />
+  <HelpKINode Title="ModuleLoadErrorList structure">
+    <HelpKINode Title="ModuleLoadErrorList Structure" Url="html/e832e435-c231-36c1-5f46-876316a93b1f.htm" />
+    <HelpKINode Title="about ModuleLoadErrorList structure" Url="html/e832e435-c231-36c1-5f46-876316a93b1f.htm" />
+    <HelpKINode Title="fields" Url="html/4d37b4d4-fa8a-f7c0-12b5-dda30a00facd.htm" />
+    <HelpKINode Title="methods" Url="html/9d06a573-e267-c736-3cee-16e237c0519f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModuleLoadErrorList.ErrorModuleInfo field" Url="html/91ad7d0d-ed0d-e6cc-dbc6-bd6ebf1cc72c.htm" />
+  <HelpKINode Title="ModuleLoadErrorList.ErrorModuleName field" Url="html/9d607f61-210d-a6ad-6684-5c101007ee42.htm" />
+  <HelpKINode Title="ModuleName property">
+    <HelpKINode Title="AllowsMethodChecker.ModuleName Property " Url="html/c66c1197-f59d-a274-5027-30fe12145b52.htm" />
+    <HelpKINode Title="DNSAnalysor.ModuleName Property " Url="html/e1e56e59-7a76-fd11-763e-bcbdd1b7b52c.htm" />
+    <HelpKINode Title="IVulnerableModuleBase.ModuleName Property " Url="html/cac88b95-7285-f9ca-c0c3-81649d8286a1.htm" />
+    <HelpKINode Title="ShellShock.ModuleName Property " Url="html/07fa1dc1-6c98-d74b-9d8d-397922e5ccb7.htm" />
+    <HelpKINode Title="VulnerableFileFinder.ModuleName Property " Url="html/a6e8bce4-737a-c9a9-becf-45c5766e44bb.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Modules.Host.TCP namespace" Url="html/a5d92352-8808-73b6-d3d9-fc6877988cc8.htm" />
+  <HelpKINode Title="Modules.Host.TCP.DNSAnalysor class" Url="html/2fd54dea-e9dd-3a3c-7042-5e4f5d7be758.htm" />
+  <HelpKINode Title="Modules.HttpWeb namespace" Url="html/556a6bf4-5f9c-bbfd-883a-6b2fdd4e70da.htm" />
+  <HelpKINode Title="Modules.HttpWeb.AllowsMethodChecker class" Url="html/04e3cfd9-7651-dc16-9dd2-052080dd662c.htm" />
+  <HelpKINode Title="Modules.HttpWeb.ShellShock class" Url="html/238ffa13-7b50-67d6-7904-103e4cea9cfe.htm" />
+  <HelpKINode Title="Modules.HttpWeb.VulnerableFileFinder class" Url="html/812561be-376e-caee-dcb0-5a8fafc7b963.htm" />
+  <HelpKINode Title="ModuleStatus enumeration" Url="html/898261b5-2ffd-fabd-aaf2-e9e628b2f74b.htm" />
+  <HelpKINode Title="ModuleVer property">
+    <HelpKINode Title="AllowsMethodChecker.ModuleVer Property " Url="html/a7c689b4-19b7-919f-2fb5-a0ed0db4b6d0.htm" />
+    <HelpKINode Title="DNSAnalysor.ModuleVer Property " Url="html/b620f75d-5536-c9ac-d3bb-515827c85e07.htm" />
+    <HelpKINode Title="IVulnerableModuleBase.ModuleVer Property " Url="html/011af77e-aaa5-5f93-5d16-c33bbb2a5edc.htm" />
+    <HelpKINode Title="ShellShock.ModuleVer Property " Url="html/a2aa7ff4-0a10-51b8-ecc6-d8888f40c9b5.htm" />
+    <HelpKINode Title="VulnerableFileFinder.ModuleVer Property " Url="html/40dd1cf4-5ad0-7876-2d26-159ca10c8df1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Name field" Url="html/02f098f2-eb4b-9f57-c61c-239aa4f76416.htm" />
+  <HelpKINode Title="Reload method" Url="html/01ca7966-3601-e197-462a-0c77fe0071c0.htm" />
+  <HelpKINode Title="RemoveAllHeaders method" Url="html/4577b061-1b81-ae0a-67b2-9af3365a8bba.htm" />
+  <HelpKINode Title="RemoveHeaders method" Url="html/44292a03-1eda-1675-e6b0-c2d9d5ee0fac.htm" />
+  <HelpKINode Title="Request method" Url="html/08430dcb-5de3-872d-a302-20136d731535.htm" />
+  <HelpKINode Title="RequestEx method" Url="html/0115d26a-770d-bd2a-c56d-ee175c82a3b0.htm" />
+  <HelpKINode Title="ResponseEntity property" Url="html/12f37d14-75eb-0430-d5e9-35c5188d9b1a.htm" />
+  <HelpKINode Title="ResponseHeader property" Url="html/a1e18735-f51e-7933-ed16-e5adff21e899.htm" />
+  <HelpKINode Title="Result property" Url="html/c9527676-c27b-c065-c23a-ba413006dcc8.htm" />
+  <HelpKINode Title="Safe enumeration member" Url="html/7f8c44a3-57d9-724e-e57a-4793c5c90e1c.htm" />
+  <HelpKINode Title="ScannerFramework class">
+    <HelpKINode Title="ScannerFramework Class" Url="html/624665fa-b3c4-e9ef-0600-f14cc733614c.htm" />
+    <HelpKINode Title="about ScannerFramework class" Url="html/624665fa-b3c4-e9ef-0600-f14cc733614c.htm" />
+    <HelpKINode Title="constructor" Url="html/825c2732-f7db-4950-4913-d0e14cba7b20.htm" />
+    <HelpKINode Title="fields" Url="html/a7d59224-0d49-d59a-cef7-ffd0eac794e5.htm" />
+    <HelpKINode Title="methods" Url="html/e7fdc41f-77b0-b9c3-57f1-9c88967b868e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ScannerFramework.ModuleControll field" Url="html/fcab42f5-a6b7-9f1b-4a5f-611f1522095a.htm" />
+  <HelpKINode Title="ScannerFramework.ScannerFramework constructor" Url="html/825c2732-f7db-4950-4913-d0e14cba7b20.htm" />
+  <HelpKINode Title="ScannerFramework.VulnerablePointCheck method" Url="html/b365ef99-a863-d865-6085-4877d3f8a198.htm" />
+  <HelpKINode Title="ServerAddress property" Url="html/d7827947-819c-a43e-2a9e-a88d4e1013dd.htm" />
+  <HelpKINode Title="SetAddress method" Url="html/fe2bfb69-9b93-ab90-d05e-d9dbfde85d1a.htm" />
+  <HelpKINode Title="ShellShock class">
+    <HelpKINode Title="ShellShock Class" Url="html/238ffa13-7b50-67d6-7904-103e4cea9cfe.htm" />
+    <HelpKINode Title="about ShellShock class" Url="html/238ffa13-7b50-67d6-7904-103e4cea9cfe.htm" />
+    <HelpKINode Title="constructor" Url="html/cf766c38-5577-66b6-cfc5-d6a53fe2c42a.htm" />
+    <HelpKINode Title="methods" Url="html/30f2968d-21f4-be7b-6018-5b45fe1f9dde.htm" />
+    <HelpKINode Title="properties" Url="html/ea96d81d-1e7f-ed7e-2e18-63e823e99ce4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ShellShock.IVulnerableCheck method" Url="html/1004a736-b0e8-f91c-ac37-141dc869bd08.htm" />
+  <HelpKINode Title="ShellShock.IVulnerableInfo property" Url="html/db2d283c-203b-de81-8497-da3bd4288562.htm" />
+  <HelpKINode Title="ShellShock.ModuleName property" Url="html/07fa1dc1-6c98-d74b-9d8d-397922e5ccb7.htm" />
+  <HelpKINode Title="ShellShock.ModuleVer property" Url="html/a2aa7ff4-0a10-51b8-ecc6-d8888f40c9b5.htm" />
+  <HelpKINode Title="ShellShock.ShellShock constructor" Url="html/cf766c38-5577-66b6-cfc5-d6a53fe2c42a.htm" />
+  <HelpKINode Title="Status enumeration member" Url="html/7f8c44a3-57d9-724e-e57a-4793c5c90e1c.htm" />
+  <HelpKINode Title="Status field" Url="html/eee8cc6b-4610-cd1c-5d83-cf2db4ed1991.htm" />
+  <HelpKINode Title="Unsafe enumeration member" Url="html/7f8c44a3-57d9-724e-e57a-4793c5c90e1c.htm" />
+  <HelpKINode Title="Value field" Url="html/9da00cf6-edf3-00cc-2b03-6cb027b28c60.htm" />
+  <HelpKINode Title="version">
+    <HelpKINode Title="1.0.0.0" Url="html/56f75318-ba62-4ea7-b80d-e36337c9373b.htm" />
+    <HelpKINode Title="history" Url="html/eb477d8c-a335-488b-b87e-b647a6260f23.htm" />
+  </HelpKINode>
+  <HelpKINode Title="VulnerableFileFinder class">
+    <HelpKINode Title="VulnerableFileFinder Class" Url="html/812561be-376e-caee-dcb0-5a8fafc7b963.htm" />
+    <HelpKINode Title="about VulnerableFileFinder class" Url="html/812561be-376e-caee-dcb0-5a8fafc7b963.htm" />
+    <HelpKINode Title="constructor" Url="html/89196e86-6dfd-489c-2b99-31c8f5c1f357.htm" />
+    <HelpKINode Title="methods" Url="html/09913f26-6476-4a8d-7a94-0309ce612aa6.htm" />
+    <HelpKINode Title="properties" Url="html/67a11389-3a41-75db-4a51-14da26845096.htm" />
+  </HelpKINode>
+  <HelpKINode Title="VulnerableFileFinder.IVulnerableCheck method" Url="html/92d8a100-ae61-0b83-1391-89271056d96f.htm" />
+  <HelpKINode Title="VulnerableFileFinder.IVulnerableInfo property" Url="html/5dcb58f2-1e10-f490-92a8-ac55f76b57ef.htm" />
+  <HelpKINode Title="VulnerableFileFinder.ModuleName property" Url="html/a6e8bce4-737a-c9a9-becf-45c5766e44bb.htm" />
+  <HelpKINode Title="VulnerableFileFinder.ModuleVer property" Url="html/40dd1cf4-5ad0-7876-2d26-159ca10c8df1.htm" />
+  <HelpKINode Title="VulnerableFileFinder.VulnerableFileFinder constructor" Url="html/89196e86-6dfd-489c-2b99-31c8f5c1f357.htm" />
+  <HelpKINode Title="VulnerablePointCheck method" Url="html/b365ef99-a863-d865-6085-4877d3f8a198.htm" />
+  <HelpKINode Title="VulnerablePointInfo field" Url="html/1eb0ac09-4360-5c40-ce9c-bf538c8d137e.htm" />
+  <HelpKINode Title="VulnerablePointModuleInfo structure">
+    <HelpKINode Title="VulnerablePointModuleInfo Structure" Url="html/e3bfd82f-115a-5281-90fb-8a9792d0d8b5.htm" />
+    <HelpKINode Title="about VulnerablePointModuleInfo structure" Url="html/e3bfd82f-115a-5281-90fb-8a9792d0d8b5.htm" />
+    <HelpKINode Title="fields" Url="html/e2942225-0882-2e19-70d8-dff04f4162d0.htm" />
+    <HelpKINode Title="methods" Url="html/ce270684-2a4b-8e7e-de80-e8791bab4718.htm" />
+  </HelpKINode>
+  <HelpKINode Title="VulnerablePointModuleInfo.VulnerablePointInfo field" Url="html/1eb0ac09-4360-5c40-ce9c-bf538c8d137e.htm" />
+  <HelpKINode Title="VulnerablePointModuleInfo.VulnerablePointModuleVer field" Url="html/d4165cd8-6556-225f-f469-5832257de2f1.htm" />
+  <HelpKINode Title="VulnerablePointModuleInfo.VulnerablePointName field" Url="html/284634fa-70f5-5a31-efd9-327ad4e5d088.htm" />
+  <HelpKINode Title="VulnerablePointModuleInfo.VulnerablePointStatus field" Url="html/6bb4cd78-0252-8a66-f2b2-e69c5229851e.htm" />
+  <HelpKINode Title="VulnerablePointModuleVer field" Url="html/d4165cd8-6556-225f-f469-5832257de2f1.htm" />
+  <HelpKINode Title="VulnerablePointName field" Url="html/284634fa-70f5-5a31-efd9-327ad4e5d088.htm" />
+  <HelpKINode Title="VulnerablePointStatus field" Url="html/6bb4cd78-0252-8a66-f2b2-e69c5229851e.htm" />
+  <HelpKINode Title="WebBase class">
+    <HelpKINode Title="WebBase Class" Url="html/4086e1c7-6fc2-f488-9c6c-66784becb241.htm" />
+    <HelpKINode Title="about WebBase class" Url="html/4086e1c7-6fc2-f488-9c6c-66784becb241.htm" />
+    <HelpKINode Title="constructor" Url="html/96f58062-301f-b87c-4145-de40f4f8b743.htm" />
+    <HelpKINode Title="methods" Url="html/b7e18b25-3bc8-a190-122b-f975f9acf6b0.htm" />
+    <HelpKINode Title="properties" Url="html/f95bb245-fe0f-2fca-c34c-28e360e899bf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WebBase.HttpRequest property" Url="html/e1b9a3f6-5619-1126-9d11-54a11ef9fcc8.htm" />
+  <HelpKINode Title="WebBase.MakeUrl method" Url="html/997feb2f-59d7-91fe-c911-e343b8b0ede1.htm" />
+  <HelpKINode Title="WebBase.RemoveAllHeaders method" Url="html/4577b061-1b81-ae0a-67b2-9af3365a8bba.htm" />
+  <HelpKINode Title="WebBase.RemoveHeaders method" Url="html/44292a03-1eda-1675-e6b0-c2d9d5ee0fac.htm" />
+  <HelpKINode Title="WebBase.Request method" Url="html/08430dcb-5de3-872d-a302-20136d731535.htm" />
+  <HelpKINode Title="WebBase.RequestEx method" Url="html/0115d26a-770d-bd2a-c56d-ee175c82a3b0.htm" />
+  <HelpKINode Title="WebBase.ResponseEntity property" Url="html/12f37d14-75eb-0430-d5e9-35c5188d9b1a.htm" />
+  <HelpKINode Title="WebBase.ResponseHeader property" Url="html/a1e18735-f51e-7933-ed16-e5adff21e899.htm" />
+  <HelpKINode Title="WebBase.ServerAddress property" Url="html/d7827947-819c-a43e-2a9e-a88d4e1013dd.htm" />
+  <HelpKINode Title="WebBase.SetAddress method" Url="html/fe2bfb69-9b93-ab90-d05e-d9dbfde85d1a.htm" />
+  <HelpKINode Title="WebBase.WebBase constructor" Url="html/96f58062-301f-b87c-4145-de40f4f8b743.htm" />
+  <HelpKINode Title="Welcome" Url="html/de8b0d32-f46f-41ac-94e6-219824d8d220.htm" />
+</HelpKI>

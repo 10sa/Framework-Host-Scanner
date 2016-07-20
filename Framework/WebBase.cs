@@ -15,7 +15,14 @@ namespace Framework.Module.Base
 	/// </summary>
 	public struct Headers
 	{
+		/// <summary>
+		/// 헤더의 키값 입니다.
+		/// </summary>
 		public List<string> Key;
+
+		/// <summary>
+		/// 헤더의 값입니다.
+		/// </summary>
 		public List<string> Value;
 	}
 
@@ -42,6 +49,10 @@ namespace Framework.Module.Base
 		/// </summary>
 		public string ResponseEntity { get; protected set; }
 
+		/// <summary>
+		/// 주소를 설정하는 메소드입니다.
+		/// </summary>
+		/// <param name="Address">서버에 대한 주소입니다.</param>
 		protected void SetAddress(string Address)
 		{
 			HttpRequest = (HttpWebRequest)WebRequest.Create(MakeUrl(Address));
@@ -61,9 +72,9 @@ namespace Framework.Module.Base
 				if(GetEntity)
 					this.GetEntity(Response);
 			}
-			catch(Exception exp)
+			catch(Exception)
 			{
-				throw exp;
+				throw;
 			}
 		}
 
@@ -156,14 +167,14 @@ namespace Framework.Module.Base
 				{
 					return new Uri("http://" + address);
 				}
-				catch(Exception exp)
+				catch(Exception)
 				{
-					throw exp;
+					throw;
 				}
 			}
-			catch(Exception exp)
+			catch(Exception)
 			{
-				throw exp;
+				throw;
 			}
 		}
     }

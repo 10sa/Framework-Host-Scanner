@@ -14,6 +14,9 @@ using System.IO;
 
 namespace Form
 {
+	/// <summary>
+	/// 모듈의 정보를 표시하고 관리하는 메인 폼입니다.
+	/// </summary>
 	public partial class MainForm : MetroForm
 	{
 		ScannerFramework Scanner;

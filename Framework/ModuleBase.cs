@@ -16,11 +16,13 @@ namespace Framework.Module.Base
         /// <summary>
         /// 모듈의 이름입니다.
         /// </summary>
+		/// <returns>모듈의 이름입니다.</returns>
         string ModuleName { get; }
 
         /// <summary>
         /// 모듈의 버전입니다.
         /// </summary>
+		/// <returns>모듈의 버전입니다.</returns>
         string ModuleVer { get; }
 
         /// <summary>

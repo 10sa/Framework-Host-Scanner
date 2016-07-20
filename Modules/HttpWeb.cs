@@ -11,7 +11,7 @@ using HtmlAgilityPack;
 namespace Modules.HttpWeb
 {
     /// <summary>
-    /// CVE-2014-6271 :: ShellShock (Apapche HTTP Server User-Agent Attack) Patch : <http://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-025>
+    /// ShellShock 취약점을 탐색하기 위한 모듈 클래스입니다.
     /// </summary>
     public class ShellShock : WebBase, IVulnerableModuleBase
     {
@@ -32,9 +32,9 @@ namespace Modules.HttpWeb
 			{
 				return ShellShockCheck();
 			}
-			catch(Exception exp)
+			catch(Exception)
 			{
-				throw exp;
+				throw;
 			}
 		}
 
@@ -70,6 +70,9 @@ namespace Modules.HttpWeb
         }
 	}
 
+	/// <summary>
+	/// 웹 서버 상에서 취약한 파일을 찾기 위해 만들어진 모듈 클래스 입니다.
+	/// </summary>
 	public class VulnerableFileFinder : WebBase, IVulnerableModuleBase
 	{
 		public string IVulnerableInfo { get; private set; }
@@ -86,9 +89,9 @@ namespace Modules.HttpWeb
 			{
 				Request(true);
 			}
-			catch (Exception exp)
+			catch (Exception)
 			{
-				throw exp;
+				throw;
 			}
 
 			if(Checking())
@@ -135,6 +138,9 @@ namespace Modules.HttpWeb
 		}
 	} 
 
+	/// <summary>
+	/// 웹 서버가 허용한 메소드를 확인하는 모듈 클래스 입니다.
+	/// </summary>
 	public class AllowsMethodChecker : WebBase, IVulnerableModuleBase
 	{
 		public string IVulnerableInfo { get; private set; }

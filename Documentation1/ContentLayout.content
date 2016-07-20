@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Topics>
+  <Topic id="de8b0d32-f46f-41ac-94e6-219824d8d220" visible="True" isDefault="true" title="ScannerFramework 레퍼런스">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="Welcome" />
+    </HelpKeywords>
+  </Topic>
+  <Topic id="eb477d8c-a335-488b-b87e-b647a6260f23" visible="True" isExpanded="true" title="버전 기록">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="version, history" />
+    </HelpKeywords>
+    <Topic id="56f75318-ba62-4ea7-b80d-e36337c9373b" visible="True" isSelected="true" title="버전 1.0.0.0">
+      <HelpKeywords>
+        <HelpKeyword index="K" term="version, 1.0.0.0" />
+      </HelpKeywords>
+    </Topic>
+  </Topic>
+</Topics>

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Fram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules", "Modules\Modules.csproj", "{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}"
 EndProject
-Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "ScannerFrameworkHelper", "Documentation1\ScannerFrameworkHelper.shfbproj", "{4BB7CD00-6934-469F-B40F-BDDAE3E7FD99}"
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "ScannerFrameworkHelper", "ScannerFrameworkHelper\ScannerFrameworkHelper.shfbproj", "{4BB7CD00-6934-469F-B40F-BDDAE3E7FD99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

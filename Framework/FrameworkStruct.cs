@@ -83,7 +83,7 @@ namespace Framework.Struct
 		}
 
         /// <summary>
-		/// 호출할 모듈의 리스트입니다.
+		/// 호출할 모듈의 정보입니다.
 		/// </summary>
 		public IVulnerableModuleBase Module { get; private set; }
 

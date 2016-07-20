@@ -12,11 +12,21 @@ using MetroFramework.Forms;
 using Framework;
 using System.IO;
 
-namespace _2016_KOI
+namespace Form
 {
 	public partial class MainForm : MetroForm
 	{
 		ScannerFramework Scanner;
+
+		// 여러 Worker 에서 사용되는 Callback 메소드.
+		private void AsyncAddtionCallback(object sender, RunWorkerCompletedEventArgs e)
+		{
+			foreach(var Data in Scanner.ModuleControll.Data)
+			{
+				string[] Row = new string[] { Data.Name, Data.Module.ModuleVer, Data.Status.ToString() };
+				ModuleStatusGrid.Rows.Add(Row);
+			}
+		}
 
 		public MainForm ()
 		{
@@ -25,14 +35,13 @@ namespace _2016_KOI
 
 		private void MainForm_Load (object sender, EventArgs e)
 		{
-			ModuleStatusGrid.ColumnCount = 3;
+			ModuleStatusGrid.ColumnCount = 4;
 			ModuleStatusGrid.ColumnHeadersVisible = true;
-			ModuleStatusGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-			ModuleStatusGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
 			ModuleStatusGrid.Columns[0].Name = "모듈 이름";
 			ModuleStatusGrid.Columns[1].Name = "모듈 버전";
 			ModuleStatusGrid.Columns[2].Name = "모듈 상태";
+			ModuleStatusGrid.Columns[3].Name = "모듈 정보";
 
 			StartCheck_button.Enabled = false;
 			ReloadButton.Enabled = false;
@@ -54,18 +63,23 @@ namespace _2016_KOI
 
 		private void StartCheck_button_Click (object sender, EventArgs e)
 		{
+			if(ServerAddress_textbox.Text == string.Empty)
+			{
+				MessageBox.Show("주소는 공란일수 없습니다.");
+				return;
+			}
+				
 			StartCheck_button.Enabled = false;
 			ReloadButton.Enabled = false;
 
 			BackgroundWorker AsyncWorker = new BackgroundWorker();
 			AsyncWorker.DoWork += (a, b) =>
 			{
-				Scanner.VulnerablePointCheck(ServerAddress_textbox.Text);
+				
 			};
 			AsyncWorker.RunWorkerCompleted += (a, b) =>
 			{
-				StartCheck_button.Enabled = false;
-				MessageBox.Show("Progress Done.");
+
 			};
 
         }
@@ -90,15 +104,21 @@ namespace _2016_KOI
 			AsyncWorker.RunWorkerAsync();
 		}
 
-
-		// 여러 Worker 에서 사용되는 Callback 메소드.
-		private void AsyncAddtionCallback(object sender, RunWorkerCompletedEventArgs e)
+		private void ModuleStatusGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			foreach(var Data in Scanner.ModuleControll.Data)
+			//MessageBox.Show(e.ColumnIndex.ToString());
+			if(e.ColumnIndex == 3)
 			{
-				string[] Row = new string[] { Data.Name, Data.Module.ModuleVer, Data.Status.ToString() };
-				ModuleStatusGrid.Rows.Add(Row);
+				InfoForm Info = new InfoForm();
+				Info.InfoTextBox.Text = GetModuleData(e.RowIndex);
+				Info.Text = Scanner.ModuleControll.Data[e.RowIndex].Name;
+				Info.Show();
 			}
+		}
+
+		private string GetModuleData(int Row)
+		{
+			return Scanner.ModuleControll.Data[Row].Module.IVulnerableInfo + Environment.NewLine;
 		}
 	}
 }

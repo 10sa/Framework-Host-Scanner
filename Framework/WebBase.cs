@@ -52,9 +52,8 @@ namespace Framework.Module.Base
 		/// 생성시 입력된 주소값으로 요청을 보냅니다.
 		/// </summary>
 		/// <param name="GetEntity">엔티티 본문을 Response_Entity 인스턴스에 저장할지에 대한 여부입니다.</param>
-		public void Request(string Address, bool GetEntity)
+		public void Request(bool GetEntity)
 		{
-			SetAddress(Address);
 			try
 			{
 				WebResponse Response = HttpRequest.GetResponse();
@@ -68,7 +67,7 @@ namespace Framework.Module.Base
 			}
 		}
 
-		// 오버로드로 구현할까?...
+
         /// <summary>
         /// Request 메서드와 동일한 기능을 제공하나 Request 메서드가 사용할 HTTP 헤더를 지정 합니다.
         /// </summary>
@@ -76,9 +75,8 @@ namespace Framework.Module.Base
         /// <param name="CallRequestMethod">인자로 전달받은 헤더의 키/값 쌍을 모두 헤더에 추가한 뒤 Request 메소드를 호출할지에 대한 여부입니다.</param>
         /// <param name="ClearAndAdd">기존에 있던 헤더 데이터를 초기화 한 뒤 추가할지에 대한 여부입니다.</param>
         /// <param name="Headers">헤더의 키와 값을 저장한 구조체입니다.</param>
-        public void RequestEx(string Address, bool GetEntitiy, bool CallRequestMethod, bool ClearAndAdd, Headers Headers)
+        public void RequestEx(bool GetEntitiy, bool CallRequestMethod, bool ClearAndAdd, Headers Headers)
         {
-			SetAddress(Address);
 			if ( Headers.Key.Count != Headers.Value.Count )
 				throw new Exception("키 리스트와 값 리스트의 크기가 맞지 않습니다.");
 
@@ -91,7 +89,7 @@ namespace Framework.Module.Base
             }
 
             if(CallRequestMethod)
-                Request(Address, GetEntitiy);
+                Request(GetEntitiy);
 
             return;
         }

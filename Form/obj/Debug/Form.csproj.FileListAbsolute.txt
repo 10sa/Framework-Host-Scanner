@@ -6,7 +6,6 @@ C:\Users\USER\Source\Repos\ScannerFramework\Form\obj\Debug\Form.exe
 C:\Users\USER\Source\Repos\ScannerFramework\Form\obj\Debug\Form.pdb
 C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Debug\Form.exe.config
 C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Debug\Form.csprojResolveAssemblyReference.cache
-C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Debug\_2016_KOI.MainForm.resources
 C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Debug\Form.Properties.Resources.resources
 C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Debug\Form.csproj.GenerateResource.Cache
 C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Debug\Form.exe
@@ -22,3 +21,5 @@ C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Debug\Form.pdb
 C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Debug\HtmlAgilityPack.dll
 C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\User\Documents\GitHub\ScannerFramework\Form\bin\Debug\HtmlAgilityPack.xml
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Debug\Form.InfoForm.resources
+C:\Users\User\Documents\GitHub\ScannerFramework\Form\obj\Debug\Form.MainForm.resources

@@ -27,9 +27,10 @@ namespace Modules.HttpWeb
 		public CallResult IVulnerableCheck(string address)
         {
 			SetAddress(address);
+
 			try
 			{
-				return ShellShockCheck(address);
+				return ShellShockCheck();
 			}
 			catch(Exception exp)
 			{
@@ -41,11 +42,11 @@ namespace Modules.HttpWeb
         /// 쉘쇼크 취약점을 검색하는 메소드입니다.
         /// </summary>
         /// <returns>보안 취약점이 있을시 true, 없을시 false를 반환합니다.</returns>
-        private CallResult ShellShockCheck(string Address)
+        private CallResult ShellShockCheck()
         {
             // 깊이 탐색 알고리즘 구현하기.
 			// HTML 파싱이 필요함.
-            RequestEx(Address, true, true, true, GetRequestHeaders());
+            RequestEx(true, true, true, GetRequestHeaders());
             if (ResponseHeader.Contains(Agent))
             {
                 IVulnerableInfo = "서버에 쉘 쇼크 보안 취약점이 존재합니다.\n";
@@ -83,7 +84,7 @@ namespace Modules.HttpWeb
 
 			try
 			{
-				Request(address, true);
+				Request(true);
 			}
 			catch (Exception exp)
 			{
@@ -102,32 +103,35 @@ namespace Modules.HttpWeb
 			Parsing.LoadHtml(ResponseEntity);
 
 			// 깊이 탐색 알고리즘 필요
-			foreach(var Tag in Parsing.DocumentNode.SelectNodes("//a[@href]"))
-			{
+			//foreach(var Tag in Parsing.DocumentNode.SelectNodes("//a[@href]"))
+			//{
 				// 리다이렉트 링크가 원래 서버 주소와 일치하는지 검사. (만약 검사되지 않을시 무한반복할수 있음.)
-				string temp = Tag.GetAttributeValue("href", string.Empty);
-				if(temp.Contains(ServerAddress.AbsoluteUri))
-				{
-					Links.Add(temp);
-				}
+				//string temp = Tag.GetAttributeValue("href", string.Empty);
+				//if(temp.Contains(ServerAddress.AbsoluteUri))
+				//{
+					//Links.Add(temp);
+				//}
 
-				foreach(var Link in Links)
-				{
-					Uri ParsingUri = new Uri(Link);
+				//foreach(var Link in Links)
+				//{
+					//Uri ParsingUri = new Uri(Link);
 
-					if(ParsingUri.AbsolutePath.Contains("phpinfo.php"))
-					{
+					//if(ParsingUri.AbsolutePath.Contains("phpinfo.php"))
+					//{
 						if(Parsing.DocumentNode.SelectSingleNode("//title").InnerText.Contains("phpinfo()"))
 						{
-							IVulnerableInfo = string.Format("Find a PHP Info File : {0}", Link);
+							IVulnerableInfo = string.Format("Find a PHP Info File : {0}", ServerAddress.AbsolutePath);
 							return true;
 						}
-					}
-
-				}
+						else
+			{
+				string.Format("Find a PHP Info File : {0}", ServerAddress.AbsolutePath);
+				return true;
 			}
+					//}
 
-			return true;
+				//}
+			//}
 		}
 	} 
 
@@ -139,6 +143,27 @@ namespace Modules.HttpWeb
 
 		public CallResult IVulnerableCheck(string address)
 		{
+			SetAddress(address);
+			HttpRequest.Method = "OPTIONS";
+
+			try
+			{
+				Request(false);
+			}
+			catch (WebException exp)
+			{
+				IVulnerableInfo = "웹 서버에서 200번 상태코드 이외의 상태코드를 반환하였습니다." + Environment.NewLine;
+				IVulnerableInfo += "Status : " + exp.Status.ToString();
+
+				return CallResult.Status;
+			}
+			catch (Exception exp)
+			{
+				IVulnerableInfo = exp.Message;
+				return CallResult.Exception;
+			}
+
+			IVulnerableInfo = HttpRequest.Headers.Get("Allow");
 			return CallResult.Status;
 		}
 	}

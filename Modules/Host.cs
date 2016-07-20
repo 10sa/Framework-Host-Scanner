@@ -19,12 +19,12 @@ namespace Modules.Host.TCP
 		public CallResult IVulnerableCheck(string address)
 		{
 			IPHostEntry Data = Dns.GetHostEntry(address);
-			IVulnerableInfo = "DNS Analysor Result";
-			IVulnerableInfo += "---------------------";
+			IVulnerableInfo = "DNS Analysor Result" + Environment.NewLine;
+			IVulnerableInfo += "---------------------" + Environment.NewLine;
 
 			foreach(var Address in Data.AddressList)
 			{
-				IVulnerableInfo += string.Format("| Address Protocol : {0} | IP : {1} | DNS Hostname : {2} |\n", Address.AddressFamily, Address.ToString(), Data.HostName);
+				IVulnerableInfo += string.Format("| Address Protocol : {0} | IP : {1} | DNS Hostname : {2} |\n", Address.AddressFamily, Address.ToString(), Data.HostName) + Environment.NewLine;
 			}
 
 			return CallResult.Status;

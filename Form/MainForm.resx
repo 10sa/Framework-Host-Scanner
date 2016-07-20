@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ServerAddress_textbox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ServerAddress_textbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 63</value>
@@ -139,6 +143,9 @@
   </data>
   <data name="&gt;&gt;ServerAddress_textbox.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="StartCheck_button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="StartCheck_button.Location" type="System.Drawing.Point, System.Drawing">
     <value>529, 548</value>
@@ -191,6 +198,9 @@
   <data name="&gt;&gt;ServerAddressTextbox_Desc_Label.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="ReloadButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="ReloadButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>404, 548</value>
   </data>
@@ -214,6 +224,9 @@
   </data>
   <data name="&gt;&gt;ReloadButton.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="ModuleStatusGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="ModuleStatusGrid.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 94</value>
@@ -244,6 +257,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>671, 617</value>
+  </data>
+  <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>WebScanner</value>

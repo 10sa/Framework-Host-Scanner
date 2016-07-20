@@ -1,4 +1,4 @@
-﻿namespace _2016_KOI
+﻿namespace Form
 {
 	partial class MainForm
 	{
@@ -39,8 +39,8 @@
 			// 
 			// ServerAddress_textbox
 			// 
-			this.ServerAddress_textbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
 			resources.ApplyResources(this.ServerAddress_textbox, "ServerAddress_textbox");
+			this.ServerAddress_textbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
 			this.ServerAddress_textbox.Name = "ServerAddress_textbox";
 			// 
 			// StartCheck_button
@@ -66,11 +66,14 @@
 			this.ModuleStatusGrid.AllowUserToDeleteRows = false;
 			this.ModuleStatusGrid.AllowUserToResizeColumns = false;
 			this.ModuleStatusGrid.AllowUserToResizeRows = false;
-			this.ModuleStatusGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			resources.ApplyResources(this.ModuleStatusGrid, "ModuleStatusGrid");
+			this.ModuleStatusGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.ModuleStatusGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+			this.ModuleStatusGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.ModuleStatusGrid.Name = "ModuleStatusGrid";
 			this.ModuleStatusGrid.ReadOnly = true;
 			this.ModuleStatusGrid.RowTemplate.Height = 23;
+			this.ModuleStatusGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ModuleStatusGrid_CellMouseDoubleClick);
 			// 
 			// MainForm
 			// 
@@ -84,7 +87,6 @@
 			this.Controls.Add(this.ServerAddress_textbox);
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
-			this.Resizable = false;
 			this.Style = MetroFramework.MetroColorStyle.Silver;
 			this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
 			this.Load += new System.EventHandler(this.MainForm_Load);

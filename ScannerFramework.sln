@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules", "Modules\Modules.
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "ScannerFrameworkHelper", "ScannerFrameworkHelper\ScannerFrameworkHelper.shfbproj", "{4BB7CD00-6934-469F-B40F-BDDAE3E7FD99}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Doc", "ModelingProject1\Doc.modelproj", "{D2A5C9AD-7115-4A1E-B394-56E57AEF8DE5}"
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "FrameworkModel", "FrameworkModel\FrameworkModel.modelproj", "{D2A5C9AD-7115-4A1E-B394-56E57AEF8DE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

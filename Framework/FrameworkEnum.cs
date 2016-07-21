@@ -42,16 +42,15 @@ namespace Framework.Enum
         /// </summary>
         Call,
 
-		// 현재 미지원, 지원 예정.
         /// <summary>
-        /// 모듈을 비동기식으로 호출함을 나타냅니다.
+        /// 모듈을 비동기식으로 호출함을 나타냅니다. 현재는 지원하지 않습니다.
         /// </summary>
-        // AsyncCall,
+        AsyncCall,
 
-        /// <summary>
-        /// 모듈을 스레드를 생성하여 호출함을 나타냅니다.
-        /// </summary>
-        // ThreadCall,
+		/// <summary>
+		/// 모듈을 스레드를 생성하여 호출함을 나타냅니다. 현재는 지원하지 않습니다.
+		/// </summary>
+		ThreadCall,
 
         /// <summary>
         /// 모듈을 호출하지 않음을 나타냅니다.

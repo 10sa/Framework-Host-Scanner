@@ -96,7 +96,7 @@ namespace Framework.Module
 		/// <summary>
 		/// 외부 Dll를 로드합니다.
 		/// </summary>
-		/// <returns>ModuleLoadErrorList 구조체입니다.</returns>
+		/// <returns>로드된 정보를 자동으로 저장합니다.</returns>
 		public void ModuleLoad()
 		{
 			// 폴더가 있는지 확인.
@@ -146,12 +146,11 @@ namespace Framework.Module
 								// 주소 자체가 localhost 이기 때문에 충분히 예외 발생이 가능함.
 								AddVulnerablePointCheckModule(Temp);
 							}
-							catch(Exception exp)
+							catch(Exception)
 							{
 								// 인터페이스를 상속하는 클래스를 찾았으나 인터페이스 메소드가 제대로 정의되지 않았을 경우 예외처리함.
 								// Overload 된 메소드 자체가 에러 처리를 위한 메소드임.
 								AddVulnerablePointCheckModule(Temp, Temp.ModuleName);
-								MessageBox.Show(exp.Message);
 							}
 						}
 

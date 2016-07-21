@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="f16eb049-94dd-4016-ae09-99ff61c2f66f" name="Dll Module Load AD" linkedPackageId="35a89308-2ff6-4d96-a1bd-8030028217c3" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="188670e3-dfbb-4364-ba4f-d37e72c95733">
+      <profileInstance Id="6b8e49cd-2916-49ed-86f2-35f8ce4ef2e6" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="10dc8c1e-d4a2-4a07-8e73-97326f494652">
+      <profileInstance Id="89b58112-bfcd-4fca-a361-4045521bf911" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="fc542510-0864-4e82-bb67-20b01dc1ba4e" name="Dll Module Load AD" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="42c6b2fb-d1e2-496c-9bd0-56abd022c94a" />
+        <nodes>
+          <initialNode Id="30856b71-76a1-42bb-8a3f-251f9dede1eb" name="Initial1" isLeaf="false">
+            <elementDefinition Id="7925e285-853e-432a-af6e-000849e7a25f" />
+            <flowNodeTargets>
+              <controlFlow Id="c8da7647-cf93-44a9-be33-fde0ceb64cfa" isLeaf="false">
+                <opaqueActionMoniker Id="f71dace7-8797-494f-baa1-20f871a8056b" LastKnownName="Check Module Folder" />
+                <elementDefinition Id="26afe1e5-7a47-4b89-bd4f-18ced352d1db" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="f71dace7-8797-494f-baa1-20f871a8056b" name="Check Module Folder" isLeaf="false">
+            <elementDefinition Id="4f501b91-b3ef-4fdf-87ae-347f58342dcb" />
+            <flowNodeTargets>
+              <controlFlow Id="154de46a-79b6-49a6-9697-0e4cb3909138" isLeaf="false">
+                <decisionNodeMoniker Id="04c97f6d-c20d-4fbf-9e16-74e1bed2147e" LastKnownName="Decision1" />
+                <elementDefinition Id="61027e5f-a556-4e0b-b09b-ce76230b31c5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="04c97f6d-c20d-4fbf-9e16-74e1bed2147e" name="Decision1" isLeaf="false">
+            <elementDefinition Id="99235555-fbee-4815-875f-b1d7f72c0fab" />
+            <flowNodeTargets>
+              <controlFlow Id="652999fe-2f00-4116-81d9-35a6802c7c25" guard="Existed Module Folder" isLeaf="false">
+                <opaqueActionMoniker Id="085c6533-3d4b-408c-9cb5-2c1197a12ff2" LastKnownName="Get Dll File" />
+                <elementDefinition Id="354189c4-7712-446c-8be5-41e7c0c6e27e" />
+              </controlFlow>
+              <controlFlow Id="0974b1e4-397f-4180-9b47-7b2947b907a0" guard="Folder's Not Existed" isLeaf="false">
+                <opaqueActionMoniker Id="2df16be8-8d1d-4c86-97a4-46719e72bd4f" LastKnownName="Make Dir" />
+                <elementDefinition Id="a060a35a-2900-4d77-83f3-7cb5e8469d83" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="2df16be8-8d1d-4c86-97a4-46719e72bd4f" name="Make Dir" isLeaf="false">
+            <elementDefinition Id="5365873c-6516-410f-a2c5-39b2bddb7e04" />
+            <flowNodeTargets>
+              <controlFlow Id="bab64ed6-f719-4ef5-8182-4b2858f49485" isLeaf="false">
+                <activityFinalNodeMoniker Id="345470de-54ff-4acf-9546-8cce4d1ea67f" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="8e307fc2-d1e5-4d33-b4c8-53a3e7d194de" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="085c6533-3d4b-408c-9cb5-2c1197a12ff2" name="Get Dll File" isLeaf="false">
+            <elementDefinition Id="fc991353-2e2d-49d2-bde5-6d548606fe22" />
+            <flowNodeTargets>
+              <controlFlow Id="255e3ad2-4519-45a5-8970-7616ed693151" isLeaf="false">
+                <decisionNodeMoniker Id="fba68b89-1d2f-40e2-a615-1c7b52f97bec" LastKnownName="Decision21" />
+                <elementDefinition Id="1888638e-2f2b-4a7c-b7b7-20732fb54b41" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="345470de-54ff-4acf-9546-8cce4d1ea67f" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="51a4e284-812e-4e35-b912-7e7d1d05f3e8" />
+          </activityFinalNode>
+          <opaqueAction Id="4991400f-0870-4ec3-9cfd-5fd5c46f731c" name="Find Class" isLeaf="false">
+            <elementDefinition Id="c1dfed94-0016-404e-8efd-186223603a27" />
+            <flowNodeTargets>
+              <controlFlow Id="1791fece-7253-4b62-807c-9168a6170014" isLeaf="false">
+                <opaqueActionMoniker Id="226cf5fd-b571-4e55-91e2-46196b71fed7" LastKnownName="Assignable From Check" />
+                <elementDefinition Id="c9592196-a278-4681-bcc9-94607e76d117" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="2fc5a085-88d1-41a1-bed6-c8feac5b2e95" name="Add Module" isLeaf="false">
+            <elementDefinition Id="b862d568-4afc-4e92-afe7-be3aed858af9" />
+            <flowNodeTargets>
+              <controlFlow Id="8757243c-41b9-4e37-9af6-6932b7bf183f" isLeaf="false">
+                <decisionNodeMoniker Id="061b4907-db26-45fe-9b3f-58ed5a008943" LastKnownName="Decision3" />
+                <elementDefinition Id="d5960b43-f83b-494d-87f2-b3cffdcaec22" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="fba68b89-1d2f-40e2-a615-1c7b52f97bec" name="Decision21" isLeaf="false">
+            <elementDefinition Id="eb657b8a-7853-4ccf-b03c-dda072de7777" />
+            <flowNodeTargets>
+              <controlFlow Id="eab1acf0-97d2-44c5-9e08-622d80d28a67" guard="Nothing In Folder" isLeaf="false">
+                <activityFinalNodeMoniker Id="345470de-54ff-4acf-9546-8cce4d1ea67f" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="110976b5-576b-45a0-92ac-394aaed2b7a4" />
+              </controlFlow>
+              <controlFlow Id="88db73b8-d327-485c-9b36-03c1facc2169" guard="Load Dll File" isLeaf="false">
+                <opaqueActionMoniker Id="f361ceb4-88b1-4b27-b384-a16a441cf260" LastKnownName="lib Type Check" />
+                <elementDefinition Id="58d128e0-b5aa-4ceb-975b-fa7e6aaa50f4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="f361ceb4-88b1-4b27-b384-a16a441cf260" name="lib Type Check" isLeaf="false">
+            <elementDefinition Id="43473810-673d-4814-b017-26a9377627ac" />
+            <flowNodeTargets>
+              <controlFlow Id="4dc1584b-8deb-49ba-b262-9d9af54b0102" isLeaf="false">
+                <decisionNodeMoniker Id="b6ee276a-ab9a-4d86-8b3b-f990215c2c16" LastKnownName="Decision5" />
+                <elementDefinition Id="25c51192-d5a9-4064-9339-a999ce2dc15e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="b6ee276a-ab9a-4d86-8b3b-f990215c2c16" name="Decision5" isLeaf="false">
+            <elementDefinition Id="85044003-f3ba-4e6c-9374-44b9d55ca430" />
+            <flowNodeTargets>
+              <controlFlow Id="ef2bedb7-8221-4bca-991b-27529d83a98e" guard="lib File's Not &quot;C#&quot; Class lib" isLeaf="false">
+                <opaqueActionMoniker Id="f361ceb4-88b1-4b27-b384-a16a441cf260" LastKnownName="lib Type Check" />
+                <elementDefinition Id="a035901f-e641-44d1-8588-757d969a90ba" />
+              </controlFlow>
+              <controlFlow Id="774aae8c-1640-4871-aa19-badedfae1606" guard="lib File's &quot;C#&quot; Class lib" isLeaf="false">
+                <opaqueActionMoniker Id="4991400f-0870-4ec3-9cfd-5fd5c46f731c" LastKnownName="Find Class" />
+                <elementDefinition Id="1df46e01-3047-44fe-a224-751029e72e7c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="226cf5fd-b571-4e55-91e2-46196b71fed7" name="Assignable From Check" isLeaf="false">
+            <elementDefinition Id="baf7891f-0420-49ea-b765-7022eebb0caa" />
+            <flowNodeTargets>
+              <controlFlow Id="05071dea-ae98-4e5f-acc3-cff58c5d0d06" isLeaf="false">
+                <decisionNodeMoniker Id="49c850d9-7ddb-45f1-8524-4f27bd616a50" LastKnownName="Decision2" />
+                <elementDefinition Id="95292993-0946-44f3-939a-ce8c2cd9387a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="49c850d9-7ddb-45f1-8524-4f27bd616a50" name="Decision2" isLeaf="false">
+            <elementDefinition Id="94f200f8-88cc-41e6-be31-a7d7905fa566" />
+            <flowNodeTargets>
+              <controlFlow Id="425fe22a-f90e-4081-882f-62380bf83f5b" guard="Class's Not Assignable Form Module Interface" isLeaf="false">
+                <opaqueActionMoniker Id="4991400f-0870-4ec3-9cfd-5fd5c46f731c" LastKnownName="Find Class" />
+                <elementDefinition Id="162a30ed-4861-476c-874e-228e1787d0cb" />
+              </controlFlow>
+              <controlFlow Id="8fc7a2e1-d414-49a7-8c18-886bf83c25b9" guard="Class's Assignable Form Module Interface" isLeaf="false">
+                <opaqueActionMoniker Id="2fc5a085-88d1-41a1-bed6-c8feac5b2e95" LastKnownName="Add Module" />
+                <elementDefinition Id="0fdd4acb-e566-427b-bc96-a8e60a4a0233" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="061b4907-db26-45fe-9b3f-58ed5a008943" name="Decision3" isLeaf="false">
+            <elementDefinition Id="9223c0a0-08c9-4fc5-adbe-08704fa37783" />
+            <flowNodeTargets>
+              <controlFlow Id="a279324a-04fa-4ed2-8d41-f9c43af4f8f6" guard="Leave Class" isLeaf="false">
+                <opaqueActionMoniker Id="4991400f-0870-4ec3-9cfd-5fd5c46f731c" LastKnownName="Find Class" />
+                <elementDefinition Id="ad0acc6f-0e8f-4e50-98ee-ace5a6118a7f" />
+              </controlFlow>
+              <controlFlow Id="a989e3e2-3211-4510-8b8f-3090ba784727" isLeaf="false">
+                <decisionNodeMoniker Id="449ffaee-a7ee-42d3-9e5c-31772120b5fe" LastKnownName="Decision4" />
+                <elementDefinition Id="05b95b86-cc1b-48a0-a2e4-da19eb9825f1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="449ffaee-a7ee-42d3-9e5c-31772120b5fe" name="Decision4" isLeaf="false">
+            <elementDefinition Id="ce2f6cd3-98f1-4d6c-9dab-2990ecec0075" />
+            <flowNodeTargets>
+              <controlFlow Id="15b70d16-9e35-413c-971f-68edb90453f0" guard="Leave lib File" isLeaf="false">
+                <opaqueActionMoniker Id="085c6533-3d4b-408c-9cb5-2c1197a12ff2" LastKnownName="Get Dll File" />
+                <elementDefinition Id="27e343f9-015c-4fa8-87a8-ee4e3dd5b4b0" />
+              </controlFlow>
+              <controlFlow Id="f46a60fe-7790-49e4-9b13-24e8e59437e3" guard="Load Complete" isLeaf="false">
+                <activityFinalNodeMoniker Id="345470de-54ff-4acf-9546-8cce4d1ea67f" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="5b549334-280c-4549-871b-ab9e6543f364" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="35a89308-2ff6-4d96-a1bd-8030028217c3" name="ModelingProject1">
+    <elementDefinition Id="040d6ebe-7102-4bd5-91b1-438e60386e53" />
+  </package>
+</activityRootModel>

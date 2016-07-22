@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="f16eb049-94dd-4016-ae09-99ff61c2f66f" name="Dll Module Load AD" linkedPackageId="35a89308-2ff6-4d96-a1bd-8030028217c3" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="188670e3-dfbb-4364-ba4f-d37e72c95733">
-      <profileInstance Id="6b8e49cd-2916-49ed-86f2-35f8ce4ef2e6" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="10dc8c1e-d4a2-4a07-8e73-97326f494652">
-      <profileInstance Id="89b58112-bfcd-4fca-a361-4045521bf911" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="fc542510-0864-4e82-bb67-20b01dc1ba4e" name="Dll Module Load AD" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -40,13 +26,13 @@
           <decisionNode Id="04c97f6d-c20d-4fbf-9e16-74e1bed2147e" name="Decision1" isLeaf="false">
             <elementDefinition Id="99235555-fbee-4815-875f-b1d7f72c0fab" />
             <flowNodeTargets>
-              <controlFlow Id="652999fe-2f00-4116-81d9-35a6802c7c25" guard="Existed Module Folder" isLeaf="false">
-                <opaqueActionMoniker Id="085c6533-3d4b-408c-9cb5-2c1197a12ff2" LastKnownName="Get Dll File" />
-                <elementDefinition Id="354189c4-7712-446c-8be5-41e7c0c6e27e" />
-              </controlFlow>
               <controlFlow Id="0974b1e4-397f-4180-9b47-7b2947b907a0" guard="Folder's Not Existed" isLeaf="false">
                 <opaqueActionMoniker Id="2df16be8-8d1d-4c86-97a4-46719e72bd4f" LastKnownName="Make Dir" />
                 <elementDefinition Id="a060a35a-2900-4d77-83f3-7cb5e8469d83" />
+              </controlFlow>
+              <controlFlow Id="80543eb6-11f8-41d1-949f-d3d50396d18b" isLeaf="false">
+                <opaqueActionMoniker Id="085c6533-3d4b-408c-9cb5-2c1197a12ff2" LastKnownName="Load Dll File List" />
+                <elementDefinition Id="2d7e85af-b693-4bf1-94a5-6592410d9fcc" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
@@ -59,7 +45,7 @@
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <opaqueAction Id="085c6533-3d4b-408c-9cb5-2c1197a12ff2" name="Get Dll File" isLeaf="false">
+          <opaqueAction Id="085c6533-3d4b-408c-9cb5-2c1197a12ff2" name="Load Dll File List" isLeaf="false">
             <elementDefinition Id="fc991353-2e2d-49d2-bde5-6d548606fe22" />
             <flowNodeTargets>
               <controlFlow Id="255e3ad2-4519-45a5-8970-7616ed693151" isLeaf="false">
@@ -96,9 +82,9 @@
                 <activityFinalNodeMoniker Id="345470de-54ff-4acf-9546-8cce4d1ea67f" LastKnownName="ActivityFinal1" />
                 <elementDefinition Id="110976b5-576b-45a0-92ac-394aaed2b7a4" />
               </controlFlow>
-              <controlFlow Id="88db73b8-d327-485c-9b36-03c1facc2169" guard="Load Dll File" isLeaf="false">
-                <opaqueActionMoniker Id="f361ceb4-88b1-4b27-b384-a16a441cf260" LastKnownName="lib Type Check" />
-                <elementDefinition Id="58d128e0-b5aa-4ceb-975b-fa7e6aaa50f4" />
+              <controlFlow Id="4088e021-d9cc-4bee-928d-732fa2d5a430" guard="Load Dll File" isLeaf="false">
+                <opaqueActionMoniker Id="cbd4be54-f45d-41a3-8149-12bf9a97718c" LastKnownName="Get Lib" />
+                <elementDefinition Id="04c9c62f-bb1b-48ed-a8c0-5b06da43cb94" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
@@ -114,13 +100,13 @@
           <decisionNode Id="b6ee276a-ab9a-4d86-8b3b-f990215c2c16" name="Decision5" isLeaf="false">
             <elementDefinition Id="85044003-f3ba-4e6c-9374-44b9d55ca430" />
             <flowNodeTargets>
-              <controlFlow Id="ef2bedb7-8221-4bca-991b-27529d83a98e" guard="lib File's Not &quot;C#&quot; Class lib" isLeaf="false">
-                <opaqueActionMoniker Id="f361ceb4-88b1-4b27-b384-a16a441cf260" LastKnownName="lib Type Check" />
-                <elementDefinition Id="a035901f-e641-44d1-8588-757d969a90ba" />
-              </controlFlow>
               <controlFlow Id="774aae8c-1640-4871-aa19-badedfae1606" guard="lib File's &quot;C#&quot; Class lib" isLeaf="false">
                 <opaqueActionMoniker Id="4991400f-0870-4ec3-9cfd-5fd5c46f731c" LastKnownName="Find Class" />
                 <elementDefinition Id="1df46e01-3047-44fe-a224-751029e72e7c" />
+              </controlFlow>
+              <controlFlow Id="85b1d205-782d-4a86-a7a0-bcdbc254295d" guard="lib File's Not &quot;C#&quot; Class lib" isLeaf="false">
+                <decisionNodeMoniker Id="bd7959d8-b825-4174-ae25-f99ee2d81bba" LastKnownName="Decision6" />
+                <elementDefinition Id="55b4a177-0718-40cc-940d-ceb108ef7e33" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
@@ -162,13 +148,35 @@
           <decisionNode Id="449ffaee-a7ee-42d3-9e5c-31772120b5fe" name="Decision4" isLeaf="false">
             <elementDefinition Id="ce2f6cd3-98f1-4d6c-9dab-2990ecec0075" />
             <flowNodeTargets>
-              <controlFlow Id="15b70d16-9e35-413c-971f-68edb90453f0" guard="Leave lib File" isLeaf="false">
-                <opaqueActionMoniker Id="085c6533-3d4b-408c-9cb5-2c1197a12ff2" LastKnownName="Get Dll File" />
-                <elementDefinition Id="27e343f9-015c-4fa8-87a8-ee4e3dd5b4b0" />
-              </controlFlow>
               <controlFlow Id="f46a60fe-7790-49e4-9b13-24e8e59437e3" guard="Load Complete" isLeaf="false">
                 <activityFinalNodeMoniker Id="345470de-54ff-4acf-9546-8cce4d1ea67f" LastKnownName="ActivityFinal1" />
                 <elementDefinition Id="5b549334-280c-4549-871b-ab9e6543f364" />
+              </controlFlow>
+              <controlFlow Id="fadb74f5-5766-4264-af07-95eafb8f515c" guard="Leave Dll File" isLeaf="false">
+                <opaqueActionMoniker Id="cbd4be54-f45d-41a3-8149-12bf9a97718c" LastKnownName="Get Lib" />
+                <elementDefinition Id="e48a032d-5a5f-4e57-b0bc-fd7caaab5bf6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="cbd4be54-f45d-41a3-8149-12bf9a97718c" name="Get Lib" isLeaf="false">
+            <elementDefinition Id="867958cd-4800-4761-9a0a-f362c42805cb" />
+            <flowNodeTargets>
+              <controlFlow Id="5c17768b-2505-4efb-9b29-757076a51e83" isLeaf="false">
+                <opaqueActionMoniker Id="f361ceb4-88b1-4b27-b384-a16a441cf260" LastKnownName="lib Type Check" />
+                <elementDefinition Id="306a49c3-3d02-4f06-8a52-d44ebd3130fe" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="bd7959d8-b825-4174-ae25-f99ee2d81bba" name="Decision6" isLeaf="false">
+            <elementDefinition Id="553d7339-4b8f-49a4-93d1-cc0b478f08c6" />
+            <flowNodeTargets>
+              <controlFlow Id="d515694e-9cf7-473e-88b8-055a8d16592a" guard="Leave Dll File" isLeaf="false">
+                <opaqueActionMoniker Id="cbd4be54-f45d-41a3-8149-12bf9a97718c" LastKnownName="Get Lib" />
+                <elementDefinition Id="895c58b0-276c-47e8-8e42-4d37a5ef4af5" />
+              </controlFlow>
+              <controlFlow Id="8162db1a-ff0c-4302-9799-43ad784373b2" guard="Last File" isLeaf="false">
+                <activityFinalNodeMoniker Id="345470de-54ff-4acf-9546-8cce4d1ea67f" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="6fd35374-0ee0-4d0d-b064-ac3a3291141d" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
@@ -178,5 +186,19 @@
   </packagedElements>
   <package Id="35a89308-2ff6-4d96-a1bd-8030028217c3" name="ModelingProject1">
     <elementDefinition Id="040d6ebe-7102-4bd5-91b1-438e60386e53" />
+    <profileInstances>
+      <packageHasProfileInstances Id="188670e3-dfbb-4364-ba4f-d37e72c95733">
+        <profileInstance Id="6b8e49cd-2916-49ed-86f2-35f8ce4ef2e6" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="10dc8c1e-d4a2-4a07-8e73-97326f494652">
+        <profileInstance Id="89b58112-bfcd-4fca-a361-4045521bf911" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </activityRootModel>

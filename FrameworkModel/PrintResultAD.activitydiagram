@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="deb560ef-645b-4479-a36a-179ab3fd505c" name="Activity1" linkedPackageId="e93d7513-6704-4c72-a55d-d61914c7b39e" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="deb560ef-645b-4479-a36a-179ab3fd505c" name="Print Result AD" linkedPackageId="e93d7513-6704-4c72-a55d-d61914c7b39e" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <profileInstances>
     <packageHasProfileInstances Id="b81b84a8-6526-45c1-b163-455d2faad7ee">
       <profileInstance Id="bab83ffd-c9ab-42ee-9bc8-7f93f89637c5" name="StandardProfileL2">
@@ -16,7 +16,7 @@
   </profileInstances>
   <packagedElements>
     <activityRootModelHasActivity>
-      <activity Id="6c692c70-c854-4907-a331-fb55a426a240" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+      <activity Id="6c692c70-c854-4907-a331-fb55a426a240" name="Print Result AD" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
         <elementDefinition Id="1c47b90d-9c56-433b-a72a-21db29c7bc8a" />
         <nodes>
           <initialNode Id="72a194b4-f542-4938-ab93-1f1ecd7fde94" name="Initial1" isLeaf="false">
@@ -69,12 +69,6 @@
           </activityFinalNode>
           <opaqueAction Id="84df817b-7f88-45ac-85bc-572459f41f13" name="Change URL" isLeaf="false">
             <elementDefinition Id="2d50d582-5401-46b6-81e4-36766c5df904" />
-            <flowNodeTargets>
-              <controlFlow Id="cb451514-ccef-4184-ae3f-ee1f45b4135e" isLeaf="false">
-                <decisionNodeMoniker Id="05dc70bb-63e0-4e07-b8c8-690104de0b57" LastKnownName="Decision1" />
-                <elementDefinition Id="7a9ae39c-34f9-4a37-a367-b0e6e237247e" />
-              </controlFlow>
-            </flowNodeTargets>
             <pins>
               <opaqueActionHasInputValues>
                 <inputPin Id="274880e0-51a4-4cd9-a001-06634cc3d5a0" name="Address" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
@@ -86,6 +80,22 @@
                   </upperBound>
                 </inputPin>
               </opaqueActionHasInputValues>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="9792699a-66d2-4e44-a813-26d9430b5c7d" name="URL" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="3c29798c-32dc-49c6-9466-d18830ae9706" />
+                  <objectFlowTargets>
+                    <objectFlow Id="cb7a56b3-eda2-41d6-80b4-0cd928d797f0" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <decisionNodeMoniker Id="05dc70bb-63e0-4e07-b8c8-690104de0b57" LastKnownName="Decision1" />
+                      <elementDefinition Id="d3518f3b-fd89-4663-9d83-0c29036cd368" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="3e8f35f0-572e-4294-aa55-a18d7301b370" name="2147483647" value="2147483647">
+                      <elementDefinition Id="f7a3ecc4-d25f-4a06-9101-6c29cabe8617" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
             </pins>
           </opaqueAction>
           <callOperationAction Id="d857e7ff-864c-424c-9634-2f95f66049ad" name="Module Call" isLeaf="false">
@@ -111,21 +121,27 @@
           </callOperationAction>
           <opaqueAction Id="e63371bf-e250-4d11-af7b-892985a21ab3" name="Get Call Result List" isLeaf="false">
             <elementDefinition Id="dbcd68df-51e5-434f-b3f3-2b65744849fd" />
-            <flowNodeTargets>
-              <controlFlow Id="58c5dca8-3886-432f-be3a-9b2269e217be" isLeaf="false">
-                <decisionNodeMoniker Id="7547f157-ca74-47be-93c3-5fc56e62056d" LastKnownName="Decision3" />
-                <elementDefinition Id="c2bd4d87-86a7-4576-b980-4f0112ea095c" />
-              </controlFlow>
-            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="014b95eb-8dcc-462f-8812-fa31e2b62d71" name="Result List" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="3021b38f-6b84-4cf3-8333-5d8fb9153926" />
+                  <objectFlowTargets>
+                    <objectFlow Id="71738963-23f5-40d6-9372-aab023ac86c9" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <decisionNodeMoniker Id="7547f157-ca74-47be-93c3-5fc56e62056d" LastKnownName="Decision3" />
+                      <elementDefinition Id="e9e3bc66-69f6-41ea-9645-85a7ebd527d7" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="ad0e3f75-afa4-4063-b6e3-ecbe248b78cb" name="2147483647" value="2147483647">
+                      <elementDefinition Id="fe592d47-7cf1-4fbe-8ea2-84beaa3c9b60" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
           </opaqueAction>
           <opaqueAction Id="babfcd33-d284-4952-a618-eb95990af673" name="Get Call Result" isLeaf="false">
             <elementDefinition Id="34531cdf-cfb8-4088-aa88-a619191cde16" />
-            <objectFlowTargets>
-              <objectFlow Id="af118942-0994-4606-9d65-da0071504ea3" isLeaf="false" isMulticast="false" isMultireceive="false">
-                <inputPinMoniker Id="baf541c6-26b8-44f6-a1b2-ba5a187d8af0" LastKnownName="Result" />
-                <elementDefinition Id="0a44c791-16b4-43e7-83fe-3203d8c9c937" />
-              </objectFlow>
-            </objectFlowTargets>
             <pins>
               <opaqueActionHasInputValues>
                 <inputPin Id="cb11c204-e630-476e-b5c0-8bcac8b58b9f" name="Result List" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
@@ -137,6 +153,22 @@
                   </upperBound>
                 </inputPin>
               </opaqueActionHasInputValues>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="f58f1baa-aa92-4e3b-afd9-2d2682af3072" name="Result" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="d057c827-7b6a-4418-9279-064124c989cc" />
+                  <objectFlowTargets>
+                    <objectFlow Id="110eb4af-b9a9-43b6-b407-f19ca94eef6b" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <inputPinMoniker Id="baf541c6-26b8-44f6-a1b2-ba5a187d8af0" LastKnownName="Result" />
+                      <elementDefinition Id="1445494a-2054-4366-b3cf-782b8b7d9e31" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="04fe0c6a-b7f3-4c0f-851a-1cc4bbd3a70d" name="2147483647" value="2147483647">
+                      <elementDefinition Id="bf910752-900b-4a62-a735-054ad757fffd" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
             </pins>
           </opaqueAction>
           <decisionNode Id="7547f157-ca74-47be-93c3-5fc56e62056d" name="Decision3" isLeaf="false">
@@ -178,7 +210,7 @@
           <decisionNode Id="461e4c7c-f571-42ce-bdf4-59c0b6f3e3a7" name="Decision2" isLeaf="false">
             <elementDefinition Id="8a6fcf39-6639-4976-bb0e-0b88ccb5c453" />
             <flowNodeTargets>
-              <controlFlow Id="027348dc-ecc2-498e-b278-3d79ec4a644f" guard="All Print" isLeaf="false">
+              <controlFlow Id="027348dc-ecc2-498e-b278-3d79ec4a644f" guard="All Print Result" isLeaf="false">
                 <activityFinalNodeMoniker Id="72dd9e29-486f-4a50-81db-b5a8c87502e8" LastKnownName="ActivityFinal1" />
                 <elementDefinition Id="e82a438d-552c-4f87-a136-f04809aaeb21" />
               </controlFlow>

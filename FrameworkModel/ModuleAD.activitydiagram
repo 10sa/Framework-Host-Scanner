@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="f16eb049-94dd-4016-ae09-99ff61c2f66f" name="Dll Module Load AD" linkedPackageId="35a89308-2ff6-4d96-a1bd-8030028217c3" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm13="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="f16eb049-94dd-4016-ae09-99ff61c2f66f" name="Dll Module Load AD" linkedPackageId="35a89308-2ff6-4d96-a1bd-8030028217c3" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="fc542510-0864-4e82-bb67-20b01dc1ba4e" name="Dll Module Load AD" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -30,7 +30,7 @@
                 <opaqueActionMoniker Id="2df16be8-8d1d-4c86-97a4-46719e72bd4f" LastKnownName="Make Dir" />
                 <elementDefinition Id="a060a35a-2900-4d77-83f3-7cb5e8469d83" />
               </controlFlow>
-              <controlFlow Id="80543eb6-11f8-41d1-949f-d3d50396d18b" isLeaf="false">
+              <controlFlow Id="80543eb6-11f8-41d1-949f-d3d50396d18b" guard="Folder's Exsted" isLeaf="false">
                 <opaqueActionMoniker Id="085c6533-3d4b-408c-9cb5-2c1197a12ff2" LastKnownName="Load Dll File List" />
                 <elementDefinition Id="2d7e85af-b693-4bf1-94a5-6592410d9fcc" />
               </controlFlow>
@@ -47,33 +47,48 @@
           </opaqueAction>
           <opaqueAction Id="085c6533-3d4b-408c-9cb5-2c1197a12ff2" name="Load Dll File List" isLeaf="false">
             <elementDefinition Id="fc991353-2e2d-49d2-bde5-6d548606fe22" />
-            <flowNodeTargets>
-              <controlFlow Id="255e3ad2-4519-45a5-8970-7616ed693151" isLeaf="false">
-                <decisionNodeMoniker Id="fba68b89-1d2f-40e2-a615-1c7b52f97bec" LastKnownName="Decision21" />
-                <elementDefinition Id="1888638e-2f2b-4a7c-b7b7-20732fb54b41" />
-              </controlFlow>
-            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="ed59b056-9b43-4664-9ac1-688502d2015b" name="Dll File List" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="29b6d787-f37e-4225-a07a-ba5cdaf411f1" />
+                  <objectFlowTargets>
+                    <objectFlow Id="1dae9fe2-838f-4e07-8cde-882aae2ae698" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <decisionNodeMoniker Id="fba68b89-1d2f-40e2-a615-1c7b52f97bec" LastKnownName="Decision21" />
+                      <elementDefinition Id="de6bb8ee-6556-4d17-844b-e6caa3b86f77" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="81787ba1-8a1f-4d99-9fbe-b1b7e4bf02ae" name="2147483647" value="2147483647">
+                      <elementDefinition Id="9851faf6-7147-47e7-8a3c-2685f07f1ceb" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
           </opaqueAction>
           <activityFinalNode Id="345470de-54ff-4acf-9546-8cce4d1ea67f" name="ActivityFinal1" isLeaf="false">
             <elementDefinition Id="51a4e284-812e-4e35-b912-7e7d1d05f3e8" />
           </activityFinalNode>
           <opaqueAction Id="4991400f-0870-4ec3-9cfd-5fd5c46f731c" name="Find Class" isLeaf="false">
             <elementDefinition Id="c1dfed94-0016-404e-8efd-186223603a27" />
-            <flowNodeTargets>
-              <controlFlow Id="1791fece-7253-4b62-807c-9168a6170014" isLeaf="false">
-                <opaqueActionMoniker Id="226cf5fd-b571-4e55-91e2-46196b71fed7" LastKnownName="Assignable From Check" />
-                <elementDefinition Id="c9592196-a278-4681-bcc9-94607e76d117" />
-              </controlFlow>
-            </flowNodeTargets>
-          </opaqueAction>
-          <opaqueAction Id="2fc5a085-88d1-41a1-bed6-c8feac5b2e95" name="Add Module" isLeaf="false">
-            <elementDefinition Id="b862d568-4afc-4e92-afe7-be3aed858af9" />
-            <flowNodeTargets>
-              <controlFlow Id="8757243c-41b9-4e37-9af6-6932b7bf183f" isLeaf="false">
-                <decisionNodeMoniker Id="061b4907-db26-45fe-9b3f-58ed5a008943" LastKnownName="Decision3" />
-                <elementDefinition Id="d5960b43-f83b-494d-87f2-b3cffdcaec22" />
-              </controlFlow>
-            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="417fefd5-841a-4990-b32d-14c550cb7430" name="Class Data" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="bd71d3b0-366b-4549-9d16-b02e2d6a9419" />
+                  <objectFlowTargets>
+                    <objectFlow Id="452687db-00c1-4b8f-a3be-5147d3b03220" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <inputPinMoniker Id="5c919975-a2bb-48cf-85d1-d2b38363f09c" LastKnownName="Class Data" />
+                      <elementDefinition Id="1605be2f-d718-4ccd-a4bd-04844c93c334" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="944be293-7352-44b9-a2b1-8f1b06c516ac" name="2147483647" value="2147483647">
+                      <elementDefinition Id="27c8d2d4-3301-458d-bdfe-ebda667ca18e" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
           </opaqueAction>
           <decisionNode Id="fba68b89-1d2f-40e2-a615-1c7b52f97bec" name="Decision21" isLeaf="false">
             <elementDefinition Id="eb657b8a-7853-4ccf-b03c-dda072de7777" />
@@ -82,11 +97,13 @@
                 <activityFinalNodeMoniker Id="345470de-54ff-4acf-9546-8cce4d1ea67f" LastKnownName="ActivityFinal1" />
                 <elementDefinition Id="110976b5-576b-45a0-92ac-394aaed2b7a4" />
               </controlFlow>
-              <controlFlow Id="4088e021-d9cc-4bee-928d-732fa2d5a430" guard="Load Dll File" isLeaf="false">
-                <opaqueActionMoniker Id="cbd4be54-f45d-41a3-8149-12bf9a97718c" LastKnownName="Get Lib" />
-                <elementDefinition Id="04c9c62f-bb1b-48ed-a8c0-5b06da43cb94" />
-              </controlFlow>
             </flowNodeTargets>
+            <objectFlowTargets>
+              <objectFlow Id="b2255dd6-4a75-416a-b1fa-e9a63de5ec38" guard="Load Dll File" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <inputPinMoniker Id="6ab270a9-bb8e-4de4-904e-3726383f804b" LastKnownName="Lib Data" />
+                <elementDefinition Id="903970e5-0d88-4457-a8a8-f3b65f27bd11" />
+              </objectFlow>
+            </objectFlowTargets>
           </decisionNode>
           <opaqueAction Id="f361ceb4-88b1-4b27-b384-a16a441cf260" name="lib Type Check" isLeaf="false">
             <elementDefinition Id="43473810-673d-4814-b017-26a9377627ac" />
@@ -96,6 +113,18 @@
                 <elementDefinition Id="25c51192-d5a9-4064-9339-a999ce2dc15e" />
               </controlFlow>
             </flowNodeTargets>
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin Id="72c28942-f750-4474-af18-ea575eaa3ef2" name="lib Data" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="93ce72d1-f1fe-4747-a187-56fd20cc52c2" />
+                  <upperBound>
+                    <literalInteger Id="b30149cd-18a3-405a-aca4-2b745ecf0970" name="2147483647" value="2147483647">
+                      <elementDefinition Id="c97fe4e9-8257-432f-8b11-770a81ee58b0" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+            </pins>
           </opaqueAction>
           <decisionNode Id="b6ee276a-ab9a-4d86-8b3b-f990215c2c16" name="Decision5" isLeaf="false">
             <elementDefinition Id="85044003-f3ba-4e6c-9374-44b9d55ca430" />
@@ -112,12 +141,34 @@
           </decisionNode>
           <opaqueAction Id="226cf5fd-b571-4e55-91e2-46196b71fed7" name="Assignable From Check" isLeaf="false">
             <elementDefinition Id="baf7891f-0420-49ea-b765-7022eebb0caa" />
-            <flowNodeTargets>
-              <controlFlow Id="05071dea-ae98-4e5f-acc3-cff58c5d0d06" isLeaf="false">
-                <decisionNodeMoniker Id="49c850d9-7ddb-45f1-8524-4f27bd616a50" LastKnownName="Decision2" />
-                <elementDefinition Id="95292993-0946-44f3-939a-ce8c2cd9387a" />
-              </controlFlow>
-            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin Id="5c919975-a2bb-48cf-85d1-d2b38363f09c" name="Class Data" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="df62932f-0bb6-4761-b038-e1db78c1411f" />
+                  <upperBound>
+                    <literalInteger Id="bd9d61d3-198e-4d5e-a744-651090743b85" name="2147483647" value="2147483647">
+                      <elementDefinition Id="4b022177-bf66-45f5-a404-adba0bb28d05" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="3073f8d2-8e92-4bf3-8a19-233c7170d390" name="Class Data" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="0d2fba26-cab9-419c-bd7e-81cca15acc69" />
+                  <objectFlowTargets>
+                    <objectFlow Id="2a37c4b1-0043-4943-a825-40aa95c57c46" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <decisionNodeMoniker Id="49c850d9-7ddb-45f1-8524-4f27bd616a50" LastKnownName="Decision2" />
+                      <elementDefinition Id="525c4140-a849-4ae0-a1e3-9e2c16538916" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="2bc74874-261e-4ac8-af62-bdcbb692a5ac" name="2147483647" value="2147483647">
+                      <elementDefinition Id="aa6549e4-6d25-4aac-87ea-0791109e3296" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
           </opaqueAction>
           <decisionNode Id="49c850d9-7ddb-45f1-8524-4f27bd616a50" name="Decision2" isLeaf="false">
             <elementDefinition Id="94f200f8-88cc-41e6-be31-a7d7905fa566" />
@@ -126,11 +177,13 @@
                 <opaqueActionMoniker Id="4991400f-0870-4ec3-9cfd-5fd5c46f731c" LastKnownName="Find Class" />
                 <elementDefinition Id="162a30ed-4861-476c-874e-228e1787d0cb" />
               </controlFlow>
-              <controlFlow Id="8fc7a2e1-d414-49a7-8c18-886bf83c25b9" guard="Class's Assignable Form Module Interface" isLeaf="false">
-                <opaqueActionMoniker Id="2fc5a085-88d1-41a1-bed6-c8feac5b2e95" LastKnownName="Add Module" />
-                <elementDefinition Id="0fdd4acb-e566-427b-bc96-a8e60a4a0233" />
-              </controlFlow>
             </flowNodeTargets>
+            <objectFlowTargets>
+              <objectFlow Id="e2071cee-4e64-403d-bddc-aead3c5545ee" guard="Class's Assignable Form Module Interface" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <inputPinMoniker Id="62577d48-d8d9-418a-973b-4a704aedf6d6" LastKnownName="Class Data" />
+                <elementDefinition Id="1a89d6a9-4ecc-4d5a-a321-7f85a7f50f4b" />
+              </objectFlow>
+            </objectFlowTargets>
           </decisionNode>
           <decisionNode Id="061b4907-db26-45fe-9b3f-58ed5a008943" name="Decision3" isLeaf="false">
             <elementDefinition Id="9223c0a0-08c9-4fc5-adbe-08704fa37783" />
@@ -160,12 +213,34 @@
           </decisionNode>
           <opaqueAction Id="cbd4be54-f45d-41a3-8149-12bf9a97718c" name="Get Lib" isLeaf="false">
             <elementDefinition Id="867958cd-4800-4761-9a0a-f362c42805cb" />
-            <flowNodeTargets>
-              <controlFlow Id="5c17768b-2505-4efb-9b29-757076a51e83" isLeaf="false">
-                <opaqueActionMoniker Id="f361ceb4-88b1-4b27-b384-a16a441cf260" LastKnownName="lib Type Check" />
-                <elementDefinition Id="306a49c3-3d02-4f06-8a52-d44ebd3130fe" />
-              </controlFlow>
-            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="63f9cbc4-b429-4b84-8e73-96ee94259636" name="lib Data" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="cffc2186-a45e-4f9e-aa9b-b6ce0955c28c" />
+                  <objectFlowTargets>
+                    <objectFlow Id="26989ea6-c22e-4c74-a970-1b69234040bf" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <inputPinMoniker Id="72c28942-f750-4474-af18-ea575eaa3ef2" LastKnownName="lib Data" />
+                      <elementDefinition Id="b86eca35-3778-4a5d-b1d8-4c8fc302bf81" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="dccdcc65-90b8-40c9-bd53-c229778b5405" name="2147483647" value="2147483647">
+                      <elementDefinition Id="5cef29f8-3955-4aca-8244-5d11eab8624a" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+              <opaqueActionHasInputValues>
+                <inputPin Id="6ab270a9-bb8e-4de4-904e-3726383f804b" name="Lib Data" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="8f88fcee-3d73-43b8-951e-fbdbaa5d204e" />
+                  <upperBound>
+                    <literalInteger Id="f9a805ff-bd2f-415a-876f-edf36fb51369" name="2147483647" value="2147483647">
+                      <elementDefinition Id="6fdf7684-3202-40b1-b7c2-955f91b41abd" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+            </pins>
           </opaqueAction>
           <decisionNode Id="bd7959d8-b825-4174-ae25-f99ee2d81bba" name="Decision6" isLeaf="false">
             <elementDefinition Id="553d7339-4b8f-49a4-93d1-cc0b478f08c6" />
@@ -180,6 +255,27 @@
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
+          <callOperationAction Id="742f5811-28e7-46c8-a118-8c64228d5f3e" name="Add Module" isLeaf="false">
+            <elementDefinition Id="73eeb0d9-ecf8-405b-8c5b-f50735139122" />
+            <flowNodeTargets>
+              <controlFlow Id="952f1f54-b3ba-42ac-a4f3-f49019c2bd98" isLeaf="false">
+                <decisionNodeMoniker Id="061b4907-db26-45fe-9b3f-58ed5a008943" LastKnownName="Decision3" />
+                <elementDefinition Id="924dce2b-b549-4309-815d-5d624e51efaa" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <callOperationActionHasTarget>
+                <inputPin Id="62577d48-d8d9-418a-973b-4a704aedf6d6" name="Class Data" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="eaa9fba4-f0a3-4dd8-81d9-87cae767086f" />
+                  <upperBound>
+                    <literalInteger Id="c1f8655b-3471-47bf-b906-873f1eddede4" name="2147483647" value="2147483647">
+                      <elementDefinition Id="0d4ce328-71da-4a2b-8825-b5d177f02465" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </callOperationActionHasTarget>
+            </pins>
+          </callOperationAction>
         </nodes>
       </activity>
     </activityRootModelHasActivity>

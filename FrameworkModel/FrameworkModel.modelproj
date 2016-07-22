@@ -29,19 +29,12 @@
       <SubType>Content</SubType>
       <DependentUpon>PrintResultAD.activitydiagram</DependentUpon>
     </Content>
-    <Content Include="UserCallStackUD.usecasediagram">
+    <Content Include="ModuleAD.activitydiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="UserCallStackUD.usecasediagram.layout">
+    <Content Include="ModuleAD.activitydiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>UserCallStackUD.usecasediagram</DependentUpon>
-    </Content>
-    <Content Include="ModuleLoadAD.activitydiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ModuleLoadAD.activitydiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>ModuleLoadAD.activitydiagram</DependentUpon>
+      <DependentUpon>ModuleAD.activitydiagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ClassMap.dgml">

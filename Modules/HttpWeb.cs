@@ -44,6 +44,7 @@ namespace Modules.HttpWeb
         /// <returns>보안 취약점이 있을시 true, 없을시 false를 반환합니다.</returns>
         private CallResult ShellShockCheck()
         {
+            
             // 깊이 탐색 알고리즘 구현하기.
 			// HTML 파싱이 필요함.
             RequestEx(true, true, true, GetRequestHeaders());
@@ -105,38 +106,58 @@ namespace Modules.HttpWeb
 			HtmlDocument Parsing = new HtmlDocument();
 			Parsing.LoadHtml(ResponseEntity);
 
-			// 깊이 탐색 알고리즘 필요
-			//foreach(var Tag in Parsing.DocumentNode.SelectNodes("//a[@href]"))
-			//{
-				// 리다이렉트 링크가 원래 서버 주소와 일치하는지 검사. (만약 검사되지 않을시 무한반복할수 있음.)
-				//string temp = Tag.GetAttributeValue("href", string.Empty);
-				//if(temp.Contains(ServerAddress.AbsoluteUri))
-				//{
-					//Links.Add(temp);
-				//}
-
-				//foreach(var Link in Links)
-				//{
-					//Uri ParsingUri = new Uri(Link);
-
-					//if(ParsingUri.AbsolutePath.Contains("phpinfo.php"))
-					//{
-						if(Parsing.DocumentNode.SelectSingleNode("//title").InnerText.Contains("phpinfo()"))
-						{
-							IVulnerableInfo = string.Format("Find a PHP Info File : {0}", ServerAddress.AbsolutePath);
-							return true;
-						}
-						else
+			foreach(var Tag in Parsing.DocumentNode.SelectNodes("//a[@href]"))
 			{
-				string.Format("Find a PHP Info File : {0}", ServerAddress.AbsolutePath);
-				return true;
-			}
-					//}
+				string temp = Tag.GetAttributeValue("href", string.Empty);
 
-				//}
-			//}
+                // 컨피그 요소 고려.
+				if(temp.Contains(ServerAddress.AbsoluteUri))
+				{
+                    try
+                    {
+                        Uri Temp = new Uri(temp);
+                        Links.Add(temp);
+                    }
+                    catch(UriFormatException)
+                    {
+                        // 이 예외 처리는 당연히 일어날수 있는 예외임, 무시 처리.
+                    }
+                    catch(Exception)
+                    {
+                        throw;
+                    }
+				}
+			}
+
+
+
+            foreach (var Link in Links)
+            {
+                Uri ParsingUri = new Uri(Link);
+
+                if (ParsingUri.AbsolutePath.Contains("phpinfo.php"))
+                {
+                    if (Parsing.DocumentNode.SelectSingleNode("//title").InnerText.Contains("phpinfo()"))
+                    {
+                        IVulnerableInfo = string.Format("Find a PHP Info File : {0}", ServerAddress.AbsolutePath);
+                        return true;
+                    }
+                    else
+                    {
+                        //string.Format("Find a PHP Info File : {0}", ServerAddress.AbsolutePath);
+                        //return true;
+                    }
+                }
+            }
+
+            return false;
 		}
-	} 
+    } 
+
+
+
+    
+
 
 	/// <summary>
 	/// 웹 서버가 허용한 메소드를 확인하는 모듈 클래스 입니다.

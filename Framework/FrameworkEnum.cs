@@ -62,4 +62,20 @@ namespace Framework.Enum
         /// </summary>
         Error
     };
+
+    /// <summary>
+    /// 모듈의 요청 방식에 따른 옵션입니다.
+    /// </summary>
+    public enum IVulnerableOptions
+    {
+        /// <summary>
+        /// 단순 서버의 주소만을 요구함을 나타냅니다.
+        /// </summary>
+        ServerOnly,
+
+        /// <summary>
+        /// 서버의 모든 페이지를 요구함을 나타냅니다.
+        /// </summary>
+        AllPage
+    };
 }

@@ -365,12 +365,16 @@
             모듈을 제어합니다.
             </summary>
         </member>
+        <member name="P:Framework.ScannerFramework.Info">
+            <summary>
+            VulnerablePointCheck 메소드 호출 후 모듈의 보고서가 저장되는 리스트입니다.
+            </summary>
+        </member>
         <member name="M:Framework.ScannerFramework.VulnerablePointCheck(System.String)">
             <summary>
             목표 서버에 대한 취약점을 점검합니다.
             </summary>
             <param name="Address">목표 서버의 주소입니다.</param>
-            <returns>호출 결과를 저장한 리스트를 반환합니다.</returns>
         </member>
     </members>
 </doc>

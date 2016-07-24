@@ -27,8 +27,13 @@ namespace Form
 		{
 			foreach(var Data in Scanner.ModuleControll.Data)
 			{
-				string[] Row = new string[] { Data.Name, Data.Module.ModuleVer, Data.Status.ToString() };
-				ModuleStatusGrid.Rows.Add(Row);
+                string[] Row;
+                if(Data.Status != Framework.Enum.ModuleStatus.Error)
+				    Row = new string[] { Data.Name, Data.Module.ModuleVer, Data.Status.ToString(), string.Empty, "호출" };
+                else
+                    Row = new string[] { Data.Name, Data.Module.ModuleVer, Data.Status.ToString(), string.Empty, "에러" };
+
+                ModuleStatusGrid.Rows.Add(Row);
 			}
 		}
 
@@ -39,13 +44,14 @@ namespace Form
 
 		private void MainForm_Load (object sender, EventArgs e)
 		{
-			ModuleStatusGrid.ColumnCount = 4;
+			ModuleStatusGrid.ColumnCount = 5;
 			ModuleStatusGrid.ColumnHeadersVisible = true;
 
 			ModuleStatusGrid.Columns[0].Name = "모듈 이름";
 			ModuleStatusGrid.Columns[1].Name = "모듈 버전";
 			ModuleStatusGrid.Columns[2].Name = "모듈 상태";
 			ModuleStatusGrid.Columns[3].Name = "모듈 정보";
+            ModuleStatusGrid.Columns[4].Name = "호출 여부";
 
 			StartCheck_button.Enabled = false;
 			ReloadButton.Enabled = false;
@@ -73,7 +79,7 @@ namespace Form
 				return;
 			}
 
-            List<ModuleCallResult> Result = new List<ModuleCallResult>();
+            List<ModuleCallResult> Result;
 
             StartCheck_button.Enabled = false;
 			ReloadButton.Enabled = false;
@@ -81,15 +87,23 @@ namespace Form
 			BackgroundWorker AsyncWorker = new BackgroundWorker();
 			AsyncWorker.DoWork += (a, b) =>
 			{
-                Result = Scanner.VulnerablePointCheck(ServerAddress_textbox.Text);
+                Scanner.VulnerablePointCheck(ServerAddress_textbox.Text);
+                
 			};
 			AsyncWorker.RunWorkerCompleted += (a, b) =>
 			{
+                Result = Scanner.Info;
                 for (int i=0; i<Result.Count; i++)
                 {
-                    if((Result[i].Info != string.Empty) && (Result[i].Info != null))
-                        ModuleStatusGrid[3, i].Value = "(클릭)";
-                    MessageBox.Show(Result[i].Info);
+                    if ((Result[i].Info != string.Empty) && (Result[i].Info != null))
+                    {
+                        if (Scanner.ModuleControll.Data[i].Status == Framework.Enum.ModuleStatus.Error)
+                            ModuleStatusGrid[3, i].Value = "<에러>";
+                        else
+                            ModuleStatusGrid[3, i].Value = "(클릭)";
+                    }
+                    else
+                        ModuleStatusGrid[3, i].Value = "|정보 없음|";
                 }
                     
 
@@ -122,7 +136,6 @@ namespace Form
 
 		private void ModuleStatusGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			//MessageBox.Show(e.ColumnIndex.ToString());
 			if(e.ColumnIndex == 3)
 			{
 				InfoForm Info = new InfoForm();
@@ -134,10 +147,10 @@ namespace Form
 
 		private string GetModuleData(int Row)
 		{
-            if ((Scanner.ModuleControll.Data[Row].Module.IVulnerableInfo == string.Empty) || (Scanner.ModuleControll.Data[Row].Module.IVulnerableInfo == null))
+            if ((Scanner.Info[Row].Info == string.Empty) || (Scanner.Info[Row].Info == null))
                 return string.Empty;
             else
-                return Scanner.ModuleControll.Data[Row].Module.IVulnerableInfo + Environment.NewLine;
+                return Scanner.Info[Row].Info + Environment.NewLine;
         }
 	}
 }

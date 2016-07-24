@@ -24,15 +24,19 @@ namespace Framework
 		/// </summary>
 		public ModuleController ModuleControll = new ModuleController(true);
 
-		/// <summary>
-		/// 목표 서버에 대한 취약점을 점검합니다.
-		/// </summary>
-		/// <param name="Address">목표 서버의 주소입니다.</param>
-		/// <returns>호출 결과를 저장한 리스트를 반환합니다.</returns>
-		public List<ModuleCallResult> VulnerablePointCheck(string Address)
-		{
-			List<ModuleCallResult> Info = new List<ModuleCallResult>();
 
+        /// <summary>
+        /// VulnerablePointCheck 메소드 호출 후 모듈의 보고서가 저장되는 리스트입니다.
+        /// </summary>
+        public List<ModuleCallResult> Info { get; private set; } = new List<ModuleCallResult>();
+
+        /// <summary>
+        /// 목표 서버에 대한 취약점을 점검합니다.
+        /// </summary>
+        /// <param name="Address">목표 서버의 주소입니다.</param>
+        public void VulnerablePointCheck(string Address)
+		{
+            Info.Clear();
 			for (int i = 0; i <= ModuleControll.Lenght-1; i++)
 			{
 				// 호출구조 개선할것. (복잡함)
@@ -42,7 +46,10 @@ namespace Framework
                     if (ModuleControll.Data[i].Status != ModuleStatus.Error || ModuleControll.Data[i].Status == ModuleStatus.DontCall)
                         Info.Add(new ModuleCallResult(ModuleControll.Data[i], ModuleControll.Data[i].Module.IVulnerableCheck(Address), ModuleControll.Data[i].Module.IVulnerableInfo));
                     else
+                    {
                         Info.Add(new ModuleCallResult(ModuleControll.Data[i], CallResult.Exception, "모듈에 에러가 있습니다."));
+                    }
+                        
                 }
 				catch (Exception)
 				{
@@ -51,7 +58,7 @@ namespace Framework
 				}
 			}
 
-			return Info;
+            return;
 		}
 
 	}

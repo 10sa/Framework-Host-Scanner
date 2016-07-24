@@ -59,6 +59,21 @@
             모듈에 에러가 있음을 나타냅니다.
             </summary>
         </member>
+        <member name="T:Framework.Enum.IVulnerableOptions">
+            <summary>
+            모듈의 요청 방식에 따른 옵션입니다.
+            </summary>
+        </member>
+        <member name="F:Framework.Enum.IVulnerableOptions.ServerOnly">
+            <summary>
+            단순 서버의 주소만을 요구함을 나타냅니다.
+            </summary>
+        </member>
+        <member name="F:Framework.Enum.IVulnerableOptions.AllPage">
+            <summary>
+            서버의 모든 페이지를 요구함을 나타냅니다.
+            </summary>
+        </member>
         <member name="T:Framework.Module.ModuleDataController">
             <summary>
             모듈의 데이터를 저장하고 관리하는 클래스입니다.

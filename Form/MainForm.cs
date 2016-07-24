@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MetroFramework.Fonts;
 using MetroFramework.Forms;
 using Framework;
+using Framework.Struct;
 using System.IO;
 
 namespace Form
@@ -66,25 +67,37 @@ namespace Form
 
 		private void StartCheck_button_Click (object sender, EventArgs e)
 		{
-			if(ServerAddress_textbox.Text == string.Empty)
+            if (ServerAddress_textbox.Text == string.Empty)
 			{
 				MessageBox.Show("주소는 공란일수 없습니다.");
 				return;
 			}
-				
-			StartCheck_button.Enabled = false;
+
+            List<ModuleCallResult> Result = new List<ModuleCallResult>();
+
+            StartCheck_button.Enabled = false;
 			ReloadButton.Enabled = false;
 
 			BackgroundWorker AsyncWorker = new BackgroundWorker();
 			AsyncWorker.DoWork += (a, b) =>
 			{
-				
+                Result = Scanner.VulnerablePointCheck(ServerAddress_textbox.Text);
 			};
 			AsyncWorker.RunWorkerCompleted += (a, b) =>
 			{
+                for (int i=0; i<Result.Count; i++)
+                {
+                    if((Result[i].Info != string.Empty) && (Result[i].Info != null))
+                        ModuleStatusGrid[3, i].Value = "(클릭)";
+                    MessageBox.Show(Result[i].Info);
+                }
+                    
 
+                StartCheck_button.Enabled = true;
+                ReloadButton.Enabled = true;
 			};
 
+            AsyncWorker.RunWorkerAsync();
         }
 
 		private void ReloadButton_Click(object sender, EventArgs e)
@@ -121,7 +134,10 @@ namespace Form
 
 		private string GetModuleData(int Row)
 		{
-			return Scanner.ModuleControll.Data[Row].Module.IVulnerableInfo + Environment.NewLine;
-		}
+            if ((Scanner.ModuleControll.Data[Row].Module.IVulnerableInfo == string.Empty) || (Scanner.ModuleControll.Data[Row].Module.IVulnerableInfo == null))
+                return string.Empty;
+            else
+                return Scanner.ModuleControll.Data[Row].Module.IVulnerableInfo + Environment.NewLine;
+        }
 	}
 }

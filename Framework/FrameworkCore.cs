@@ -38,7 +38,11 @@ namespace Framework
 				// 호출구조 개선할것. (복잡함)
 				try
 				{
-					Info.Add(new ModuleCallResult(ModuleControll.Data[i], ModuleControll.Data[i].Module.IVulnerableCheck(Address), ModuleControll.Data[i].Module.IVulnerableInfo));
+                    // DontCall이 구현되지 않은 관계로 생략.
+                    if (ModuleControll.Data[i].Status != ModuleStatus.Error || ModuleControll.Data[i].Status == ModuleStatus.DontCall)
+                        Info.Add(new ModuleCallResult(ModuleControll.Data[i], ModuleControll.Data[i].Module.IVulnerableCheck(Address), ModuleControll.Data[i].Module.IVulnerableInfo));
+                    else
+                        Info.Add(new ModuleCallResult(ModuleControll.Data[i], CallResult.Exception, "모듈에 에러가 있습니다."));
                 }
 				catch (Exception)
 				{

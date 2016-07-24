@@ -102,6 +102,13 @@
             <param name="Name">모듈의 이름입니다.</param>
             <param name="Flag">모듈의 상태입니다.</param>
         </member>
+        <member name="M:Framework.Module.ModuleDataController.SetModuleStatus(System.Int32,Framework.Enum.ModuleStatus)">
+            <summary>
+            모듈의 상태를 설정합니다.
+            </summary>
+            <param name="index">상태를 설정할 모듈의 인덱스입니다.</param>
+            <param name="Status">설정할 상태입니다.</param>
+        </member>
         <member name="T:Framework.Module.ModuleController">
             <summary>
             모듈의 로드 및 관리를 담당하는 모듈 컨트롤러 클래스입니다.

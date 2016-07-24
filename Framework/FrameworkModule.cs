@@ -47,6 +47,19 @@ namespace Framework.Module
 		{
             Data.Add(new ModuleData(Module, Name, Flag));
 		}
+
+        /// <summary>
+        /// 모듈의 상태를 설정합니다.
+        /// </summary>
+        /// <param name="index">상태를 설정할 모듈의 인덱스입니다.</param>
+        /// <param name="Status">설정할 상태입니다.</param>
+        public void SetModuleStatus(int index, ModuleStatus Status)
+        {
+            Data.Insert(index, new ModuleData(Data[index].Module, Data[index].Name, Status));
+            Data.RemoveAt(index + 1);
+
+            return;
+        }
 	}
 
 

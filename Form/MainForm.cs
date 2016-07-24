@@ -143,6 +143,21 @@ namespace Form
 				Info.Text = Scanner.ModuleControll.Data[e.RowIndex].Name;
 				Info.Show();
 			}
+
+            if(e.ColumnIndex == 4)
+            {
+                if (ModuleStatusGrid[4, e.RowIndex].Value.Equals("호출"))
+                {
+                    ModuleStatusGrid[4, e.RowIndex].Value = "비호출";
+                    Scanner.ModuleControll.SetModuleStatus(e.RowIndex, Framework.Enum.ModuleStatus.DontCall);
+                }
+                else
+                {
+                    ModuleStatusGrid[4, e.RowIndex].Value = ("호출");
+                    Scanner.ModuleControll.SetModuleStatus(e.RowIndex, Framework.Enum.ModuleStatus.Call);
+                }
+
+            }
 		}
 
 		private string GetModuleData(int Row)

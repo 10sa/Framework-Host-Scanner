@@ -85,7 +85,6 @@
             this.Controls.Add(this.ServerAddressTextbox_Desc_Label);
             this.Controls.Add(this.StartCheck_button);
             this.Controls.Add(this.ServerAddress_textbox);
-            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
@@ -103,6 +102,6 @@
 		private MetroFramework.Controls.MetroLabel ServerAddressTextbox_Desc_Label;
 		private MetroFramework.Controls.MetroButton ReloadButton;
 		private System.Windows.Forms.DataGridView ModuleStatusGrid;
-	}
+    }
 }
 

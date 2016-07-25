@@ -12,7 +12,7 @@ namespace Modules.Host.TCP
 	/// <summary>
 	/// 전달받은 주소의 DNS 정보를 반환하는 모듈 클래스 입니다.
 	/// </summary>
-    public class DNSAnalysor : IVulnerableModuleBase
+    /* public class DNSAnalysor : IVulnerableModuleBase
     {
 		public string IVulnerableInfo { get; private set; }
 		public string ModuleName { get { return "DNSAnalysor"; } }
@@ -32,5 +32,5 @@ namespace Modules.Host.TCP
 
 			return CallResult.Status;
 		}
-	}
+	} */
 }

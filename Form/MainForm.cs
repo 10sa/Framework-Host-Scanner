@@ -44,7 +44,10 @@ namespace Form
 
 		private void MainForm_Load (object sender, EventArgs e)
 		{
-			ModuleStatusGrid.ColumnCount = 5;
+            StartCheck_button.Enabled = false;
+            ReloadButton.Enabled = false;
+
+            ModuleStatusGrid.ColumnCount = 5;
 			ModuleStatusGrid.ColumnHeadersVisible = true;
 
 			ModuleStatusGrid.Columns[0].Name = "모듈 이름";
@@ -53,9 +56,7 @@ namespace Form
 			ModuleStatusGrid.Columns[3].Name = "모듈 정보";
             ModuleStatusGrid.Columns[4].Name = "호출 여부";
 
-			StartCheck_button.Enabled = false;
-			ReloadButton.Enabled = false;
-			BackgroundWorker FormLoadWorker = new BackgroundWorker();
+            BackgroundWorker FormLoadWorker = new BackgroundWorker();
 			FormLoadWorker.DoWork += (a, b) =>
 			{
 				Scanner = new ScannerFramework();
@@ -66,7 +67,7 @@ namespace Form
 			{
 				StartCheck_button.Enabled = true;
 				ReloadButton.Enabled = true;
-			};
+            };
 
 			FormLoadWorker.RunWorkerAsync();
 		}
@@ -75,7 +76,7 @@ namespace Form
 		{
             if (ServerAddress_textbox.Text == string.Empty)
 			{
-				MessageBox.Show("주소는 공란일수 없습니다.");
+				MessageBox.Show("주소를 입력해 주세요.");
 				return;
 			}
 
@@ -95,8 +96,6 @@ namespace Form
                 Result = Scanner.Info;
                 for (int i=0; i<Result.Count; i++)
                 {
-                    // MessageBox.Show(((Result[i].Info != string.Empty) && (Result[i].Info != null)).ToString());
-                    // MessageBox.Show(Result[i].Info);
                     if ((Result[i].Info != string.Empty) && (Result[i].Info != null))
                     {
                         ModuleStatusGrid[3, i].Value = "(클릭)";
@@ -110,7 +109,7 @@ namespace Form
 
                 StartCheck_button.Enabled = true;
                 ReloadButton.Enabled = true;
-			};
+            };
 
             AsyncWorker.RunWorkerAsync();
         }
@@ -173,5 +172,7 @@ namespace Form
             else
                 return Scanner.Info[Row].Info + Environment.NewLine;
         }
+
+
 	}
 }

@@ -39,10 +39,8 @@ namespace Framework
             Info.Clear();
 			for (int i = 0; i <= ModuleControll.Lenght-1; i++)
 			{
-				// 호출구조 개선할것. (복잡함)
 				try
 				{
-                    // DontCall이 구현되지 않은 관계로 생략.
                     if ((ModuleControll.Data[i].Status == ModuleStatus.Error) || (ModuleControll.Data[i].Status == ModuleStatus.DontCall))
                         Info.Add(new ModuleCallResult(ModuleControll.Data[i], CallResult.Exception, string.Empty));
                     else

@@ -6,7 +6,3 @@
 
 # Modules 폴더
  프레임워크에 추가되는 모듈입니다.
-
-# 함수 레퍼런스
- ScannerFramework/Documentation1/Help/Scanner Framework Ref Document.chm
- 참고.

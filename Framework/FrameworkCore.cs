@@ -43,11 +43,11 @@ namespace Framework
 				try
 				{
                     // DontCall이 구현되지 않은 관계로 생략.
-                    if (ModuleControll.Data[i].Status != ModuleStatus.Error || ModuleControll.Data[i].Status == ModuleStatus.DontCall)
-                        Info.Add(new ModuleCallResult(ModuleControll.Data[i], ModuleControll.Data[i].Module.IVulnerableCheck(Address), ModuleControll.Data[i].Module.IVulnerableInfo));
+                    if ((ModuleControll.Data[i].Status == ModuleStatus.Error) || (ModuleControll.Data[i].Status == ModuleStatus.DontCall))
+                        Info.Add(new ModuleCallResult(ModuleControll.Data[i], CallResult.Exception, string.Empty));
                     else
                     {
-                        Info.Add(new ModuleCallResult(ModuleControll.Data[i], CallResult.Exception, "모듈에 에러가 있습니다."));
+                        Info.Add(new ModuleCallResult(ModuleControll.Data[i], ModuleControll.Data[i].Module.IVulnerableCheck(Address), ModuleControll.Data[i].Module.IVulnerableInfo));
                     }
                         
                 }

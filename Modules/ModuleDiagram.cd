@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Modules.Host.TCP.DNSAnalysor" BaseTypeListCollapsed="true">
-    <Position X="8.25" Y="2.75" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAgBAACAAA=</HashCode>
-      <FileName>Host.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="Modules.HttpWeb.ShellShock" BaseTypeListCollapsed="true">
     <Position X="4.25" Y="2.75" Width="1.75" />
     <TypeIdentifier>
@@ -31,13 +23,6 @@
       <FileName>HttpWeb.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Modules.SSL.HeartBleed">
-    <Position X="8.25" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
-      <FileName>SSL.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Class Name="Framework.Module.Base.WebBase" Collapsed="true">
     <Position X="4.5" Y="0.5" Width="1.5" />

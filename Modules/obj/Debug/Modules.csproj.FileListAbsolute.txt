@@ -8,3 +8,13 @@ C:\Users\User\Documents\GitHub\ScannerFramework\Modules\obj\Debug\Modules.pdb
 C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\HtmlAgilityPack.dll
 C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\User\Documents\GitHub\ScannerFramework\Modules\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Tensa\Documents\GitHub\ScannerFramework\Modules\bin\Debug\Modules.dll
+C:\Users\Tensa\Documents\GitHub\ScannerFramework\Modules\bin\Debug\Modules.pdb
+C:\Users\Tensa\Documents\GitHub\ScannerFramework\Modules\bin\Debug\Framework.dll
+C:\Users\Tensa\Documents\GitHub\ScannerFramework\Modules\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Tensa\Documents\GitHub\ScannerFramework\Modules\bin\Debug\Framework.pdb
+C:\Users\Tensa\Documents\GitHub\ScannerFramework\Modules\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Tensa\Documents\GitHub\ScannerFramework\Modules\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Tensa\Documents\GitHub\ScannerFramework\Modules\obj\Debug\Modules.csprojResolveAssemblyReference.cache
+C:\Users\Tensa\Documents\GitHub\ScannerFramework\Modules\obj\Debug\Modules.dll
+C:\Users\Tensa\Documents\GitHub\ScannerFramework\Modules\obj\Debug\Modules.pdb

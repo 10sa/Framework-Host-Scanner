@@ -95,13 +95,14 @@ namespace Form
                 Result = Scanner.Info;
                 for (int i=0; i<Result.Count; i++)
                 {
+                    // MessageBox.Show(((Result[i].Info != string.Empty) && (Result[i].Info != null)).ToString());
+                    // MessageBox.Show(Result[i].Info);
                     if ((Result[i].Info != string.Empty) && (Result[i].Info != null))
                     {
-                        if (Scanner.ModuleControll.Data[i].Status == Framework.Enum.ModuleStatus.Error)
-                            ModuleStatusGrid[3, i].Value = "<에러>";
-                        else
-                            ModuleStatusGrid[3, i].Value = "(클릭)";
+                        ModuleStatusGrid[3, i].Value = "(클릭)";
                     }
+                    else if(Scanner.ModuleControll.Data[i].Status == Framework.Enum.ModuleStatus.Error)
+                        ModuleStatusGrid[3, i].Value = "<에러>";
                     else
                         ModuleStatusGrid[3, i].Value = "|정보 없음|";
                 }
@@ -136,12 +137,18 @@ namespace Form
 
 		private void ModuleStatusGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			if(e.ColumnIndex == 3)
-			{
-				InfoForm Info = new InfoForm();
-				Info.InfoTextBox.Text = GetModuleData(e.RowIndex);
-				Info.Text = Scanner.ModuleControll.Data[e.RowIndex].Name;
-				Info.Show();
+            if(e.ColumnIndex == 3)
+            {
+                if(!ModuleStatusGrid[3, e.RowIndex].Value.Equals(string.Empty) && ModuleStatusGrid[3, e.RowIndex].Value != null)
+                {
+                    if(ModuleStatusGrid[3, e.RowIndex].Value.Equals("(클릭)"))
+                    {
+                        InfoForm Info = new InfoForm();
+                        Info.InfoTextBox.Text = GetModuleData(e.RowIndex);
+                        Info.Text = Scanner.ModuleControll.Data[e.RowIndex].Name;
+                        Info.Show();
+                    }
+                }
 			}
 
             if(e.ColumnIndex == 4)
@@ -151,12 +158,11 @@ namespace Form
                     ModuleStatusGrid[4, e.RowIndex].Value = "비호출";
                     Scanner.ModuleControll.SetModuleStatus(e.RowIndex, Framework.Enum.ModuleStatus.DontCall);
                 }
-                else
+                else if (ModuleStatusGrid[4, e.RowIndex].Value.Equals("비호출"))
                 {
                     ModuleStatusGrid[4, e.RowIndex].Value = ("호출");
                     Scanner.ModuleControll.SetModuleStatus(e.RowIndex, Framework.Enum.ModuleStatus.Call);
                 }
-
             }
 		}
 

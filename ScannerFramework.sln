@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form", "Form\Form.csproj", "{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Framework.csproj", "{54A04C31-8B2D-4AD4-8241-4BA633454405}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules", "Modules\Modules.csproj", "{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCF1E9DE-105F-4BB7-B9AE-D1A85E16123E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54A04C31-8B2D-4AD4-8241-4BA633454405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{54A04C31-8B2D-4AD4-8241-4BA633454405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54A04C31-8B2D-4AD4-8241-4BA633454405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54A04C31-8B2D-4AD4-8241-4BA633454405}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4C2EFFA7-4AB8-46B1-97A4-FF0A23682A91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,11 +8,14 @@
 Form/bin/
 Form/obj/
 
-Framework/bin/
-Framework/obj/
+Framework/bin/Debug/*.*
+Framework/obj/Debug/*.*
 
-Module/bin/
-Module/obj/
+Framework/bin/Debug/*.*
+Framework/obj//Debug/*.*
+
+Module/bin/Debug/*.*
+Module/obj/Debug/*.*
 
 # User-specific files
 *.suo

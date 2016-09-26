@@ -5,17 +5,8 @@
 *.config
 *.csproj
 
-Form/bin/
-Form/obj/
-
 Framework/bin/Debug/*.*
 Framework/obj/Debug/*.*
-
-Framework/bin/Debug/*.*
-Framework/obj//Debug/*.*
-
-Module/bin/Debug/*.*
-Module/obj/Debug/*.*
 
 # User-specific files
 *.suo

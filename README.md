@@ -1,8 +1,16 @@
-# Form 폴더
- 프레임워크 디자인 요소입니다.
+# Framework
+ This framework is a framework designed to explore the vulnerabilities.
  
-# Framework 폴더
- 프레임워크 코어 파트입니다.
+# Version
+ - 1.0v || 16.09.26 || Version 1.0 Released.
+ 
+# License
+ This framework allowed the creation of secondary commercial or non-commercial purposes under the original attribution conditions.
 
-# Modules 폴더
- 프레임워크에 추가되는 모듈입니다.
+# Module
+ Use the interface module of the framework fabricated modules are owned by the authors own copyright.
+ The framework does not have an impact on any copyright that additional modules.
+ 
+# So?...
+ As a result, the module author has a copyright all, the framework has no effect on the module copyright.
+ The fine will be selling the produced modules.

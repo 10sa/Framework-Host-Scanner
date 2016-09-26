@@ -4,8 +4,6 @@
 # User Addtion Code.
 *.config
 *.csproj
-LAN Anti Hacker/Properties/*.*
-
 
 # User-specific files
 *.suo

@@ -11,6 +11,7 @@ using MetroFramework.Fonts;
 using MetroFramework.Forms;
 using Framework;
 using Framework.Struct;
+using Framework.Enum;
 using System.IO;
 
 namespace Form
@@ -96,12 +97,12 @@ namespace Form
                 Result = Scanner.Info;
                 for (int i=0; i<Result.Count; i++)
                 {
-                    if ((Result[i].Info != string.Empty) && (Result[i].Info != null))
-                    {
+                    if((Result[i].Info != string.Empty) && (Result[i].Info != null))
                         ModuleStatusGrid[3, i].Value = "(클릭)";
-                    }
-                    else if(Scanner.ModuleControll.Data[i].Status == Framework.Enum.ModuleStatus.Error)
+                    else if(Scanner.Info[i].Result == CallResult.Exception)
                         ModuleStatusGrid[3, i].Value = "<에러>";
+                    else if(Scanner.Info[i].Result == CallResult.Safe)
+                        ModuleStatusGrid[3, i].Value = "[안전]";
                     else
                         ModuleStatusGrid[3, i].Value = "|정보 없음|";
                 }

@@ -76,6 +76,11 @@ namespace Framework.Enum
         /// <summary>
         /// 서버의 모든 페이지를 요구함을 나타냅니다.
         /// </summary>
-        AllPage
+        AllPage,
+
+        /// <summary>
+        /// 사전 파일에 등록된 단어를 요구함을 나타냅니다.
+        /// </summary>
+        Dictionary
     };
 }

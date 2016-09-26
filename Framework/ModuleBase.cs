@@ -26,6 +26,16 @@ namespace Framework.Module.Base
         string ModuleVer { get; }
 
         /// <summary>
+        /// 모듈의 옵션입니다.
+        /// </summary>
+        IVulnerableOptions ModuleOptions { get; }
+
+        /// <summary>
+        /// 옵션에 따라 추가로 설정되는 속성입니다.
+        /// </summary>
+        object IOptionsAddData { get; set; }
+
+        /// <summary>
         /// 취약점이 있을시 추가되는 설명입니다.
         /// </summary>
         /// <returns>표시되는 설명입니다.</returns>

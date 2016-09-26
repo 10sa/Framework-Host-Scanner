@@ -24,6 +24,12 @@ namespace Framework.Module.Base
 		/// 헤더의 값입니다.
 		/// </summary>
 		public List<string> Value;
+
+        public Headers(string Key, string Value)
+        {
+            this.Key = new List<string> { Key };
+            this.Value = new List<string> { Value };
+        }
 	}
 
 
@@ -53,10 +59,11 @@ namespace Framework.Module.Base
 		/// 주소를 설정하는 메소드입니다.
 		/// </summary>
 		/// <param name="Address">서버에 대한 주소입니다.</param>
-		protected void SetAddress(string Address)
+		protected virtual void SetAddress(string Address)
 		{
-			HttpRequest = (HttpWebRequest)WebRequest.Create(MakeUrl(Address));
+            HttpRequest = (HttpWebRequest)WebRequest.Create(MakeUri(Address));
 			HttpRequest.Method = "HEAD";
+            HttpRequest.UserAgent = "Scanner Framework(0.1v);";
 		}
 
 		/// <summary>
@@ -65,17 +72,17 @@ namespace Framework.Module.Base
 		/// <param name="GetEntity">엔티티 본문을 Response_Entity 인스턴스에 저장할지에 대한 여부입니다.</param>
 		public void Request(bool GetEntity)
 		{
-			try
-			{
-				WebResponse Response = HttpRequest.GetResponse();
-				GetHeader(Response);
-				if(GetEntity)
-					this.GetEntity(Response);
-			}
-			catch(Exception)
-			{
-				throw;
-			}
+            try
+            {
+                WebResponse Response = HttpRequest.GetResponse();
+                GetHeader(Response);
+                if(GetEntity)
+                    this.GetEntity(Response);
+            }
+            catch(Exception)
+            {
+                throw;
+            }
 		}
 
 
@@ -129,7 +136,7 @@ namespace Framework.Module.Base
         /// <param name="Response">서버측에서 반환하는 데이터를 포함한 WebResponse 클래스입니다.</param>
 		private void GetHeader(WebResponse Response)
 		{
-			MessageBox.Show(Response.Headers.ToString());
+			// MessageBox.Show(Response.Headers.ToString());
 			ResponseHeader = Response.Headers.ToString();
 
 			return;
@@ -143,6 +150,7 @@ namespace Framework.Module.Base
             using (StreamReader Reader = new StreamReader(Response.GetResponseStream()))
             {
                 ResponseEntity = Reader.ReadToEnd();
+                // MessageBox.Show(ResponseEntity);
             }
 
 			return;
@@ -154,7 +162,7 @@ namespace Framework.Module.Base
 		/// </summary>
 		/// <param name="address">URI 주소입니다.</param>
 		/// <returns>완성된 URI를 반환합니다.</returns>
-		protected virtual Uri MakeUrl(string address)
+		protected virtual Uri MakeUri(string address)
 		{
             // 이 부분을 고칠수 있을까?...
 			try

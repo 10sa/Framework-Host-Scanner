@@ -146,10 +146,15 @@ namespace Framework.Module
 								string name = Temp.ModuleName;
 								string ver = Temp.ModuleVer;
 
-								// 오버헤드를 감수하고 모듈의 정상 여부를 검사함.
-								// 만약 모듈이 정상적으로 구현되지 않았다면 NotImplementedException 예외를 반환할 것임.
-								
+                                // 오버헤드를 감수하고 모듈의 정상 여부를 검사함.
+                                // 만약 모듈이 정상적으로 구현되지 않았다면 NotImplementedException 예외를 반환할 것임.
+                                if(Temp.ModuleOptions == IVulnerableOptions.AllPage)
+                                    Temp.IOptionsAddData = new List<Uri> { new Uri("http://localhost") };
+                                else if(Temp.ModuleOptions == IVulnerableOptions.Dictionary)
+                                    Temp.IOptionsAddData = new List<string> { "Test" };
+
 								Temp.IVulnerableCheck("localhost");
+                                Temp.IOptionsAddData = null;
 
 								// 정상적으로 로드되었을 경우, 추가.
 								AddVulnerablePointCheckModule(Temp);

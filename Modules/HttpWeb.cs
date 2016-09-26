@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Framework.Module.Base;
 using Framework.Enum;
 using System.Net;
+
 using HtmlAgilityPack;
 
 namespace Modules.HttpWeb
@@ -15,46 +16,56 @@ namespace Modules.HttpWeb
     /// </summary>
     public class ShellShock : WebBase, IVulnerableModuleBase
     {
-		/// <summary>
-		/// ShellShock 취약점을 탐색하기 위한 헤더입니다.
-		/// </summary>
-		private const string Agent = "ShellShock: Vulnerable!";
-		public string IVulnerableInfo { get; private set; }
+        /// <summary>
+        /// ShellShock 취약점을 탐색하기 위한 헤더입니다.
+        /// </summary>
+        private const string Agent = "ShellShock: Vulnerable";
+        public string IVulnerableInfo { get; private set; }
 
-		public string ModuleName { get { return "ShellShock Module"; } }
+        public string ModuleName { get { return "ShellShock Module"; } }
         public string ModuleVer { get { return "0.1v"; } }
 
-		public CallResult IVulnerableCheck(string address)
-        {
-			SetAddress(address);
+        public IVulnerableOptions ModuleOptions { get { return IVulnerableOptions.AllPage; } }
+        public object IOptionsAddData { get; set; }
+        
 
-			try
-			{
-				return ShellShockCheck();
-			}
-			catch(Exception)
-			{
-				throw;
-			}
-		}
-
-        /// <summary>
-        /// 쉘쇼크 취약점을 검색하는 메소드입니다.
-        /// </summary>
-        /// <returns>보안 취약점이 있을시 true, 없을시 false를 반환합니다.</returns>
-        private CallResult ShellShockCheck()
+        public CallResult IVulnerableCheck(string address)
         {
-            
-            // 깊이 탐색 알고리즘 구현하기.
-			// HTML 파싱이 필요함.
-            RequestEx(true, true, true, GetRequestHeaders());
-            if (ResponseHeader.Contains(Agent))
+            List<Uri> ServerAllPages = (List<Uri>)IOptionsAddData;
+            bool IsVulnerable = false;
+
+            foreach(var Data in ServerAllPages)
             {
-                IVulnerableInfo = "서버에 쉘 쇼크 보안 취약점이 존재합니다.\n";
-				return CallResult.Unsafe;
+                try
+                {
+                    SetAddress(Data.AbsoluteUri);
+                    RequestEx(true, true, true, GetRequestHeaders());
+
+                    if(ResponseHeader.Contains(Agent))
+                    {
+                        IVulnerableInfo += string.Format("취약 페이지 : {0}\n", Data.AbsoluteUri);
+                        IsVulnerable = true;
+                    }
+                }
+                catch(WebException)
+                {
+                    continue;
+                }
+                catch(UriFormatException)
+                {
+                    continue;
+                }
+                catch(Exception)
+                {
+                    throw;
+                }
             }
 
-			return CallResult.Safe;
+            if(IsVulnerable)
+                return CallResult.Unsafe;
+            else
+                return CallResult.Safe;
+                
         }
 
         /// <summary>
@@ -63,16 +74,19 @@ namespace Modules.HttpWeb
         /// <returns>헤더 키/값 으로 이루어진 Headers 구조체입니다.</returns>
         private Headers GetRequestHeaders()
         {
-            Headers Packet = new Headers();
-            Packet.Key.Add("User-Agent");
-            Packet.Value.Add("echo \"" + Agent + "\"");
-
-            return Packet;
+            return new Headers("User-Agnet", "() {:;}; echo" + Agent);
         }
-	}
+
+        protected sealed override void SetAddress(string Address)
+        {
+            HttpRequest = (HttpWebRequest)WebRequest.Create(Address);
+            HttpRequest.UserAgent = Agent;
+            HttpRequest.Method = "GET";
+        }
+    }
 
 	/// <summary>
-	/// 웹 서버 상에서 취약한 파일을 찾기 위해 만들어진 모듈 클래스 입니다.
+	/// 웹 서버 상에서 취약한 파일을 찾기 위해 만들어진 모듈입니다.
 	/// </summary>
 	public class VulnerableFileFinder : WebBase, IVulnerableModuleBase
 	{
@@ -80,84 +94,92 @@ namespace Modules.HttpWeb
 		public string ModuleName { get { return "Vulnerable File Finder"; } }
 		public string ModuleVer { get { return "1.0v"; } }
 
-		List<string> Links = new List<string>();
+        public IVulnerableOptions ModuleOptions { get { return IVulnerableOptions.Dictionary; } }
+        public object IOptionsAddData { get; set; }
+        private List<string> DefaultWords;
 
-		public CallResult IVulnerableCheck(string address)
-		{
-			SetAddress(address);
+        private const int MaximumHope = 3;
+        private int Hope = 0;
 
-			try
-			{
-				Request(true);
-			}
-			catch (Exception)
-			{
-				throw;
-			}
+        public CallResult IVulnerableCheck(string address)
+        {
+            DefaultWords = (List<string>)IOptionsAddData;
 
-			if(Checking())
-				return CallResult.Unsafe;
+            try
+            {
+                Requests(address);
+            }
+            catch(Exception)
+            {
+                throw;
+            }
 
-			return CallResult.Safe;
-		}
+            return CallResult.Safe;
+        }
 
-		private bool Checking()
-		{
-			HtmlDocument Parsing = new HtmlDocument();
-			Parsing.LoadHtml(ResponseEntity);
+        private void Requests(string address)
+        {
+            if(Hope >= MaximumHope)
+            {
+                Hope--;
+                return;
+            }
+            else
+                Hope++;
 
-			foreach(var Tag in Parsing.DocumentNode.SelectNodes("//a[@href]"))
-			{
-				string temp = Tag.GetAttributeValue("href", string.Empty);
-
-                // 컨피그 요소 고려.
-				if(temp.Contains(ServerAddress.AbsoluteUri))
-				{
+            try
+            {
+                foreach(var Word in DefaultWords)
+                {
                     try
                     {
-                        Uri Temp = new Uri(temp);
-                        Links.Add(temp);
+                        SetAddress(address + Word);
+                        Request(true);
+
+                        if(ResponseEntity != string.Empty && ResponseEntity != Environment.NewLine)
+                        {
+                            HtmlDocument Parsing = new HtmlDocument();
+                            Parsing.Load(ResponseEntity);
+                            string Title = Parsing.DocumentNode.SelectSingleNode("//title").InnerText;
+
+                            if(Title.Contains("Index Of"))
+                                IVulnerableInfo += string.Format("Index File : {0}", address);
+                            else if(Title.Contains("phpinfo()"))
+                            {
+                                IVulnerableInfo += string.Format("phpinfo() File : {0}", address);
+                            }
+                        }
+
+                        Requests(address);
                     }
-                    catch(UriFormatException)
-                    {
-                        // 이 예외 처리는 당연히 일어날수 있는 예외임, 무시 처리.
-                    }
+                    catch(NullReferenceException) { continue; }
+                    catch(ArgumentException) { continue; }
+                    catch(WebException) { continue; }
                     catch(Exception)
                     {
                         throw;
                     }
-				}
-			}
-
-
-
-            foreach (var Link in Links)
-            {
-                Uri ParsingUri = new Uri(Link);
-
-                if (ParsingUri.AbsolutePath.Contains("phpinfo.php"))
-                {
-                    if (Parsing.DocumentNode.SelectSingleNode("//title").InnerText.Contains("phpinfo()"))
-                    {
-                        IVulnerableInfo = string.Format("Find a PHP Info File : {0}", ServerAddress.AbsolutePath);
-                        return true;
-                    }
-                    else
-                    {
-                        //string.Format("Find a PHP Info File : {0}", ServerAddress.AbsolutePath);
-                        //return true;
-                    }
+                    
                 }
             }
+            catch(NullReferenceException)
+            {
+                return;
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            
+            return;
+        }
 
-            return false;
-		}
+        protected sealed override void SetAddress(string Address)
+        {
+            HttpRequest = (HttpWebRequest)WebRequest.Create(MakeUri(Address));
+            HttpRequest.Method = "GET";
+        }
     } 
-
-
-
-    
-
 
 	/// <summary>
 	/// 웹 서버가 허용한 메소드를 확인하는 모듈 클래스 입니다.
@@ -165,10 +187,15 @@ namespace Modules.HttpWeb
 	public class AllowsMethodChecker : WebBase, IVulnerableModuleBase
 	{
 		public string IVulnerableInfo { get; private set; }
-		public string ModuleName { get { return "Allows Methods Checker"; } }
-		public string ModuleVer { get { return "1.0v"; } }
 
-		public CallResult IVulnerableCheck(string address)
+		public string ModuleName { get { return "Allows Methods Checker"; } }
+        public string ModuleVer { get { return "1.0v"; } }
+
+        public IVulnerableOptions ModuleOptions { get { return IVulnerableOptions.ServerOnly; } }
+        public object IOptionsAddData { get; set; }
+
+
+        public CallResult IVulnerableCheck(string address)
 		{
 			SetAddress(address);
 			HttpRequest.Method = "OPTIONS";
@@ -176,13 +203,22 @@ namespace Modules.HttpWeb
 			try
 			{
 				Request(false);
-			}
+                foreach(var Allows in HttpRequest.Headers.GetValues("Allow"))
+                {
+                    if(Allows.Equals("PUT"))
+                        IVulnerableInfo += "서버가 PUT 메소드를 사용 허가하고 있습니다.";
+                    else if(Allows.Equals("DELETE"))
+                        IVulnerableInfo += "서버가 DELETE 메소드를 사용 허가하고 있습니다.";
+                    else if(Allows.Equals("TRACE"))
+                        IVulnerableInfo += "서버가 TRACE 메소드를 사용 허가하고 있습니다.";
+                }
+            }
 			catch (WebException exp)
 			{
 				IVulnerableInfo = "웹 서버에서 200번 상태코드 이외의 상태코드를 반환하였습니다." + Environment.NewLine;
 				IVulnerableInfo += "Status : " + exp.Status.ToString();
 
-				return CallResult.Status;
+                return CallResult.Exception;
 			}
 			catch (Exception exp)
 			{
@@ -190,7 +226,6 @@ namespace Modules.HttpWeb
 				return CallResult.Exception;
 			}
 
-			IVulnerableInfo = HttpRequest.Headers.Get("Allow");
 			return CallResult.Status;
 		}
 	}

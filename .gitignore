@@ -5,6 +5,15 @@
 *.config
 *.csproj
 
+Form/bin/
+Form/obj/
+
+Framework/bin/
+Framework/obj/
+
+Module/bin/
+Module/obj/
+
 # User-specific files
 *.suo
 *.user

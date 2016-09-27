@@ -49,13 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrameworkEnum.cs" />
-    <Compile Include="FrameworkModule.cs" />
-    <Compile Include="FrameworkStruct.cs" />
-    <Compile Include="ModuleBase.cs" />
-    <Compile Include="WebBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FrameworkCore.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

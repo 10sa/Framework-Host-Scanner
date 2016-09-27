@@ -1,8 +1,7 @@
 # Framework
- This framework is a framework designed to explore the vulnerabilities.
+ This Framework Is A Framework Designed To Explore The Vulnerabilities.
  
 # Version
- - 1.0v || 16.09.26 || Version 1.0 Released. || CC-BY
  - 2.0v || Working... || Verison 2.0 || MIT License
  
 # Framework License

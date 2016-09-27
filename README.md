@@ -1,8 +1,5 @@
 # Framework
  This framework is a framework designed to explore the vulnerabilities.
- 
-# Using Lib
- - HtmlAgilityPack | MS-PL License.
 
 # Version
  - 1.0v || 16.09.26 || Version 1.0 Released.

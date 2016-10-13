@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
-using System.Threading.Tasks;
 using System.Reflection;
-using System.Windows.Forms;
 using System.Net;
 
-using Framework.Struct;
-using Framework.Enum;
-using Framework.Module.Base;
+using SHFramework.Struct;
+using SHFramework.Enum;
+using SHFramework.Module.Base;
 
-namespace Framework.Module
+namespace SHFramework.Module
 {
 	/// <summary>
 	/// 모듈의 데이터를 저장하고 관리하는 클래스입니다.

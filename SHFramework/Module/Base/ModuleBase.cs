@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Framework.Enum;
+﻿using SHFramework.Enum;
 
-namespace Framework.Module.Base
+namespace SHFramework.Module.Base
 {
-    /// <summary>
-    /// VulnerablePointChecker 프레임워크에 추가될 모듈의 인터페이스 입니다.
-    /// 이 인터페이스를 상속한 클래스는 인자를 0개 사용하는 생성자를 포함하여야 합니다.
-    /// </summary>
-    public interface IVulnerableModuleBase
+	/// <summary>
+	/// VulnerablePointChecker 프레임워크에 추가될 모듈의 인터페이스 입니다.
+	/// 이 인터페이스를 상속한 클래스는 인자를 0개 사용하는 생성자를 포함하여야 합니다.
+	/// </summary>
+	public interface IVulnerableModuleBase
     {
         /// <summary>
         /// 모듈의 이름입니다.

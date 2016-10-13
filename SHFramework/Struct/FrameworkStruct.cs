@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-using Framework.Module.Base;
-using Framework.Enum;
+using SHFramework.Module.Base;
+using SHFramework.Enum;
 
-namespace Framework.Struct
+namespace SHFramework.Struct
 {
-    /// <summary>
-    /// 모듈을 실행시켰을때 반환하는 정보입니다.
-    /// </summary>
-    public struct VulnerablePointModuleInfo
+	/// <summary>
+	/// 모듈을 실행시켰을때 반환하는 정보입니다.
+	/// </summary>
+	public struct VulnerablePointModuleInfo
 	{
 		/// <summary>
 		/// 취약점 여부입니다.

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Framework.Enum
+﻿namespace SHFramework.Enum
 {
 	/// <summary>
 	/// 모듈 호출 후 모듈이 반환하는 값입니다.

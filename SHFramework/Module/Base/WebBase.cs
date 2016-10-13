@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
-using System.Web;
 using System.IO;
-using System.Windows.Forms;
 
-namespace Framework.Module.Base
+namespace SHFramework.Module.Base
 {
 	/// <summary>
 	/// HTTP 헤더의 키와 값을 저장하기 위한 구조체입니다.

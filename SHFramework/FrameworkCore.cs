@@ -8,12 +8,12 @@ using System.IO;
 using System.Reflection;
 using HtmlAgilityPack;
 
-using Framework.Module;
-using Framework.Module.Base;
-using Framework.Struct;
-using Framework.Enum;
+using SHFramework.Module;
+using SHFramework.Module.Base;
+using SHFramework.Struct;
+using SHFramework.Enum;
 
-namespace Framework
+namespace SHFramework
 {
 	/// <summary>
 	/// 서버의 취약점을 점검하는 프레임워크 클래스입니다.

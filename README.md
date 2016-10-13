@@ -1,5 +1,5 @@
 # SHFramework
- This SHFramework Is A Framework Designed To Explore The Vulnerabilities.
+ SHFramework Is A Framework Designed To Explore The Vulnerabilities.
  
 # Version
  - 2.0v || Working... || Verison 2.0 || MIT License

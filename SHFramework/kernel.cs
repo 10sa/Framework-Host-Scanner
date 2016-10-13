@@ -4,17 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framework
+namespace SHFramework
 {
-	class fw_kernel
+	class Kernel
 	{
-		fw_module module = new fw_module();
-
-		public fw_kernel()
-		{
-
-		}
-
 		/// <summary>
 		/// Error Report Method. (Write Stderr Stream.)
 		/// </summary>

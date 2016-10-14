@@ -26,6 +26,7 @@ namespace SHFramework
 		private const string ModuleLoadFormat = "*.dll";
 
 		private const string ErrorReportFormat = "Module Load Error | {0] | {1} ";
+
 		private const string BadFormatDll = "Bad Format Dll.";
 		private const string MissingConstructor = "Missing Constructor.";
 		private const string NotFoundAssiganbleMethod = "Not Found Assiganble Method.";
@@ -44,13 +45,13 @@ namespace SHFramework
 		/// <summary>
 		/// The loaded module List.
 		/// </summary>
-		public List<module_interface> Modules { get; private set; } = new List<module_interface>();
+		public List<IModuleBase> Modules { get; private set; } = new List<IModuleBase>();
 
 		/// <summary>
 		/// Load Module.
 		/// </summary>
 		/// <returns>Module Instances.</returns>
-		public List<module_interface> Load()
+		public List<IModuleBase> Load()
 		{
 			foreach(var ModuleFile in GetModuleFiles())
 			{
@@ -81,7 +82,7 @@ namespace SHFramework
 				{
 					try
 					{
-						Modules.Add((module_interface)Activator.CreateInstance(Class));
+						Modules.Add((IModuleBase)Activator.CreateInstance(Class));
 					}
 					catch (MissingMethodException)
 					{
@@ -127,7 +128,7 @@ namespace SHFramework
 		/// <returns>Validity Of The Class.</returns>
 		private bool CheckClassType(Type Class)
 		{
-			if (Class.IsAssignableFrom(typeof(module_interface)) && Class.IsPublic && !Class.IsAbstract)
+			if (Class.IsAssignableFrom(typeof(IModuleBase)) && Class.IsPublic && !Class.IsAbstract)
 				return true;
 			else
 				return false;

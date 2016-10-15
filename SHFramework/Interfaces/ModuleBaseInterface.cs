@@ -20,7 +20,7 @@ namespace SHFramework.Module.Interfaces
 		
 		ModuleParameterOptions GetOptions { get; }
 
-		Form CustomForm { get; }
+		Form ResultForm { get; }
 		
 		/// <summary>
 		/// Module Start Point.

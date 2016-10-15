@@ -43,25 +43,29 @@ namespace SHFramework.Module
 		}
 
 		/// <summary>
-		/// The loaded module List.
+		/// The Last Loaded Module List.
 		/// </summary>
-		public List<IModuleBase> Modules { get; private set; } = new List<IModuleBase>();
+		public List<ModuleData> Modules { get; private set; } = new List<ModuleData>();
 
 		/// <summary>
 		/// Load Module.
 		/// </summary>
 		/// <returns>Module Instances.</returns>
-		public List<IModuleBase> Load()
+		public List<ModuleData> Load()
 		{
-			foreach(var ModuleFile in GetModuleFiles())
+			foreach(var moduleFile in GetModuleFiles())
 			{
 				try
 				{
-					int LastCount = Modules.Count;
-					AddModules(GetModuleClass(ModuleFile.FullName));
+					int lastCount = Modules.Count;
 
-					if (LastCount != Modules.Count)
-						FrameworkKernel.ErrorReport(string.Format(ErrorReportFormat, NotFoundAssiganbleMethod, ModuleFile.FullName));
+					foreach(var _class in CreateModules(GetModuleClass(moduleFile.FullName)))
+					{
+						Modules.Add(new ModuleData(_class, moduleFile.Name, moduleFile.FullName));
+					}
+
+					if (lastCount != Modules.Count)
+						FrameworkKernel.ErrorReport(string.Format(ErrorReportFormat, NotFoundAssiganbleMethod, moduleFile.FullName));
 				}
 				// Ignore Exceptions. 
 				catch (BadImageFormatException) { continue; }
@@ -73,23 +77,27 @@ namespace SHFramework.Module
 		/// <summary>
 		/// Add Module Class.
 		/// </summary>
-		/// <param name="Classes">Module Class.</param>
-		private void AddModules(Type[] Classes)
+		/// <param name="classes">Module Class.</param>
+		private IModuleBase[] CreateModules(Type[] classes)
 		{
-			foreach(var Class in Classes)
+			List<IModuleBase> moduleClasses = new List<IModuleBase>();
+
+			foreach(var _class in classes)
 			{
-				if(CheckClassType(Class))
+				if(CheckClassType(_class))
 				{
 					try
 					{
-						Modules.Add((IModuleBase)Activator.CreateInstance(Class));
+						moduleClasses.Add((IModuleBase)Activator.CreateInstance(_class));
 					}
 					catch (MissingMethodException)
 					{
-						FrameworkKernel.ErrorReport(string.Format(ErrorReportFormat, MissingConstructor, Class.FullName));
+						FrameworkKernel.ErrorReport(string.Format(ErrorReportFormat, MissingConstructor, _class.FullName));
 					}
 				}
 			}
+
+			return moduleClasses.ToArray();
 		}
 
 		/// <summary>
@@ -105,13 +113,13 @@ namespace SHFramework.Module
 		/// <summary>
 		/// Load Module Class.
 		/// </summary>
-		/// <param name="FileAbsolutePath">Module File Absolute Path</param>
+		/// <param name="fileAbsolutePath">Module File Absolute Path</param>
 		/// <returns>Classes Extract From the Module.</returns>
-		private Type[] GetModuleClass(string FileAbsolutePath)
+		private Type[] GetModuleClass(string fileAbsolutePath)
 		{
 			try
 			{
-				return Assembly.LoadFile(FileAbsolutePath).GetExportedTypes();
+				return Assembly.LoadFile(fileAbsolutePath).GetExportedTypes();
 			}
 			catch (BadImageFormatException exc)
 			{
@@ -132,6 +140,22 @@ namespace SHFramework.Module
 				return true;
 			else
 				return false;
+		}
+	}
+
+	public struct ModuleData
+	{
+		public IModuleBase Module;
+		public string FileName;
+		public string AbsolutPath;
+
+		public ModuleData(IModuleBase module, string fileName, string absolutPath)
+		{
+			this.Module = module;
+			this.FileName = fileName;
+			this.AbsolutPath = absolutPath;
+
+			return;
 		}
 	}
 }

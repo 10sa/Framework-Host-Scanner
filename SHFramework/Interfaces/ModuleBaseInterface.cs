@@ -13,10 +13,23 @@ namespace SHFramework.Module.Interfaces
 	public interface IModuleBase
 	{
 		ModuleType GetType { get; }
+
+		string GetName { get; }
+
+		string GetVersion { get; }
 		
-		ModuleOptions GetOptions{ get; }
+		ModuleParameterOptions GetOptions { get; }
+
+		Form CustomForm { get; }
 		
+		/// <summary>
+		/// Module Start Point.
+		/// </summary>
+		/// <param name="optionData"></param>
+		/// <returns>Module Call Result.</returns>
 		ModuleCallResult DoWork(object[] optionData);
+
+		
 	}
 	
 	/// <summary>
@@ -35,7 +48,7 @@ namespace SHFramework.Module.Interfaces
 		All
 	}
 
-	public enum ModuleOptions
+	public enum ModuleParameterOptions
 	{
 		TargetAddress,
 		None

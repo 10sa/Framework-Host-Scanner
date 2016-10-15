@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +12,27 @@ namespace SHFramework.Interfaces
 	/// </summary>
 	public interface IModuleBase
 	{
+		ModuleType GetModuleType { get; }
 		
+		ModuleOptions GetModuleOptions{ get; }
+		
+		ModuleCallResult ModuleMain(object ModuleOptionData);
+	}
+	
+	public enum ModuleCallResult
+	{
+		HaveData,
+		NoData
 	}
 	
 	public enum ModuleType
 	{
-		NonLocal,
-		Loacl
+		Global,
+		Loacl,
+		All
 	}
 
-	public enum ModuleRequestOptions
+	public enum ModuleOptions
 	{
 		TargetAddress,
 		None

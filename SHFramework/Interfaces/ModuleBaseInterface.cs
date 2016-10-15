@@ -1,34 +1,37 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SHFramework.Interfaces
+namespace SHFramework.Module.Interfaces
 {
 	/// <summary>
 	/// Module Interface.
 	/// </summary>
 	public interface IModuleBase
 	{
-		ModuleType GetModuleType { get; }
+		ModuleType GetType { get; }
 		
-		ModuleOptions GetModuleOptions{ get; }
+		ModuleOptions GetOptions{ get; }
 		
-		ModuleCallResult ModuleMain(object ModuleOptionData);
+		ModuleCallResult DoWork(object[] optionData);
 	}
 	
+	/// <summary>
+	/// Module Call Result.
+	/// </summary>
 	public enum ModuleCallResult
 	{
 		HaveData,
-		NoData
+		None
 	}
 	
 	public enum ModuleType
 	{
 		Global,
-		Loacl,
+		Local,
 		All
 	}
 

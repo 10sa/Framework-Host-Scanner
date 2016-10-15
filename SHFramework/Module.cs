@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Reflection;
 using System.IO;
 
-using SHFramework.Interfaces;
+using SHFramework.Module.Interfaces;
 
-namespace SHFramework
+namespace SHFramework.Module
 {
 	/// <summary>
 	/// Framework Module Part Class.
@@ -61,10 +61,10 @@ namespace SHFramework
 					AddModules(GetModuleClass(ModuleFile.FullName));
 
 					if (LastCount != Modules.Count)
-						Kernel.WriteErrorReport(string.Format(ErrorReportFormat, NotFoundAssiganbleMethod, ModuleFile.FullName));
+						FrameworkKernel.ErrorReport(string.Format(ErrorReportFormat, NotFoundAssiganbleMethod, ModuleFile.FullName));
 				}
 				// Ignore Exceptions. 
-				catch (BadImageFormatException) { }
+				catch (BadImageFormatException) { continue; }
 			}
 
 			return Modules;
@@ -86,7 +86,7 @@ namespace SHFramework
 					}
 					catch (MissingMethodException)
 					{
-						Kernel.WriteErrorReport(string.Format(ErrorReportFormat, MissingConstructor, Class.FullName));
+						FrameworkKernel.ErrorReport(string.Format(ErrorReportFormat, MissingConstructor, Class.FullName));
 					}
 				}
 			}
@@ -115,14 +115,14 @@ namespace SHFramework
 			}
 			catch (BadImageFormatException exc)
 			{
-				Kernel.WriteErrorReport(string.Format(ErrorReportFormat, BadFormatDll, exc.FileName));
+				FrameworkKernel.ErrorReport(string.Format(ErrorReportFormat, BadFormatDll, exc.FileName));
 				throw;
 			}
 			
 		}
 
 		/// <summary>
-		/// Validity Check Of The Class
+		/// Validity Check Of The Class.
 		/// </summary>
 		/// <param name="Class">Class To Be Checked</param>
 		/// <returns>Validity Of The Class.</returns>

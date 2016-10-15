@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace SHFramework
 {
-	class Kernel
+	class FrameworkKernel
 	{
 		/// <summary>
-		/// Error Report Method. (Write Stderr Stream.)
+		/// Error Report Method. (Write Stderr Stream)
 		/// </summary>
-		/// <param name="Message">Write Message.</param>
-		public static void WriteErrorReport(string Message)
+		/// <param name="message">Write Message.</param>
+		public static void ErrorReport(string message)
 		{
-			Console.Error.WriteLine("[SHFramework] " + Message);
+			Console.Error.WriteLine("[SHFramework] " + message);
 		}
 	}
 }

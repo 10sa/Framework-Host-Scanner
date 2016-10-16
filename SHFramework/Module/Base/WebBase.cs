@@ -20,6 +20,11 @@ namespace SHFramework.Module.Base
 		/// </summary>
 		public List<string> Value;
 
+		/// <summary>
+		/// HTTP 헤더를 전달받은 인자로 초기화합니다.
+		/// </summary>
+		/// <param name="Key"></param>
+		/// <param name="Value"></param>
         public Headers(string Key, string Value)
         {
             this.Key = new List<string> { Key };

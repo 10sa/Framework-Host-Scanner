@@ -65,9 +65,9 @@ namespace SHFramework
                         Info.Add(new ModuleCallResult(ModuleControll.Data[i], ModuleControll.Data[i].Module.IVulnerableCheck(Address), ModuleControll.Data[i].Module.IVulnerableInfo));
                     }
                 }
-                catch(ArgumentNullException e)
+                catch(ArgumentNullException)
                 {
-                    throw e;
+					throw;
                 }
                 catch (Exception)
 				{
@@ -93,6 +93,10 @@ namespace SHFramework
         private int Hope;
         private const int MaximunHope = 8;
 
+		/// <summary>
+		/// DFS 검색에 맞는 HTTP 메소드 및 검색할 서버를 설정합니다.
+		/// </summary>
+		/// <param name="Address">검색할 서버 입니다.</param>
         protected sealed override void SetAddress(string Address)
         {
             HttpRequest = (HttpWebRequest)WebRequest.Create(MakeUri(Address));

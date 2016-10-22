@@ -8,7 +8,7 @@ namespace SHFramework.Module.Base
 	/// <summary>
 	/// HTTP 헤더의 키와 값을 저장하기 위한 구조체입니다.
 	/// </summary>
-	public struct Headers
+	public struct headers
 	{
 		/// <summary>
 		/// 헤더의 키값 입니다.
@@ -23,12 +23,12 @@ namespace SHFramework.Module.Base
 		/// <summary>
 		/// HTTP 헤더를 전달받은 인자로 초기화합니다.
 		/// </summary>
-		/// <param name="Key"></param>
-		/// <param name="Value"></param>
-        public Headers(string Key, string Value)
+		/// <param name="key"></param>
+		/// <param name="value"></param>
+        public headers(string key, string value)
         {
-            this.Key = new List<string> { Key };
-            this.Value = new List<string> { Value };
+            this.Key = new List<string> { key };
+            this.Value = new List<string> { value };
         }
 	}
 
@@ -41,11 +41,11 @@ namespace SHFramework.Module.Base
 		/// <summary>
 		/// 웹 서버와의 통신을 위한 상위 클래스입니다.
 		/// </summary>
-		protected HttpWebRequest HttpRequest { get; set; }
+		protected HttpWebRequest httpRequest { get; set; }
 		/// <summary>
 		/// 웹 서버의 URI 입니다.
 		/// </summary>
-		protected Uri ServerAddress { get { return HttpRequest.Address; } }
+		protected Uri ServerAddress { get { return httpRequest.Address; } }
 		/// <summary>
 		/// 서버에서 송신한 헤더입니다.
 		/// </summary>
@@ -59,25 +59,25 @@ namespace SHFramework.Module.Base
 		/// 주소를 설정하는 메소드입니다.
 		/// </summary>
 		/// <param name="Address">서버에 대한 주소입니다.</param>
-		protected virtual void SetAddress(string Address)
+		protected virtual void SetAddress(string address)
 		{
-            HttpRequest = (HttpWebRequest)WebRequest.Create(MakeUri(Address));
-			HttpRequest.Method = "HEAD";
-            HttpRequest.UserAgent = "Scanner Framework(0.1v);";
+            httpRequest = (HttpWebRequest)WebRequest.Create(MakeUri(address));
+			httpRequest.Method = "HEAD";
+            httpRequest.UserAgent = "Scanner Framework(0.1v);";
 		}
 
 		/// <summary>
 		/// 생성시 입력된 주소값으로 요청을 보냅니다.
 		/// </summary>
-		/// <param name="GetEntity">엔티티 본문을 Response_Entity 인스턴스에 저장할지에 대한 여부입니다.</param>
-		public void Request(bool GetEntity)
+		/// <param name="getEntity">엔티티 본문을 Response_Entity 인스턴스에 저장할지에 대한 여부입니다.</param>
+		public void Request(bool getEntity)
 		{
             try
             {
-                WebResponse Response = HttpRequest.GetResponse();
-                GetHeader(Response);
-                if(GetEntity)
-                    this.GetEntity(Response);
+                WebResponse response = httpRequest.GetResponse();
+                GetHeader(response);
+                if(getEntity)
+                    this.GetEntity(response);
             }
             catch(Exception)
             {
@@ -89,25 +89,25 @@ namespace SHFramework.Module.Base
         /// <summary>
         /// Request 메서드와 동일한 기능을 제공하나 Request 메서드가 사용할 HTTP 헤더를 지정 합니다.
         /// </summary>
-        /// <param name="GetEntitiy">엔티티 본문을 Response_Entitiy 인스턴스에 저장할지에 대한 여부입니다.</param>
-        /// <param name="CallRequestMethod">인자로 전달받은 헤더의 키/값 쌍을 모두 헤더에 추가한 뒤 Request 메소드를 호출할지에 대한 여부입니다.</param>
-        /// <param name="ClearAndAdd">기존에 있던 헤더 데이터를 초기화 한 뒤 추가할지에 대한 여부입니다.</param>
-        /// <param name="Headers">헤더의 키와 값을 저장한 구조체입니다.</param>
-        public void RequestEx(bool GetEntitiy, bool CallRequestMethod, bool ClearAndAdd, Headers Headers)
+        /// <param name="getEntitiy">엔티티 본문을 Response_Entitiy 인스턴스에 저장할지에 대한 여부입니다.</param>
+        /// <param name="callRequestMethod">인자로 전달받은 헤더의 키/값 쌍을 모두 헤더에 추가한 뒤 Request 메소드를 호출할지에 대한 여부입니다.</param>
+        /// <param name="clearAndAdd">기존에 있던 헤더 데이터를 초기화 한 뒤 추가할지에 대한 여부입니다.</param>
+        /// <param name="headers">헤더의 키와 값을 저장한 구조체입니다.</param>
+        public void RequestEx(bool getEntitiy, bool callRequestMethod, bool clearAndAdd, headers headers)
         {
-			if ( Headers.Key.Count != Headers.Value.Count )
+			if ( headers.Key.Count != headers.Value.Count )
 				throw new Exception("키 리스트와 값 리스트의 크기가 맞지 않습니다.");
 
-            if (ClearAndAdd)
-                RemoveAllHeaders();
+            if (clearAndAdd)
+                RemoveAllheaders();
 
-            for(int i=0; i<Headers.Key.Count; i++)
+            for(int i=0; i<headers.Key.Count; i++)
             {
-				HttpRequest.Headers.Add(Headers.Key[i], Headers.Value[i]);
+				httpRequest.Headers.Add(headers.Key[i], headers.Value[i]);
             }
 
-            if(CallRequestMethod)
-                Request(GetEntitiy);
+            if(callRequestMethod)
+                Request(getEntitiy);
 
             return;
         }
@@ -117,7 +117,7 @@ namespace SHFramework.Module.Base
         /// </summary>
         public void RemoveAllHeaders()
         {
-			HttpRequest.Headers.Clear();
+			httpRequest.Headers.Clear();
         }
 
 
@@ -125,19 +125,19 @@ namespace SHFramework.Module.Base
         /// 파라매터로 넘겨받은 키 이름을 가진 헤더를 제거합니다.
         /// </summary>
         /// <param name="Name">지울 헤더의 키 이름입니다.</param>
-        public void RemoveHeaders(string Name)
+        public void RemoveHeaders(string name)
         {
-			HttpRequest.Headers.Remove(Name);
+			httpRequest.headers.Remove(name);
         }
 
         /// <summary>
         /// HTTP 요청 후 서버측에서 반환하는 헤더를 ResponseHeader 인스턴스에 저장합니다.
         /// </summary>
         /// <param name="Response">서버측에서 반환하는 데이터를 포함한 WebResponse 클래스입니다.</param>
-		private void GetHeader(WebResponse Response)
+		private void GetHeader(WebResponse response)
 		{
-			// MessageBox.Show(Response.Headers.ToString());
-			ResponseHeader = Response.Headers.ToString();
+			// MessageBox.Show(Response.headers.ToString());
+			ResponseHeader = response.headers.ToString();
 
 			return;
 		}
@@ -145,11 +145,11 @@ namespace SHFramework.Module.Base
         /// HTTP 요청 후 서버측에서 반환하는 엔티티 본문을 Response_Entitiy 인스턴스에 저장합니다.
         /// </summary>
         /// <param name="Response">서버측에서 반환하는 데이터를 포함한 WebResponse 클래스입니다.</param>
-		private void GetEntity(WebResponse Response)
+		private void GetEntity(WebResponse response)
 		{
-            using (StreamReader Reader = new StreamReader(Response.GetResponseStream()))
+            using (StreamReader reader = new StreamReader(response.GetResponseStream()))
             {
-                ResponseEntity = Reader.ReadToEnd();
+                ResponseEntity = reader.ReadToEnd();
                 // MessageBox.Show(ResponseEntity);
             }
 

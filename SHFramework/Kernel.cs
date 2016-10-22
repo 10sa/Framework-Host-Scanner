@@ -20,7 +20,7 @@ namespace SHFramework
 		/// <summary>
 		/// 모듈을 제어합니다.
 		/// </summary>
-		public ModuleController ModuleControll = new ModuleController(true);
+		public moduleController moduleControll = new moduleController(true);
 
 
         /// <summary>
@@ -34,35 +34,35 @@ namespace SHFramework
         /// <param name="Address">목표 서버의 주소입니다.</param>
         public void VulnerablePointCheck(string Address)
 		{
-            WebLinkDFSearchClass DFSeacher = new WebLinkDFSearchClass();
-            DictionaryCrafter DCrafter = null;
+            WebLinkDFSearchClass dfSearcher = new WebLinkDFSearchClass();
+            DictionaryCrafter dCrafter = null;
             
             Info.Clear();
 
-            for (int i = 0; i < ModuleControll.Lenght; i++)
+            for (int i = 0; i < moduleControll.Lenght; i++)
 			{
 				try
 				{
-                    if ((ModuleControll.Data[i].Status == ModuleStatus.Error) || (ModuleControll.Data[i].Status == ModuleStatus.DontCall))
-                        Info.Add(new ModuleCallResult(ModuleControll.Data[i], CallResult.Exception, string.Empty));
+                    if ((moduleControll.Data[i].Status == ModuleStatus.Error) || (moduleControll.Data[i].Status == ModuleStatus.DontCall))
+                        Info.Add(new ModuleCallResult(moduleControll.Data[i], CallResult.Exception, string.Empty));
                     else
                     {
-                        if(ModuleControll.Data[i].Module.ModuleOptions == IVulnerableOptions.AllPage)
+                        if(moduleControll.Data[i].Module.ModuleOptions == IVulnerableOptions.AllPage)
                         {
-                            if(DFSeacher.Address.Count == 0)
-                                DFSeacher.GetAllEdgeLinks(Address);
+                            if(dfSearcher.Address.Count == 0)
+                                dfSearcher.GetAllEdgeLinks(Address);
 
-                            ModuleControll.Data[i].Module.IOptionsAddData = DFSeacher.Address;
+                            moduleControll.Data[i].Module.IOptionsAddData = dfSearcher.Address;
                         }
-                        else if (ModuleControll.Data[i].Module.ModuleOptions == IVulnerableOptions.Dictionary)
+                        else if (moduleControll.Data[i].Module.ModuleOptions == IVulnerableOptions.Dictionary)
                         {
-                            if(DCrafter == null)
-                                DCrafter = new DictionaryCrafter();
+                            if(dCrafter == null)
+                                dCrafter = new DictionaryCrafter();
 
-                            ModuleControll.Data[i].Module.IOptionsAddData = DCrafter.DefaultWords;
+                            moduleControll.Data[i].Module.IOptionsAddData = dCrafter.DefaultWords;
                         }
 
-                        Info.Add(new ModuleCallResult(ModuleControll.Data[i], ModuleControll.Data[i].Module.IVulnerableCheck(Address), ModuleControll.Data[i].Module.IVulnerableInfo));
+                        Info.Add(new ModuleCallResult(moduleControll.Data[i], moduleControll.Data[i].Module.IVulnerableCheck(Address), moduleControll.Data[i].Module.IVulnerableInfo));
                     }
                 }
                 catch(ArgumentNullException)
@@ -72,7 +72,7 @@ namespace SHFramework
                 catch (Exception)
 				{
                     // 모듈의 예외 반환을 처리하기 위한 에러처리.
-					Info.Add(new ModuleCallResult(ModuleControll.Data[i], CallResult.Exception, ModuleControll.Data[i].Module.IVulnerableInfo));
+					Info.Add(new ModuleCallResult(moduleControll.Data[i], CallResult.Exception, moduleControll.Data[i].Module.IVulnerableInfo));
                }
 			}
 
@@ -90,8 +90,8 @@ namespace SHFramework
         /// 모든 리다이렉트 링크입니다.
         /// </summary>
         public List<Uri> Address = new List<Uri>();
-        private int Hope;
-        private const int MaximunHope = 8;
+        private int hope;
+        private const int maximunHope = 8;
 
 		/// <summary>
 		/// DFS 검색에 맞는 HTTP 메소드 및 검색할 서버를 설정합니다.
@@ -111,13 +111,13 @@ namespace SHFramework
         /// <returns>Uri로 이루어진 연결된 모든 리다이렉트 링크입니다.</returns>
         public List<Uri> GetAllEdgeLinks(string Address)
         {
-            if(Hope >= MaximunHope)
+            if(hope >= maximunHope)
             {
-                Hope--;
+                hope--;
                 return null;
             }
             else
-                Hope++;
+                hope++;
             
             SetAddress(Address);
             this.Address.Add(MakeUri(Address));

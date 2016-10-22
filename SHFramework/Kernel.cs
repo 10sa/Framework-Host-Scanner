@@ -27,13 +27,11 @@ namespace SHFramework
 		{
 			List<CallResultData> resultData = new List<CallResultData>();
 
-			foreach (var modules in moduleController.Load())
+			moduleController.Load();
+			foreach (var modules in moduleController.Modules)
 			{
 				if (modules.Module.GetOptions == ModuleParameterOptions.TargetAddress)
-				{
-					ErrorReport(string.Format("Module : {0} | Module Type Not Matched. (Not Call)", modules.Module.GetName));
-					continue;
-				}
+					ErrorReport(string.Format("Module : {0} | Module Type Not Matched.", modules.Module.GetName));
 
 				if(modules.Module.GetOptions == ModuleParameterOptions.None)
 				{
@@ -41,10 +39,7 @@ namespace SHFramework
 					if((result = modules.Module.DoWork(null)) == ModuleCallResult.HaveData)
 					{
 						if (modules.Module.ResultForm == null)
-						{
 							ErrorReport(string.Format("Module : {0} | Module Result Form Is Null.", modules.Module.GetName));
-							continue;
-						}
 
 						resultData.Add(new CallResultData(result, modules.Module.ResultForm));
 					}

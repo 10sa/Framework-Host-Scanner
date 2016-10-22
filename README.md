@@ -4,6 +4,7 @@
 # Version
  - 1.0v || 16.09.26 || Version 1.0 Released.
  - 1.1v || 16.10.16 || Version 1.1 Released. || File Rename, Dummy Files Removed.
+ - 1.2v || 16.11.xx || Version 1.2 Working.. || Var Name Changing to C# Std.
  
 # Using Lib
  *  HtmlAgilityPack

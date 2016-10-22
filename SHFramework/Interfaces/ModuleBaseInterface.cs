@@ -28,8 +28,6 @@ namespace SHFramework.Module.Interfaces
 		/// <param name="optionData"></param>
 		/// <returns>Module Call Result.</returns>
 		ModuleCallResult DoWork(object[] optionData);
-
-		
 	}
 	
 	/// <summary>

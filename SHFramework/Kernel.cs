@@ -23,6 +23,10 @@ namespace SHFramework
 			Console.Error.WriteLine("[SHFramework] " + message);
 		}
 
+		/// <summary>
+		/// No Parameter Module Call.
+		/// </summary>
+		/// <returns></returns>
 		public CallResultData[] DoWorkModules()
 		{
 			List<CallResultData> resultData = new List<CallResultData>();

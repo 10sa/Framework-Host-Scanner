@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.IO;
+using System.Windows.Forms;
 
 using SHFramework.Module.Interfaces;
 
@@ -34,7 +35,7 @@ namespace SHFramework.Module
 		/// <summary>
 		/// Return Module Folder Path.
 		/// </summary>
-		public string ModuleDirPath
+		public string ModulePath
 		{
 			get
 			{
@@ -61,9 +62,9 @@ namespace SHFramework.Module
 				{
 					int lastCount = moduleData.Count;
 
-					foreach(var _class in CreateModules(GetModuleClass(moduleFile.FullName)))
+					foreach(var classInstances in CreateModuleInstances(GetModuleClass(moduleFile.FullName)))
 					{
-						moduleData.Add(new ModuleData(_class, moduleFile.Name, moduleFile.FullName));
+						moduleData.Add(new ModuleData(classInstances, moduleFile.Name, moduleFile.FullName));
 					}
 
 					if (lastCount != moduleData.Count)
@@ -81,21 +82,22 @@ namespace SHFramework.Module
 		/// Add Module Class.
 		/// </summary>
 		/// <param name="classes">Module Class.</param>
-		private IModuleBase[] CreateModules(Type[] classes)
+		private IModuleBase[] CreateModuleInstances(Type[] classes)
 		{
 			List<IModuleBase> moduleClasses = new List<IModuleBase>();
 
-			foreach(var _class in classes)
+			foreach(var moduleClass in classes)
 			{
-				if(CheckClassType(_class))
+				if(IsValidateClassType(moduleClass))
 				{
 					try
 					{
-						moduleClasses.Add((IModuleBase)Activator.CreateInstance(_class));
+						moduleClasses.Add((IModuleBase)Activator.CreateInstance(moduleClass));
 					}
 					catch (MissingMethodException)
 					{
-						FrameworkKernel.ErrorReport(string.Format(ErrorReportFormat, MissingConstructor, _class.FullName));
+						FrameworkKernel.ErrorReport(string.Format(ErrorReportFormat, MissingConstructor, moduleClass.FullName));
+						continue;
 					}
 				}
 			}
@@ -109,7 +111,7 @@ namespace SHFramework.Module
 		/// <returns>Module Files Info.</returns>
 		private FileInfo[] GetModuleFiles()
 		{
-			DirectoryInfo Dir = new DirectoryInfo(ModuleDirPath);
+			DirectoryInfo Dir = new DirectoryInfo(ModulePath);
 			return Dir.GetFiles(ModuleLoadFormat);
 		}
 
@@ -135,14 +137,32 @@ namespace SHFramework.Module
 		/// <summary>
 		/// Validity Check Of The Class.
 		/// </summary>
-		/// <param name="Class">Class To Be Checked</param>
+		/// <param name="moduleClass">Class To Be Checked</param>
 		/// <returns>Validity Of The Class.</returns>
-		private bool CheckClassType(Type Class)
+		private bool IsValidateClassType(Type moduleClass)
 		{
-			if (Class.IsAssignableFrom(typeof(IModuleBase)) && Class.IsPublic && !Class.IsAbstract)
+			if (moduleClass.IsAssignableFrom(typeof(IModuleBase)) && moduleClass.IsPublic && !moduleClass.IsAbstract)
 				return true;
 			else
 				return false;
+		}
+
+		private bool IsValidateProperty(IModuleBase validateModule, FileInfo fileInfo)
+		{
+			try
+			{
+				string name = validateModule.GetName;
+				string version = validateModule.GetVersion;
+				ModuleType type = validateModule.GetType;
+				Form resultForm = validateModule.ResultForm;
+			}
+			catch(Exception e)
+			{
+				FrameworkKernel.ErrorReport(string.Format(ErrorReportFormat, fileInfo.FullName, e.ToString() + e.Message));
+				return false;
+			}
+
+			return true;
 		}
 	}
 

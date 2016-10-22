@@ -31,7 +31,7 @@ namespace SHFramework
 			foreach (var modules in moduleController.Modules)
 			{
 				if (modules.Module.GetOptions == ModuleParameterOptions.TargetAddress)
-					ErrorReport(string.Format("Module : {0} | Module Type Not Matched. (Not Call)", modules.Module.GetName));
+					ErrorReport(string.Format("Module : {0} | Module Type Not Matched.", modules.Module.GetName));
 
 				if(modules.Module.GetOptions == ModuleParameterOptions.None)
 				{

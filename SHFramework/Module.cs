@@ -25,7 +25,7 @@ namespace SHFramework.Module
 		/// </summary>
 		private const string ModuleLoadFormat = "*.dll";
 
-		private const string ErrorReportFormat = "Module Load Error | {0] | {1} ";
+		private const string ErrorReportFormat = "Module Load Error | {0} | {1} ";
 
 		private const string BadFormatDll = "Bad Format Dll.";
 		private const string MissingConstructor = "Missing Constructor.";
@@ -45,32 +45,35 @@ namespace SHFramework.Module
 		/// <summary>
 		/// The Last Loaded Module List.
 		/// </summary>
-		public List<ModuleData> Modules { get; private set; } = new List<ModuleData>();
+		public ModuleData[] Modules { get; private set; }
 
 		/// <summary>
 		/// Load Module.
 		/// </summary>
 		/// <returns>Module Instances.</returns>
-		public List<ModuleData> Load()
+		public ModuleData[] Load()
 		{
+			List<ModuleData> moduleData = new List<ModuleData>();
+
 			foreach(var moduleFile in GetModuleFiles())
 			{
 				try
 				{
-					int lastCount = Modules.Count;
+					int lastCount = moduleData.Count;
 
 					foreach(var _class in CreateModules(GetModuleClass(moduleFile.FullName)))
 					{
-						Modules.Add(new ModuleData(_class, moduleFile.Name, moduleFile.FullName));
+						moduleData.Add(new ModuleData(_class, moduleFile.Name, moduleFile.FullName));
 					}
 
-					if (lastCount != Modules.Count)
+					if (lastCount != moduleData.Count)
 						FrameworkKernel.ErrorReport(string.Format(ErrorReportFormat, NotFoundAssiganbleMethod, moduleFile.FullName));
 				}
 				// Ignore Exceptions. 
 				catch (BadImageFormatException) { continue; }
 			}
 
+			Modules = moduleData.ToArray();
 			return Modules;
 		}
 

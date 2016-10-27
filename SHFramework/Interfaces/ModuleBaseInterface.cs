@@ -48,7 +48,9 @@ namespace SHFramework.Module.Interfaces
 
 	public enum ModuleParameterOptions
 	{
-		TargetAddress,
+		IPAddress,
+        Uri,
+		CustomParamter,
 		None
 	}
 }

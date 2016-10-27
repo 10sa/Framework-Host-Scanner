@@ -5,12 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Web;
+using System.Net;
+
 using SHFramework.Module;
 using SHFramework.Module.Interfaces;
 
 namespace SHFramework
 {
-	class FrameworkKernel
+	class SHFrameworkKernel
 	{
 		private const string ErrorReportFormat = "[SHFramework | Error] {0}";
 		private const string InfoReportFormat = "[SHFramework | Info] {0}";
@@ -40,6 +43,13 @@ namespace SHFramework
 				Console.WriteLine(string.Format(WarningReportFormat, message));
 		}
 
+		// Kernel Init Point.
+		public SHFrameworkKernel()
+		{
+			module.Load();
+            return;
+		}
+
 		/// <summary>
 		/// No Parameter Module Call. (None Parameter Options Module Call.)
 		/// </summary>
@@ -47,8 +57,7 @@ namespace SHFramework
 		public CallResultData[] DoWorkModules()
 		{
 			List<CallResultData> resultData = new List<CallResultData>();
-
-			moduleController.Load();
+			
 			foreach (var modules in moduleController.Modules)
 			{
 				if(modules.Module.GetOptions == ModuleParameterOptions.None)
@@ -73,6 +82,38 @@ namespace SHFramework
 				}
 			}
 
+			return resultData.ToArray();
+		}
+		
+		
+		// address call.
+		public CallResultData[] DoWorkModules(Uri address)
+		{
+            List<CallResultData> resultData = new List<CallResultData>();
+			
+            foreach(var modules in moduleController.Modules)
+            {
+                
+            }
+			
+			return resultData.ToArray();
+		}
+
+        // IPAddress Call.
+        public CallResultData[] DoWokrModules(IPAddress ipAddress)
+        {
+            List<CallResultData> resultData = new List<CallResultData>();
+
+
+            return resultData.ToArray();
+        }
+		
+		// custom parameter call.
+		public CallResultData[] DoWorkModules(object[] customParameter)
+		{
+            List<CallResultData> resultData = new List<CallResultData>();
+			
+			
 			return resultData.ToArray();
 		}
 	}

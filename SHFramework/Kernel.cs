@@ -15,16 +15,17 @@ namespace SHFramework
 {
 	class SHFrameworkKernel
 	{
-		private const string ErrorReportFormat = "[SHFramework | Error] {0}";
-		private const string InfoReportFormat = "[SHFramework | Info] {0}";
-		private const string StatusReportFormat = "[SHFramework | Status] {0}";
-		private const string WarningReportFormat = "[SHFramework | Warning] {0}";
+		private const string ErrorReportFormat = "[SHFramework | Error] <{0}>";
+		private const string InfoReportFormat = "[SHFramework | Info] <{0}>";
+		private const string StatusReportFormat = "[SHFramework | Status] <{0}>";
+		private const string WarningReportFormat = "[SHFramework | Warning] <{0}>";
 
 		private const string ModuleResultIsNull = "Module : {0} | Module Result Is Null.";
 		private const string ModuleOutputIsNone = "Module : {0} | Module Output Is None.";
 		private const string ModuleTypeNotMatched = "Module : {0} | Module Type Not Matched.";
+        private const string ModuleCheckingErrorException = "Module : {0} | Module Checking Error! | Exception {1}";
 
-		private ModuleLoadControll moduleController = new ModuleLoadControll();
+        private ModuleLoadControll moduleController = new ModuleLoadControll();
 
 		/// <summary>
 		/// Report Info. (Error, Info, Status, Warning, Others...)
@@ -46,7 +47,7 @@ namespace SHFramework
 		// Kernel Init Point.
 		public SHFrameworkKernel()
 		{
-			module.Load();
+			moduleController.Load();
             return;
 		}
 
@@ -65,8 +66,8 @@ namespace SHFramework
 					ModuleCallResult result;
 					if((result = modules.Module.DoWork(null)) == ModuleCallResult.HaveData)
 					{
-						if (modules.Module.ResultForm == null)
-							Report(string.Format(ModuleResultIsNull, modules.Module.GetName), ReportType.Warning);
+                        if(!IsValidateResultForm(modules))
+                            continue;
 
 						resultData.Add(new CallResultData(result, modules.Module.ResultForm, modules));
 					}
@@ -90,10 +91,22 @@ namespace SHFramework
 		public CallResultData[] DoWorkModules(Uri address)
 		{
             List<CallResultData> resultData = new List<CallResultData>();
-			
+            object[] moduleParameter = { address };
+
             foreach(var modules in moduleController.Modules)
             {
-                
+                if(modules.Module.GetOptions == ModuleParameterOptions.Uri)
+                {
+                    if(!IsValidateResultForm(modules))
+                        continue;
+
+                    resultData.Add(new CallResultData(modules.Module.DoWork(moduleParameter), modules.Module.ResultForm, modules));
+                }
+                else
+                {
+                    Report(string.Format(ModuleTypeNotMatched, modules.Module.GetName), ReportType.Warning);
+                    continue;
+                }
             }
 			
 			return resultData.ToArray();
@@ -116,6 +129,26 @@ namespace SHFramework
 			
 			return resultData.ToArray();
 		}
+
+        private bool IsValidateResultForm(ModuleData module)
+        {
+            try
+            {
+                if(module.Module.ResultForm == null)
+                {
+                    Report(string.Format(ModuleResultIsNull, module.Module.GetName), ReportType.Warning);
+                    return false;
+                }
+            }
+            catch(Exception e)
+            {
+                Report(string.Format(ModuleCheckingErrorException, module.Module.GetName, e.ToString()), ReportType.Error);
+                return false;
+            }
+            
+
+            return true;
+        }
 	}
 
 	public enum ReportType

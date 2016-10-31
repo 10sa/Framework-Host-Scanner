@@ -63,7 +63,7 @@ namespace SHFramework.Module
 					}
 
 					if (lastCount != moduleData.Count)
-						FrameworkKernel.Report(string.Format(ErrorReportFormat, NotFoundAssiganbleMethod, moduleFile.FullName), ReportType.Error);
+						SHFrameworkKernel.Report(string.Format(ErrorReportFormat, NotFoundAssiganbleMethod, moduleFile.FullName), ReportType.Error);
 				}
 				// Ignore Exceptions. 
 				catch (BadImageFormatException) { continue; }
@@ -87,7 +87,7 @@ namespace SHFramework.Module
 					}
 					catch (MissingMethodException)
 					{
-						FrameworkKernel.Report(string.Format(ErrorReportFormat, MissingConstructor, moduleClass.FullName), ReportType.Error);
+						SHFrameworkKernel.Report(string.Format(ErrorReportFormat, MissingConstructor, moduleClass.FullName), ReportType.Error);
 						continue;
 					}
 				}
@@ -110,7 +110,7 @@ namespace SHFramework.Module
 			}
 			catch (BadImageFormatException exc)
 			{
-				FrameworkKernel.Report(string.Format(ErrorReportFormat, WorngFormatDll, exc.FileName), ReportType.Error);
+				SHFrameworkKernel.Report(string.Format(ErrorReportFormat, WorngFormatDll, exc.FileName), ReportType.Error);
 				throw;
 			}
 			
@@ -135,7 +135,7 @@ namespace SHFramework.Module
 			}
 			catch(Exception e)
 			{
-				FrameworkKernel.Report(string.Format(ErrorReportFormat, fileInfo.FullName, e.ToString() + e.Message), ReportType.Error);
+				SHFrameworkKernel.Report(string.Format(ErrorReportFormat, fileInfo.FullName, e.ToString() + e.Message), ReportType.Error);
 				return false;
 			}
 

@@ -14,17 +14,18 @@ namespace SHFramework.Module
 	/// <summary>
 	/// Framework Module Part Class.
 	/// </summary>
-	public class ModuleLoadControll
+	class ModuleLoadControll
 	{
 		private const string ModuleFolderName = "Module";
 
 		private const string ModuleLoadFormat = "*.dll";
 
-		private const string ErrorReportFormat = "Module Load Error | {0} | {1} ";
+		private const string ErrorReportFormat = "Module Load Error | {0} | {1} | ";
 
 		private const string WorngFormatDll = "Wrong Format Dll.";
 		private const string MissingConstructor = "Missing Constructor.";
 		private const string NotFoundAssiganbleMethod = "Not Found Assiganble Method.";
+		private const string NotValidateProperty = "Module Property Is Not Validate.";
 
 		/// <summary>
 		/// Return Module Folder Path.
@@ -60,13 +61,18 @@ namespace SHFramework.Module
 					{
 						if(IsValidateProperty(classInstances, moduleFile))
 							moduleData.Add(new ModuleData(classInstances, moduleFile.Name, moduleFile.FullName));
+						else
+							SHFrameworkKernel.Report(string.Format(ErrorReportFormat, NotValidateProperty, moduleFile.Name), ReportType.Error);
 					}
 
 					if (lastCount != moduleData.Count)
 						SHFrameworkKernel.Report(string.Format(ErrorReportFormat, NotFoundAssiganbleMethod, moduleFile.FullName), ReportType.Error);
 				}
 				// Ignore Exceptions. 
-				catch (BadImageFormatException) { continue; }
+				catch (ModuleLoadException e)
+				{
+					SHFrameworkKernel.Report(e.Message, e.ReportMessageType);
+				}
 			}
 
 			Modules = moduleData.ToArray();
@@ -85,10 +91,9 @@ namespace SHFramework.Module
 					{
 						moduleClasses.Add((IModuleBase)Activator.CreateInstance(moduleClass));
 					}
-					catch (MissingMethodException)
+					catch (MissingMethodException e)
 					{
-						SHFrameworkKernel.Report(string.Format(ErrorReportFormat, MissingConstructor, moduleClass.FullName), ReportType.Error);
-						continue;
+						throw new ModuleLoadException(string.Format(ErrorReportFormat, NotFoundAssiganbleMethod), ReportType.Error);
 					}
 				}
 			}
@@ -108,10 +113,9 @@ namespace SHFramework.Module
 			{
 				return Assembly.LoadFile(fileAbsolutePath).GetExportedTypes();
 			}
-			catch (BadImageFormatException exc)
+			catch (BadImageFormatException e)
 			{
-				SHFrameworkKernel.Report(string.Format(ErrorReportFormat, WorngFormatDll, exc.FileName), ReportType.Error);
-				throw;
+				throw new ModuleLoadException(string.Format(ErrorReportFormat, WorngFormatDll, e.FileName), ReportType.Error);
 			}
 			
 		}
@@ -135,7 +139,6 @@ namespace SHFramework.Module
 			}
 			catch(Exception e)
 			{
-				SHFrameworkKernel.Report(string.Format(ErrorReportFormat, fileInfo.FullName, e.ToString() + e.Message), ReportType.Error);
 				return false;
 			}
 
@@ -157,5 +160,11 @@ namespace SHFramework.Module
 
 			return;
 		}
+	}
+
+	public class ModuleLoadException : ModuleExceptionFrame
+	{
+		public ModuleData Module { get; private set; }
+		public ModuleLoadException(string message, ReportType reportType) : base(message, reportType) { }
 	}
 }

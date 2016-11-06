@@ -14,26 +14,28 @@ using SHFramework.Module.Interfaces;
 
 namespace SHFramework
 {
-	class SHFrameworkKernel
+	public class SHFrameworkKernel
 	{
 		// Report Formats //
 		private const string ErrorReportFormat = "[SHFramework | Error] <{0}>";
 		private const string InfoReportFormat = "[SHFramework | Info] <{0}>";
 		private const string StatusReportFormat = "[SHFramework | Status] <{0}>";
 		private const string WarningReportFormat = "[SHFramework | Warning] <{0}>";
-		private const string CustonReportFormat = "[SHFramework | {0}] <{1}>";
+		private const string CustomReportFormat = "[SHFramework | {0}] <{1}>";
 		// END //
 
 		// Module Status Report Formats //
 		private const string ModuleResultIsNull = "Module : {0} | Module Result Is Null.";
 		private const string ModuleOutputIsNone = "Module : {0} | Module Output Is None.";
 		private const string ModuleTypeNotMatched = "Module : {0} | Module Type Not Matched.";
-        private const string ModuleCheckingErrorException = "Module : {0} | Module Checking Error! | Exception {1}";
+        private const string ModuleCheckingErrorException = "Module : {0} | Module Checking Error. | Exception {1}";
 		// END //
 
 		// Private //
 		private ModuleLoadControll moduleController = new ModuleLoadControll();
 		// END //
+
+
 
 		/// <summary>
 		/// Report Info. (Error, Info, Status, Warning, Others...)
@@ -61,10 +63,11 @@ namespace SHFramework
 		public static void Report(string message, string customReportType, bool IsWriteErrorStream)
 		{
 			if(IsWriteErrorStream)
-				Console.Error.WriteLine(string.Format(CustonReportFormat, customReportType, message));
+				Console.Error.WriteLine(string.Format(CustomReportFormat, customReportType, message));
 			else
-				Console.WriteLine(string.Format(CustonReportFormat, customReportType, message));
+				Console.WriteLine(string.Format(CustomReportFormat, customReportType, message));
 		}
+
 
 
 		// Kernel Init Point.
@@ -81,6 +84,8 @@ namespace SHFramework
             return;
 		}
 
+
+
 		/// <summary>
 		/// No Parameter Module Call. (None Parameter Options Module Call.)
 		/// </summary>
@@ -91,32 +96,15 @@ namespace SHFramework
 			
 			foreach (var module in moduleController.Modules)
 			{
-				if(module.Module.GetOptions == ModuleParameterOptions.None)
+				try
 				{
-					ModuleCallResult result;
-					if((result = module.Module.DoWork(null)) == ModuleCallResult.HaveData)
-					{
-                        if(!IsValidateResultForm(module))
-                            continue;
-
-						resultData.Add(new CallResultData(result, module.Module.ResultForm, module));
-					}
-					else if (result == ModuleCallResult.None)
-					{
-						Report(string.Format(ModuleOutputIsNone, module.Module.GetName), ReportType.Info);
-						continue;
-					}
+					resultData.Add(GetModuleResult(module, module.Module.GetOptions, null));
 				}
-				else
-				{
-					Report(string.Format(ModuleTypeNotMatched, module.Module.GetName), ReportType.Warning);
-					continue;
-				}
+				catch(SHFrameworkExceptionFrame e) { Report(e.Message, e.ReportMessageType); }
 			}
 
 			return resultData.ToArray();
 		}
-		
 		
 		// address call.
 		public CallResultData[] DoWorkModules(Uri address)
@@ -126,29 +114,12 @@ namespace SHFramework
 
             foreach(var module in moduleController.Modules)
             {
-                if(module.Module.GetOptions == ModuleParameterOptions.Uri)
-                {
-					ModuleCallResult result = module.Module.DoWork(moduleParameter);
-
-					if(result == ModuleCallResult.HaveData)
-					{
-						if(!IsValidateResultForm(module))
-							continue;
-
-						resultData.Add(new CallResultData(result, module.Module.ResultForm, module));
-					}
-					else
-					{
-						Report(string.Format(ModuleOutputIsNone, module.Module.GetName), ReportType.Info);
-						continue;
-					}
-                }
-                else
-                {
-                    Report(string.Format(ModuleTypeNotMatched, module.Module.GetName), ReportType.Warning);
-                    continue;
-                }
-            }
+				try
+				{
+					resultData.Add(GetModuleResult(module, module.Module.GetOptions, moduleParameter));
+				}
+				catch (SHFrameworkExceptionFrame e) { Report(e.Message, e.ReportMessageType); }
+			}
 			
 			return resultData.ToArray();
 		}
@@ -161,75 +132,61 @@ namespace SHFramework
 
             foreach(var module in moduleController.Modules)
             {
-                if(module.Module.GetOptions == ModuleParameterOptions.IPAddress)
-                {
-                    if(!IsValidateResultForm(module))
-                        continue;
-
-					resultData.Add(new CallResultData(module.Module.DoWork(moduleParameter), module.Module.ResultForm, module));
+				try
+				{
+					resultData.Add(GetModuleResult(module, module.Module.GetOptions, moduleParameter));
 				}
-                else
-                {
-                    Report(string.Format(ModuleTypeNotMatched, module.Module.GetName), ReportType.Warning);
-                    continue;
-                }
-            }
+				catch (SHFrameworkExceptionFrame e) { Report(e.Message, e.ReportMessageType); }
+			}
 
             return resultData.ToArray();
         }
 		
 		// custom parameter call.
-		public CallResultData[] DoWorkModules(object[] customParameter)
+		public CallResultData[] DoWorkModules(object[] moduleParameter)
 		{
             List<CallResultData> resultData = new List<CallResultData>();
 			
 			foreach(var module in moduleController.Modules)
 			{
-				if(module.Module.GetOptions == ModuleParameterOptions.CustomParamter)
+				try
 				{
-					ModuleCallResult result = module.Module.DoWork(customParameter);
-					if(result == ModuleCallResult.HaveData)
-					{
-						if(!IsValidateResultForm(module))
-							continue;
-
-						resultData.Add(new CallResultData(result, module.Module.ResultForm, module));
-					}
-					else
-					{
-						Report(string.Format(ModuleTypeNotMatched, module.Module.GetName), ReportType.Warning);
-						continue;
-					}
+					resultData.Add(GetModuleResult(module, module.Module.GetOptions, moduleParameter));
 				}
-				else
-				{
-					Report(string.Format(ModuleTypeNotMatched, module.Module.GetName), ReportType.Warning);
-					continue;
-				}
+				catch (SHFrameworkExceptionFrame e) { Report(e.Message, e.ReportMessageType); }
 			}
 			
 			return resultData.ToArray();
 		}
 
+
+
         private bool IsValidateResultForm(ModuleData module)
         {
-            try
-            {
-                if(module.Module.ResultForm == null)
-                {
-                    Report(string.Format(ModuleResultIsNull, module.Module.GetName), ReportType.Warning);
-                    return false;
-                }
-            }
-            catch(Exception e)
-            {
-                Report(string.Format(ModuleCheckingErrorException, module.Module.GetName, e.ToString()), ReportType.Error);
-                return false;
-            }
-            
+			if (module.Module.ResultForm == null)
+				return false;
 
-            return true;
+			return true;
         }
+
+		private CallResultData GetModuleResult(ModuleData module, ModuleParameterOptions options, object[] moduleParamter)
+		{
+			if (module.Module.GetOptions == options)
+			{
+				ModuleCallResult result;
+				if ((result = module.Module.DoWork(moduleParamter)) == ModuleCallResult.HaveData)
+				{
+					if (IsValidateResultForm(module))
+						return new CallResultData(result, module.Module.ResultForm, module);
+					else
+						throw new ModuleCallException(string.Format(ModuleResultIsNull, module.Module.GetName), ReportType.Error);
+				}
+				else
+					throw new ModuleCallException(string.Format(ModuleOutputIsNone, module.Module.GetName), ReportType.Error);
+			}
+			else
+				throw new ModuleCallException(string.Format(ModuleTypeNotMatched, module.Module.GetName), ReportType.Error);
+		}
 	}
 
 	public enum ReportType

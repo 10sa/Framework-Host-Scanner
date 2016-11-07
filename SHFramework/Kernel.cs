@@ -14,6 +14,9 @@ using SHFramework.Module.Interfaces;
 
 namespace SHFramework
 {
+	/// <summary>
+	/// SHFramework Kernel/Main Class.
+	/// </summary>
 	public class SHFrameworkKernel
 	{
 		// Report Formats //
@@ -24,17 +27,29 @@ namespace SHFramework
 		private const string CustomReportFormat = "[SHFramework | {0}] <{1}>";
 		// END //
 
+
+		// Exception Messages //
+		private const string ReportMessageIsNull = "Report Message Is Null.";
+		// END //
+
+
 		// Module Status Report Formats //
 		private const string ModuleResultIsNull = "Module : {0} | Module Result Is Null.";
 		private const string ModuleOutputIsNone = "Module : {0} | Module Output Is None.";
 		private const string ModuleTypeNotMatched = "Module : {0} | Module Type Not Matched.";
-        private const string ModuleCheckingErrorException = "Module : {0} | Module Checking Error. | Exception {1}";
+        private const string ModuleCheckingErrorException = "Module : {0} | Module Checking Error. | Exception : {1}";
 		// END //
+
+
+		// Framework Messages //
+		private const string FrameworkInitlizingStart = "Framework Initlizing...";
+		private const string EndFrameworkInitlizing = "Framework Initlizing Done!";
+		// END //
+
 
 		// Private //
 		private ModuleLoadControll moduleController = new ModuleLoadControll();
 		// END //
-
 
 
 		/// <summary>
@@ -44,14 +59,19 @@ namespace SHFramework
 		/// <param name="reportType">Report Type.</param>
 		public static void Report(string message, ReportType reportType)
 		{
-			if (reportType == ReportType.Error)
-				Console.Error.WriteLine(string.Format(ErrorReportFormat, message));
-			else if (reportType == ReportType.Info)
-				Console.WriteLine(string.Format(InfoReportFormat, message));
-			else if (reportType == ReportType.Status)
-				Console.WriteLine(string.Format(StatusReportFormat, message));
-			else if (reportType == ReportType.Warning)
-				Console.WriteLine(string.Format(WarningReportFormat, message));
+			if (message != null)
+			{
+				if (reportType == ReportType.Error)
+					Console.Error.WriteLine(string.Format(ErrorReportFormat, message));
+				else if (reportType == ReportType.Info)
+					Console.WriteLine(string.Format(InfoReportFormat, message));
+				else if (reportType == ReportType.Status)
+					Console.WriteLine(string.Format(StatusReportFormat, message));
+				else if (reportType == ReportType.Warning)
+					Console.Error.WriteLine(string.Format(WarningReportFormat, message));
+			}
+			else
+				Report(string.Format(ErrorReportFormat, ReportMessageIsNull), ReportType.Error);
 		}
 
 		/// <summary>
@@ -62,34 +82,52 @@ namespace SHFramework
 		/// <param name="IsWriteErrorStream">Report Type.</param>
 		public static void Report(string message, string customReportType, bool IsWriteErrorStream)
 		{
-			if(IsWriteErrorStream)
-				Console.Error.WriteLine(string.Format(CustomReportFormat, customReportType, message));
+			if (message != null && customReportType != null)
+			{
+				if (IsWriteErrorStream)
+					Console.Error.WriteLine(string.Format(CustomReportFormat, customReportType, message));
+				else
+					Console.WriteLine(string.Format(CustomReportFormat, customReportType, message));
+			}
 			else
-				Console.WriteLine(string.Format(CustomReportFormat, customReportType, message));
+				throw new InvalidMethodArgsException(string.Format(ErrorReportFormat, ReportMessageIsNull), ReportType.Error);
+			
 		}
 
-
-
-		// Kernel Init Point.
+		/// <summary>
+		/// Start Framework Initlizng.
+		/// </summary>
 		public SHFrameworkKernel()
 		{
-			Report("Framework Initlizing...", ReportType.Info);
+			Report(FrameworkInitlizingStart, ReportType.Info);
 
 			// Framework Initlizing //
 			moduleController.Load();
 			// END //
 
-			Report("Framework Initlizing Done!", ReportType.Info);
+			Report(EndFrameworkInitlizing, ReportType.Info);
 
             return;
 		}
 
+		/// <summary>
+		/// Framework Modules Reloading.
+		/// </summary>
+		public void Reload()
+		{
+			moduleController.Load();
+		}
 
+		// Debug Method.
+		/* public ModuleData[] Reload()
+		{
+			return moduleController.Load();
+		} */
 
 		/// <summary>
-		/// No Parameter Module Call. (None Parameter Options Module Call.)
+		/// No Parameter Module Call. (None Parameter Options Modules)
 		/// </summary>
-		/// <returns></returns>
+		/// <returns>Module Call Result.</returns>
 		public CallResultData[] DoWorkModules()
 		{
 			List<CallResultData> resultData = new List<CallResultData>();
@@ -98,7 +136,7 @@ namespace SHFramework
 			{
 				try
 				{
-					resultData.Add(GetModuleResult(module, module.Module.GetOptions, null));
+					resultData.Add(GetModuleResult(module, ModuleParameterOptions.None, null));
 				}
 				catch(SHFrameworkExceptionFrame e) { Report(e.Message, e.ReportMessageType); }
 			}
@@ -106,7 +144,11 @@ namespace SHFramework
 			return resultData.ToArray();
 		}
 		
-		// address call.
+		/// <summary>
+		/// Uri Parameter Module Call (Uri Parameter Options Modules)
+		/// </summary>
+		/// <param name="address">Target Address.</param>
+		/// <returns>Module Call Result.</returns>
 		public CallResultData[] DoWorkModules(Uri address)
 		{
             List<CallResultData> resultData = new List<CallResultData>();
@@ -116,7 +158,7 @@ namespace SHFramework
             {
 				try
 				{
-					resultData.Add(GetModuleResult(module, module.Module.GetOptions, moduleParameter));
+					resultData.Add(GetModuleResult(module, ModuleParameterOptions.Uri, moduleParameter));
 				}
 				catch (SHFrameworkExceptionFrame e) { Report(e.Message, e.ReportMessageType); }
 			}
@@ -124,8 +166,12 @@ namespace SHFramework
 			return resultData.ToArray();
 		}
 
-        // IPAddress Call.
-        public CallResultData[] DoWokrModules(IPAddress ipAddress)
+		/// <summary>
+		/// IPAddress Parameter Module Call. (IP Parameter Options Modules)
+		/// </summary>
+		/// <param name="ipAddress">Target IP Address.</param>
+		/// <returns>Module Call Result.</returns>
+		public CallResultData[] DoWokrModules(IPAddress ipAddress)
         {
             List<CallResultData> resultData = new List<CallResultData>();
             object[] moduleParameter = { ipAddress };
@@ -134,15 +180,20 @@ namespace SHFramework
             {
 				try
 				{
-					resultData.Add(GetModuleResult(module, module.Module.GetOptions, moduleParameter));
+					resultData.Add(GetModuleResult(module, ModuleParameterOptions.IPAddress, moduleParameter));
 				}
 				catch (SHFrameworkExceptionFrame e) { Report(e.Message, e.ReportMessageType); }
 			}
 
             return resultData.ToArray();
         }
-		
-		// custom parameter call.
+
+		/// <summary>
+		/// Custom Parameter Module Call. (Custom Paramter Options Modules),
+		/// The Framework Does Not Guarantee The Stability Of This Method.
+		/// </summary>
+		/// <param name="moduleParameter">Custom Parameter(s).</param>
+		/// <returns>Module Call Result.</returns>
 		public CallResultData[] DoWorkModules(object[] moduleParameter)
 		{
             List<CallResultData> resultData = new List<CallResultData>();
@@ -151,15 +202,13 @@ namespace SHFramework
 			{
 				try
 				{
-					resultData.Add(GetModuleResult(module, module.Module.GetOptions, moduleParameter));
+					resultData.Add(GetModuleResult(module, ModuleParameterOptions.Custom, moduleParameter));
 				}
 				catch (SHFrameworkExceptionFrame e) { Report(e.Message, e.ReportMessageType); }
 			}
 			
 			return resultData.ToArray();
 		}
-
-
 
         private bool IsValidateResultForm(ModuleData module)
         {
@@ -189,20 +238,58 @@ namespace SHFramework
 		}
 	}
 
+	/// <summary>
+	/// Report Message Type.
+	/// </summary>
 	public enum ReportType
 	{
+		/// <summary>
+		/// Normally Info Message.
+		/// </summary>
 		Info,
-		Error,
+
+		/// <summary>
+		/// Normally Status Message.
+		/// </summary>
+		Status,
+
+		/// <summary>
+		/// Unusual Warning Message.
+		/// </summary>
 		Warning,
-		Status
+
+		/// <summary>
+		/// Critical Error Message.
+		/// </summary>
+		Error
 	}
 
+	/// <summary>
+	/// Module Call Result Data Struct.
+	/// </summary>
 	public struct CallResultData
 	{
+		/// <summary>
+		/// Module Call Result.
+		/// </summary>
 		public ModuleCallResult Result;
+
+		/// <summary>
+		/// Module Result Form.
+		/// </summary>
 		public Form ResultForm;
+
+		/// <summary>
+		/// Original Module.
+		/// </summary>
 		public ModuleData Module;
 
+		/// <summary>
+		/// Initlizing Struct.
+		/// </summary>
+		/// <param name="callResult">Module Call Result.</param>
+		/// <param name="resultForm">Module Result Form.</param>
+		/// <param name="module">Original Module.</param>
 		public CallResultData(ModuleCallResult callResult, Form resultForm, ModuleData module)
 		{
 			Result = callResult;
@@ -211,5 +298,18 @@ namespace SHFramework
 
 			return;
 		}
+	}
+
+	/// <summary>
+	/// Module Call Exception, See a Exception Message.
+	/// </summary>
+	public class ModuleCallException : ModuleExceptionFrame
+	{
+		/// <summary>
+		/// Initlizing Exception Class.
+		/// </summary>
+		/// <param name="message"></param>
+		/// <param name="reportType"></param>
+		public ModuleCallException(string message, ReportType reportType) : base(message, reportType) { }
 	}
 }

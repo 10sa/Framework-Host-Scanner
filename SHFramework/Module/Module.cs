@@ -146,7 +146,7 @@ namespace SHFramework.Module
 		}
 	}
 
-	public struct ModuleData
+	struct ModuleData
 	{
 		public IModuleBase Module;
 		public string FileName;
@@ -162,7 +162,7 @@ namespace SHFramework.Module
 		}
 	}
 
-	public class ModuleLoadException : ModuleExceptionFrame
+	class ModuleLoadException : ModuleExceptionFrame
 	{
 		public ModuleData Module { get; private set; }
 		public ModuleLoadException(string message, ReportType reportType) : base(message, reportType) { }

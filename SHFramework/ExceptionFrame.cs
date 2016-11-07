@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using SHFramework.Module;
-
 namespace SHFramework
 {
-	public class SHFrameworkExceptionFrame : Exception
+	/// <summary>
+	/// SHFramework Exception Frame.
+	/// </summary>
+	public abstract class SHFrameworkExceptionFrame : Exception
 	{
 		public ReportType ReportMessageType { get; private set; }
 		private SHFrameworkExceptionFrame() : base() { }
@@ -20,13 +21,19 @@ namespace SHFramework
 		}
 	}
 
+	/// <summary>
+	/// Module Exception Frame.
+	/// </summary>
 	public class ModuleExceptionFrame : SHFrameworkExceptionFrame
 	{
 		public ModuleExceptionFrame(string message, ReportType reportType) : base(message, reportType) { }
 	}
 
-	public class ModuleCallException : ModuleExceptionFrame
+	/// <summary>
+	/// Occurs When an invalid Argument's Passed.
+	/// </summary>
+	public class InvalidMethodArgsException : SHFrameworkExceptionFrame
 	{
-		public ModuleCallException(string message, ReportType reportType) : base(message, reportType) { }
+		public InvalidMethodArgsException(string message, ReportType reportType) : base(message, reportType) { }
 	}
 }

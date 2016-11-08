@@ -11,22 +11,28 @@ namespace SHFramework.Config
 {
 	class Config
 	{
-		private readonly string[] FrameworkDefaultConfigTable =
-		{
-			"Maximun_Modules", "16",
+		private const string SettingConfigPath = @"\Config\FramworkSetting.cfg";
 
-			"", ""
+		private const string RootNodeName = "FrameworkSetting";
+		private const string ModuleNodeName = "ModuleSetting";
+
+		private readonly string[,] DefaultKernelSetting =
+		{
+			{ "B:Encryption_Config", "false" }
 		};
 
-		private const string SettingConfigPath = @"\Config\FramworkSetting.cfg";
+		private readonly string[,] DefaultModuleSetting =
+		{
+			{ "I:Maximun_Modules", "16" },
+			{ "S:Prefix_Module_Path", "" }
+		};
+
 		XmlDocument xmlConfig = new XmlDocument();
 
 		public Config()
 		{
-			if (File.Exists(SettingConfigPath))
-				LoadConfigData();
-			else
-				CreativeConfig();
+			if (!File.Exists(SettingConfigPath))
+				CreateConfig();
 		}
 
 		private void LoadConfigData()
@@ -34,17 +40,36 @@ namespace SHFramework.Config
 
 		}
 
-		private void CreativeConfig()
+		private void CreateConfig()
 		{
 			xmlConfig.AppendChild(xmlConfig.CreateXmlDeclaration("1.0", "UTF-8", "yes"));
-			XmlNode rootConfigNode = xmlConfig.CreateElement("", "FrameworkSetting", "");
+			XmlNode rootConfigNode = xmlConfig.CreateElement(string.Empty, RootNodeName, string.Empty);
 
-			rootConfigNode.AppendChild(CreativeXmlNode(xmlConfig, "", ""));
+
+			// Kernel Setting //
+			XmlNode kernelConfigNode = CreateXmlNode(xmlConfig, "KernelSetting", string.Empty);
+
+			for (int i = 0; i < DefaultKernelSetting.Length; i++)
+				kernelConfigNode.AppendChild(CreateXmlNode(xmlConfig, DefaultKernelSetting[i, 0], DefaultKernelSetting[i, 1]));
+
+			rootConfigNode.AppendChild(kernelConfigNode);
+			// END //
+
+
+			// Module Config //
+			XmlNode moduleConfigNode = CreateXmlNode(xmlConfig, ModuleNodeName, string.Empty);
+
+			for (int i = 0; i < DefaultModuleSetting.Length; i++)
+				moduleConfigNode.AppendChild(CreateXmlNode(xmlConfig, DefaultModuleSetting[i, 0], DefaultModuleSetting[i, 1]));
+
+			rootConfigNode.AppendChild(moduleConfigNode);
+			// END //
+
 
 			xmlConfig.Save(SettingConfigPath);
 		}
 
-		private XmlNode CreativeXmlNode(XmlDocument parentDoc, string name, string text)
+		private XmlNode CreateXmlNode(XmlDocument parentDoc, string name, string text)
 		{
 			XmlNode node = parentDoc.CreateElement(string.Empty, name, string.Empty);
 			node.InnerText = text;

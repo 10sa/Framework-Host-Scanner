@@ -104,8 +104,7 @@ namespace SHFramework.Module.Interfaces
 		Custom,
 
 		/// <summary>
-		/// /// <summary>
-		/// Module has No Arguments.
+		/// Module has No Arguments. 
 		/// </summary>
 		None
 	}

@@ -34,6 +34,7 @@ namespace SHFramework
 	/// </summary>
 	public class InvalidMethodArgsException : SHFrameworkExceptionFrame
 	{
+
 		public InvalidMethodArgsException(string message, ReportType reportType) : base(message, reportType) { }
 	}
 }

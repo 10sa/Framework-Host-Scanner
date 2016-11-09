@@ -91,7 +91,7 @@ namespace SHFramework.Module
 					{
 						moduleClasses.Add((IModuleBase)Activator.CreateInstance(moduleClass));
 					}
-					catch (MissingMethodException e)
+					catch (MissingMethodException)
 					{
 						throw new ModuleLoadException(string.Format(ErrorReportFormat, NotFoundAssiganbleMethod), ReportType.Error);
 					}
@@ -137,7 +137,7 @@ namespace SHFramework.Module
 				ModuleType type = validateModule.GetType;
 				Form resultForm = validateModule.ResultForm;
 			}
-			catch(Exception e)
+			catch(Exception)
 			{
 				return false;
 			}
@@ -146,7 +146,7 @@ namespace SHFramework.Module
 		}
 	}
 
-	struct ModuleData
+	public struct ModuleData
 	{
 		public IModuleBase Module;
 		public string FileName;

@@ -13,18 +13,26 @@ namespace SHFramework.Config
 	{
 		private const string SettingConfigPath = @"\Config\FramworkSetting.cfg";
 
-		private const string RootNodeName = "FrameworkSetting";
-		private const string ModuleNodeName = "ModuleSetting";
+		private const string RootNodeName = "GlobalFrameworkSetting";
+			private const string ModuleNodeName = "ModuleSetting";
+			private const string KernelNodeName = "KernelSetting";
 
 		private readonly string[,] DefaultKernelSetting =
 		{
-			{ "B:Encryption_Config", "false" }
+			{ "B:Encryption_Kernel_Config", "false" },
+			{ "S:Encryption_Kernel_Checksum", "" },
+
+			{ "B:Encryption_Module_Config", "false" },
+			{ "S:Encryption_Module_Checksum", "" }
 		};
 
 		private readonly string[,] DefaultModuleSetting =
 		{
 			{ "I:Maximun_Modules", "16" },
-			{ "S:Prefix_Module_Path", "" }
+			{ "S:Prefix_Module_Path", "" },
+
+			// 1: None | 2: Uri | 3: IPAddress | 4: Custom(object[]) | 5: All //
+			{ "I:Using DoWork Method", "5" }
 		};
 
 		XmlDocument xmlConfig = new XmlDocument();
@@ -47,7 +55,7 @@ namespace SHFramework.Config
 
 
 			// Kernel Setting //
-			XmlNode kernelConfigNode = CreateXmlNode(xmlConfig, "KernelSetting", string.Empty);
+			XmlNode kernelConfigNode = CreateXmlNode(xmlConfig, KernelNodeName, string.Empty);
 
 			for (int i = 0; i < DefaultKernelSetting.Length; i++)
 				kernelConfigNode.AppendChild(CreateXmlNode(xmlConfig, DefaultKernelSetting[i, 0], DefaultKernelSetting[i, 1]));

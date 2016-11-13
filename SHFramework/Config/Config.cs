@@ -6,24 +6,30 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.IO;
 using System.Collections.Specialized;
+using System.Security.Cryptography;
 
 namespace SHFramework.Config
 {
 	class Config
 	{
 		private const string SettingConfigPath = @"\Config\FramworkSetting.cfg";
+		private const string ChecksumPath = @"\Config\FrameworkConfigChecksum.chksm";
+		private const string KeyPath = @"\Config\FrameworkConfigEncryptionKey.enckey";
 
 		private const string RootNodeName = "GlobalFrameworkSetting";
 			private const string ModuleNodeName = "ModuleSetting";
 			private const string KernelNodeName = "KernelSetting";
 
+
+		// Type Define.
+		// B : Boolean
+		// S : String
+		// I : Int
+		// Example -> "B:IsModule" -> 'B', 'IsModule'. (Boolean Type "IsModule" Data)
 		private readonly string[,] DefaultKernelSetting =
 		{
-			{ "B:Encryption_Kernel_Config", "false" },
-			{ "S:Encryption_Kernel_Checksum", "" },
-
-			{ "B:Encryption_Module_Config", "false" },
-			{ "S:Encryption_Module_Checksum", "" }
+			{ "B:Encryption_Config", "false" },
+			{ "S:Encryption_Config_Checksum", "" },
 		};
 
 		private readonly string[,] DefaultModuleSetting =
@@ -73,8 +79,41 @@ namespace SHFramework.Config
 			rootConfigNode.AppendChild(moduleConfigNode);
 			// END //
 
-
 			xmlConfig.Save(SettingConfigPath);
+
+			byte[] Key = new byte[256];
+
+			using (StreamWriter sw = new StreamWriter(KeyPath))
+			{
+				Random rd = new Random(Environment.CurrentManagedThreadId);
+				rd.NextBytes(Key);
+				sw.Write(rd.Next());
+				sw.Flush();
+			}
+
+
+
+			CreateEncryptionChecksum();
+		}
+
+		// Encryption //
+		private static void CreateEncryptionChecksum()
+		{
+			SHA256 enc = new SHA256CryptoServiceProvider();
+			Stream st;
+
+			if (File.Exists(ChecksumPath))
+				st = File.Open(ChecksumPath, FileMode.Open);
+			else
+				st = File.Open(ChecksumPath, FileMode.Create);
+
+			using (StreamWriter sw = new StreamWriter(st))
+			{
+				sw.Write(Convert.ToString(enc.ComputeHash(File.Open(SettingConfigPath, FileMode.Open))));
+				st.Dispose();
+			}
+			
+			return;
 		}
 
 		private XmlNode CreateXmlNode(XmlDocument parentDoc, string name, string text)

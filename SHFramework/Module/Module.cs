@@ -16,7 +16,7 @@ namespace SHFramework.Module
 	/// </summary>
 	class ModuleLoadControll
 	{
-		private const string ModuleFolderName = "Module";
+		private const string ModuleFolderName = @"Module";
 
 		private const string ModuleLoadFormat = "*.dll";
 
@@ -34,7 +34,7 @@ namespace SHFramework.Module
 		{
 			get
 			{
-				return Environment.CurrentDirectory + @"\" + ModuleFolderName;
+				return Environment.CurrentDirectory + ModuleFolderName;
 			}
 		}
 
@@ -93,7 +93,7 @@ namespace SHFramework.Module
 					}
 					catch (MissingMethodException)
 					{
-						throw new ModuleLoadException(string.Format(ErrorReportFormat, NotFoundAssiganbleMethod), ReportType.Error);
+						throw new ModuleLoadException(string.Format(ErrorReportFormat, NotFoundAssiganbleMethod, moduleClass.Name), ReportType.Error);
 					}
 				}
 			}

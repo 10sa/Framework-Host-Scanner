@@ -2,7 +2,7 @@
  SHFramework Is A Framework Designed To Explore The Vulnerabilities.
  
 # Version
- - 2.0v || Working... || Verison 2.0 || MIT License
+ - 2.0v || Version 2.0 Released. || Verison 2.0 || MIT License
  
 # License
 Copyright (c) 2016 Tensa (Github Name: 10sa)
